@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css','./assets/css/fontawesome.css','./vendor/bootstrap/css/bootstrap.min.css'],
 })
 export class HomeComponent {
-  imageSrc = './assets/images/logo.png';
+  constructor(private router: Router){
 
+  }
+  gofaq(){
+    this.router.navigate(['app-faq']);
+  }
 }
