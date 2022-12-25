@@ -1,0 +1,29 @@
+<body>
+<!--header-->
+  <header class="main-header" role="header">
+    <div class="logo">
+      <a routerLink="home"><em><img class="logo-image" src="../assets/images/logo.png" alt="Submit" width="75" height="75">
+         OEMS</em></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a routerLink="home" href="#top">Home</a></li>
+        <li class="has-submenu"><a>About Us</a>
+          <ul class="sub-menu" >
+            <li><a routerLink="home" href="#section2">About OEMS</a></li>
+            <li><a routerLink="home" href="#section3">Developer</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="faq">FAQ</a></li>
+        <li><a routerLink="home" href="#section4">Contact</a></li>
+        <li><a routerLink="t&c" >T&C</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<!--  <app-home></app-home>-->
+  <router-outlet></router-outlet>
+</body>
+
