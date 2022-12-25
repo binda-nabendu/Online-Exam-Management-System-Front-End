@@ -8,11 +8,11 @@ body {
 
 a {
 	color: #3CF;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 a:hover {
-	color: #FC3;
+	color: #3CF;
     text-decoration: none;
 }
 
@@ -570,10 +570,10 @@ section.why-us {
 }
 
 .tabs-content {
-    margin-top: 60px;
+    margin-top: 20px;
     text-align: left;
+    
 }
-
 @media screen and (max-width: 767px) {
   
   .tabs-content {
@@ -586,6 +586,11 @@ section.why-us {
     width: 100%;
     overflow: hidden;
     padding-right: 45px;
+    padding-top: 100px;
+}
+
+.tabs-content h4 {
+  padding-top: 60px;
 }
 
 @media screen and (max-width: 767px) {
