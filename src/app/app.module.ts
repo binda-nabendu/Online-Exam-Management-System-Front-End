@@ -10,6 +10,7 @@ import { AboutUsComponent } from './all-component/public/about-us/about-us.compo
 import { FaqComponent } from './all-component/public/faq/faq.component';
 import { LoginComponent } from './all-component/public/login/login.component';
 import { RegistrationComponent } from './all-component/public/registration/registration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegistrationComponent } from './all-component/public/registration/regis
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
