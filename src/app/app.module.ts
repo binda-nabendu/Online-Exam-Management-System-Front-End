@@ -11,6 +11,8 @@ import { FaqComponent } from './all-component/public/faq/faq.component';
 import { LoginComponent } from './all-component/public/login/login.component';
 import { RegistrationComponent } from './all-component/public/registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from "../Material-Module";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TncComponent,
     AboutUsComponent,
     FaqComponent,
-    LoginComponent,
     RegistrationComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
