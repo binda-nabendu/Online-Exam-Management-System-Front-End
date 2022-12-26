@@ -8,6 +8,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
     exports:[
@@ -19,7 +20,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
         MatPaginatorModule,
         MatDialogModule,
         MatSelectModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatRadioModule
     ]
 })
 export class MaterialModule{
