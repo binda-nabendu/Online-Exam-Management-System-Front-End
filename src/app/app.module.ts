@@ -8,7 +8,7 @@ import { HomeComponent } from './all-component/public/home/home.component';
 import { TncComponent } from './all-component/public/tnc/tnc.component';
 import { AboutUsComponent } from './all-component/public/about-us/about-us.component';
 import { FaqComponent } from './all-component/public/faq/faq.component';
-import { LoginComponent } from './all-component/public/login/login.component';
+import {LoginComponent} from "./all-component/public/login/login.component";
 import { RegistrationComponent } from './all-component/public/registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "../Material-Module";
@@ -25,6 +25,7 @@ import {FormsModule} from "@angular/forms";
     RegistrationComponent
   ],
   imports: [
+    LoginComponent,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
