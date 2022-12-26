@@ -1,3 +1,4 @@
+@import url(../../../../assets/css/fontawesome.css);
 a {
   color: #3CF;
   text-decoration: none !important;
@@ -196,3 +197,9 @@ a {
   margin-bottom: 10px;
 }
 
+/*header-icon*/
+.main-menu[_ngcontent-ljp-c177]   li.has-submenu[_ngcontent-ljp-c177]   a[_ngcontent-ljp-c177]:after {
+  content: '\f107';
+  font-family: "FontAwesome";
+  margin-left: 5px;
+}

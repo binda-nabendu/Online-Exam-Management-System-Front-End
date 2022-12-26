@@ -1,5 +1,3 @@
-@import url(assets/css/fontawesome.css);
-/* @import url("<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">"); */
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -333,7 +331,7 @@ section.features .col-4 {
 /* Why Choosing Oems */
 
 section.why-us {
-    background-image: url(../home/assets/images/choosing-bg.jpg);
+    background-image: url(../../../../assets/images/choosing-bg.jpg);
     background-color: #172238;
     background-repeat: no-repeat;
     background-size: cover;
@@ -468,7 +466,7 @@ section.why-us {
 /* Video */
 
 section.video {
-    background-image: url(../home/assets/images/video-bg.jpg);
+    background-image: url(../../../../assets/images/power-of-friend.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #172238;
