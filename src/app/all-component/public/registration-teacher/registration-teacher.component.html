@@ -1,10 +1,10 @@
 <body>
 <mat-card>
-  <mat-card-title>Registation As a Student</mat-card-title>
+  <mat-card-title>Registation As Teacher</mat-card-title>
   <mat-card-content>
-    <button mat-raised-button color="primary" style="margin: 5px;">Student</button>
-    <button mat-raised-button color="accent" (click)="goToRegTecPage()">Teacher</button>
-    <form class="example-form" #thisFormType = "ngForm" (submit)="checkValidateReg(thisFormType)">
+    <button mat-raised-button color="primary" style="margin: 5px;" (click)="goToRegStdPage()">Student</button>
+    <button mat-raised-button color="accent" >Teacher</button>
+    <form class="example-form" #thisFormType = "ngForm" (submit)="registerTeacher(thisFormType)">
       <mat-form-field class="example-full-width">
         <mat-label class="name">First Name</mat-label>
         <input matInput placeholder="Your Username" ngModel required name = "usernames">
@@ -17,24 +17,23 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="---@gmail.com" ngModel required name = "usernames">
+        <input matInput placeholder="Your Username" ngModel required name = "usernames">
       </mat-form-field>
 
       <mat-form-field class="example-full-width ">
         <mat-label >Contact Number</mat-label>
-        <input matInput placeholder="+8801--" ngModel required name = "usernames">
+        <input matInput placeholder="Your Username" ngModel required name = "usernames">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Birth Reg No or NID</mat-label>
-        <input  type='Password' matInput placeholder="NID-Number" name = "Password" ngModel required>
+        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Date-of-Birth</mat-label>
         <input  type='Password' matInput placeholder="DD-MM-YYY" name = "Password" ngModel required>
       </mat-form-field>
-        <mat-radio-group aria-label="Gander" >
-
+      <mat-radio-group aria-label="Gander" >
         <mat-label>Gender</mat-label><br>
         <mat-radio-button value="1">Male</mat-radio-button>
         <mat-radio-button value="2">Female</mat-radio-button>
@@ -42,25 +41,26 @@
       </mat-radio-group>
       <mat-form-field class="example-full-width">
         <mat-label>Department</mat-label>
-        <input  type='Password' matInput placeholder="CSE" name = "Password" ngModel required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Semester</mat-label>
-        <input  type='Password' matInput placeholder="1st" name = "Password" ngModel required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
         <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
+        <mat-label>Semester</mat-label>
+        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
-      <button class ="signup" mat-raised-button color="primary"  type='submit' >SIGNUP</button>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
+      </mat-form-field>
+      <button class ="signup" mat-raised-button color="primary" type='submit'>SIGNUP</button>
 
 
     </form>
   </mat-card-content>
 </mat-card>
 </body>
+
 
