@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "../Material-Module";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { RegistrationTeacherComponent } from './all-component/public/registration-teacher/registration-teacher.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {HttpClientModule} from "@angular/common/http";
     AboutUsComponent,
     FaqComponent,
     RegistrationComponent,
+    RegistrationTeacherComponent,
   ],
   imports: [
     LoginComponent,
