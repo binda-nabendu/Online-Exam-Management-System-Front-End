@@ -1,6 +1,7 @@
 .tt{
-  padding: 150px;
+  padding-top: 100px;
   color: white;
+  text-align: center;
 }
 .body-class{
   background-image: url(/../../../../assets/images/choosing-bg.jpg);

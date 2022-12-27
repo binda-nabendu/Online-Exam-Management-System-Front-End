@@ -12,4 +12,7 @@ export class UserService {
   proceedLogin(user:any){
      return this.httpClient.post(this.url+"authenticate",user);
   }
+  getFaq(){
+    return this.httpClient.get(this.url+"public/faq");
+  }
 }
