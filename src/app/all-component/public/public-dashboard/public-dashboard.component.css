@@ -196,10 +196,3 @@ a {
   height: 65px;
   margin-bottom: 10px;
 }
-
-/*header-icon*/
-.main-menu[_ngcontent-ljp-c177]   li.has-submenu[_ngcontent-ljp-c177]   a[_ngcontent-ljp-c177]:after {
-  content: '\f107';
-  font-family: "FontAwesome";
-  margin-left: 5px;
-}
