@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MaterialModule} from "../../../../Material-Module";
 import {FormsModule} from "@angular/forms";
+import {Router} from "@angular/router";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-login',
@@ -11,14 +13,20 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  constructor() {
+  constructor(private router : Router, private service: UserService) {
   }
+  private t: string = "hei ";
   ngOnInit(): void {
   }
   checkValidate(userDetails:any){
-
+    if(userDetails.valid){
+      console.log(userDetails.value);
+      this.service.proceedLogin(userDetails.value).subscribe(item => {
+          console.log(item);
+      });
+    }
   }
   goToRegPage(){
-
+    this.router.navigate(['public-dashboard/register']);
   }
 }

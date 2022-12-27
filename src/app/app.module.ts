@@ -13,6 +13,7 @@ import { RegistrationComponent } from './all-component/public/registration/regis
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "../Material-Module";
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {FormsModule} from "@angular/forms";
     TncComponent,
     AboutUsComponent,
     FaqComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     LoginComponent,
@@ -31,6 +32,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
