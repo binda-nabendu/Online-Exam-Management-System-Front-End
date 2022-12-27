@@ -1,10 +1,10 @@
 <body>
 <mat-card>
-  <mat-card-title>Registation As a Student</mat-card-title>
+  <mat-card-title>Registation As Teacher</mat-card-title>
   <mat-card-content>
-    <button mat-raised-button color="primary" style="margin: 5px;">Student</button>
-    <button mat-raised-button color="accent" (click)="goToRegTecPage()">Teacher</button>
-    <form class="example-form" #thisFormType = "ngForm" (submit)="checkValidateReg(thisFormType)">
+    <button mat-raised-button color="primary" style="margin: 5px;" (click)="goToRegStdPage()">Student</button>
+    <button mat-raised-button color="accent" >Teacher</button>
+    <form class="example-form" #thisFormType = "ngForm" (submit)="registerTeacher(thisFormType)">
       <mat-form-field class="example-full-width">
         <mat-label class="name">First Name</mat-label>
         <input matInput placeholder="Your Username" ngModel required name = "usernames">
@@ -48,18 +48,19 @@
         <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
+        <mat-label>Password</mat-label>
         <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
+        <mat-label>Confirm Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
-      <button class ="signup" mat-raised-button color="primary"  type='submit' >SIGNUP</button>
+      <button class ="signup" mat-raised-button color="primary" type='submit'>SIGNUP</button>
 
 
     </form>
   </mat-card-content>
 </mat-card>
 </body>
+
 

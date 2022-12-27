@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -6,15 +7,15 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit{
-  constructor() {
+  constructor(private router: Router) {
   }
   ngOnInit(): void {
   }
   checkValidateReg(userDetails:any){
 
   }
-  goToRegPage(){
-
+  goToRegTecPage(){
+    this.router.navigate(['public-dashboard/register-teacher']);
   }
 
 }
