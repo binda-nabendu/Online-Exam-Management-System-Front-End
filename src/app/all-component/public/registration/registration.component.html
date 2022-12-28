@@ -1,6 +1,6 @@
 <body>
 <mat-card>
-  <mat-card-title>Registation As a Student</mat-card-title>
+  <mat-card-title>Registation As Student</mat-card-title>
   <mat-card-content>
     <button mat-raised-button color="primary" style="margin: 5px;">Student</button>
     <button mat-raised-button color="accent" (click)="goToRegTecPage()">Teacher</button>
@@ -57,10 +57,9 @@
       <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
       </mat-form-field>
       <button class ="signup" mat-raised-button color="primary"  type='submit' >SIGNUP</button>
-
-
     </form>
   </mat-card-content>
+  <a (click)="backlogin()">Back To Login</a>
 </mat-card>
 </body>
 

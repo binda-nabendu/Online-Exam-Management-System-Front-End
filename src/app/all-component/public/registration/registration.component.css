@@ -2,13 +2,17 @@
   width: 49%;
   padding: 2px;
 }
-
+a{
+  color: white;
+  font-size:15px;
+  text-decoration: none;
+  margin: 13px;
+}
 mat-card{
   background-color: #0c1228;
   margin: 0 auto;
   width: 50%;
   opacity: 90%;
-  /*height: 100%;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,6 +34,7 @@ button{
 body{
   padding-top: 130px;
   background-image: url(../../../../assets/images/choosing-bg.jpg);
+  height:140%;
 
 }
 .example-full-width{
