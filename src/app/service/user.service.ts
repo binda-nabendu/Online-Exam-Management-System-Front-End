@@ -8,7 +8,7 @@ import {HttpClient} from "@angular/common/http";
 export class UserService {
 
   constructor(private httpClient: HttpClient) { }
-  private url: string = "http://localhost:8080/";
+  private url: string = "http://localhost:8080/api/";
   proceedLogin(user:any){
      return this.httpClient.post(this.url+"authenticate",user);
   }
