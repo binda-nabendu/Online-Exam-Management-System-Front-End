@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {regStd} from "../../../model/regStd";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-registration',
@@ -7,11 +9,16 @@ import {Router} from "@angular/router";
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit{
-  constructor(private router: Router) {
+  constructor(private router: Router, private service: UserService) {
   }
+  regStdForm:any;
   ngOnInit(): void {
   }
-  checkValidateReg(userDetails:any){
+
+  registerStudent(){
+
+  }
+  checkValidateReg(userDetails:regStd){
 
   }
   goToRegTecPage(){

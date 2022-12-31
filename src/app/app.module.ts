@@ -12,9 +12,10 @@ import {LoginComponent} from "./all-component/public/login/login.component";
 import { RegistrationComponent } from './all-component/public/registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "../Material-Module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { RegistrationTeacherComponent } from './all-component/public/registration-teacher/registration-teacher.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RegistrationTeacherComponent } from './all-component/public/registratio
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
     exports:[
@@ -21,7 +23,9 @@ import {MatRadioModule} from "@angular/material/radio";
         MatDialogModule,
         MatSelectModule,
         MatCheckboxModule,
-        MatRadioModule
+        MatRadioModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ]
 })
 export class MaterialModule{
