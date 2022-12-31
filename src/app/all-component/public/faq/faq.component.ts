@@ -13,7 +13,7 @@ export class FaqComponent implements OnInit{
   ngOnInit(): void {
 
     this.service.getFaq().subscribe(t=>{
-      this.f = t;
+      console.log(t)
     })
   }
 }
