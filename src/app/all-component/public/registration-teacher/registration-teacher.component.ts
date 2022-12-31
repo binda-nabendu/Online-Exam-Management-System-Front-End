@@ -18,4 +18,7 @@ export class RegistrationTeacherComponent {
   signup(){
     this.router.navigate(['public-dashboard/login']);
   }
+  backlogin(){
+    this.router.navigate(['public-dashboard/login']);
+  }
 }

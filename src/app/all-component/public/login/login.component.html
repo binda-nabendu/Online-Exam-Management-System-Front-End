@@ -5,11 +5,11 @@
     <form class="example-form" #thisFormType = "ngForm" (submit)="checkValidate(thisFormType)">
       <mat-form-field class="example-full-width">
         <mat-label>User Name</mat-label>
-        <input matInput placeholder="Your Username" ngModel required name = "usernames">
+        <input matInput placeholder="Your Username" ngModel required name = "username">
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
+        <input  type='Password' matInput placeholder="Your Password" name = "password" ngModel required>
       </mat-form-field>
       <button mat-raised-button color="primary" type='submit' style="margin: 5px;">Log in</button>
       <button mat-raised-button color="accent" (click)="goToRegPage()">Register</button>

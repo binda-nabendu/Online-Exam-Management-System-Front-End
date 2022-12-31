@@ -17,5 +17,7 @@ export class RegistrationComponent implements OnInit{
   goToRegTecPage(){
     this.router.navigate(['public-dashboard/register-teacher']);
   }
-
+  backlogin(){
+    this.router.navigate(['public-dashboard/login']);
+  }
 }
