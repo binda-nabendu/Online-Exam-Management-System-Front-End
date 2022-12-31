@@ -27,6 +27,6 @@ export class LoginComponent implements OnInit{
     }
   }
   goToRegPage(){
-    this.router.navigate(['public-dashboard/register']);
+    this.router.navigate(['public-dashboard/register-student']);
   }
 }
