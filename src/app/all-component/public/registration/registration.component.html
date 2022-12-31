@@ -4,7 +4,7 @@
   <mat-card-content>
     <button mat-raised-button color="primary" style="margin: 5px;">Student</button>
     <button mat-raised-button color="accent" (click)="goToRegTecPage()">Teacher</button>
-    <form class="example-form" #thisFormType = "ngForm" (submit)="checkValidateReg(thisFormType)">
+    <form class="example-form" [formGroup]="regStdForm" (ngSubmit)="registerStudent()">
       <mat-form-field class="example-full-width">
         <mat-label class="name">First Name</mat-label>
         <input matInput placeholder="Your Username" ngModel required name = "usernames">
