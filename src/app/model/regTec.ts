@@ -1,14 +1,6 @@
-export interface regTec{
-    nid: String,
-    userName: string,
-    fatherName: string,
-    motherName: string,
-    gender: string,
-    contactNo: string,
-    email: string,
-    dob: string,
-    address: string,
-    password: string,
+import {regPerson} from "./regPerson";
+
+export interface regTec extends regPerson{
     eduQualification: string,
     expertise: string
 }

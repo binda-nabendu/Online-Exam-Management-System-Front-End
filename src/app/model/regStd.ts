@@ -1,14 +1,6 @@
-export interface regStd{
-  nid: string,
-  userName: string,
-  fatherName: string,
-  motherName: string,
-  gender: string,
-  contactNo: string,
-  email: string,
-  dob: string,
-  address: string,
-  password: string,
+import {regPerson} from "./regPerson";
+
+export interface regStd extends regPerson{
   deptId: string,
   semester: string
 }
