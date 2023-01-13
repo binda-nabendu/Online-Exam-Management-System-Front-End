@@ -3,7 +3,22 @@
   color: white;
   text-align: center;
 }
+h3{
+  margin:0 0 0 30px;
+  color: white;
+
+}
+p{
+  /*top right bottom left*/
+  margin: 0 40px 0 30px;
+  color: #7abaff;
+}
 .body-class{
-  background-image: url(../../../../assets/images/choosing-bg.jpg);
+  background-image: url(/../../../../assets/images/choosing-bg.jpg);
+  background-repeat: repeat;
+
   background-color: #172238;
+  min-height: 100vh;
+  height:auto;
+  margin: 0;
 }
