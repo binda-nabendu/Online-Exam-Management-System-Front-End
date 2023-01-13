@@ -9,11 +9,12 @@ import {UserService} from "../../../service/user.service";
 export class FaqComponent implements OnInit{
   constructor(private service: UserService) {
   }
-  f:any;
+  questionAns:any;
   ngOnInit(): void {
 
     this.service.getFaq().subscribe(t=>{
-      console.log(t)
+      this.questionAns = new Map(Object.entries(t));
+      console.log(this.questionAns);
     })
   }
 }
