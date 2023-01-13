@@ -3,6 +3,9 @@
   color: white;
   text-align: center;
 }
+p{
+  color: #7abaff;
+}
 .body-class{
   background-image: url(/../../../../assets/images/choosing-bg.jpg);
   background-color: #172238;

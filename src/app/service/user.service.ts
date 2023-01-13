@@ -46,4 +46,7 @@ export class UserService {
     return this.httpClient.post(this.url+"public/request-to-join-as-teacher", formData);
   }
 
+  getTnC() {
+    return this.httpClient.get(this.url+"public/terms-and-condition");
+  }
 }
