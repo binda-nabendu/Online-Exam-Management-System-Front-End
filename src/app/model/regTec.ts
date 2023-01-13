@@ -1,5 +1,5 @@
 export interface regTec{
-    nid: string,
+    nid: String,
     userName: string,
     fatherName: string,
     motherName: string,
