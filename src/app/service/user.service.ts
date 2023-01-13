@@ -20,7 +20,20 @@ export class UserService {
   submitStdReg(student: regStd){
     return this.httpClient.post(this.url+"public/request-to-join-as-student", student);
   }
-  submitTecReg(teacher: regTec){
-    return this.httpClient.post(this.url+"public/request-to-join-as-teacher", teacher);
+  submitTecReg(teacher: any){
+    let formData: FormData = new FormData();
+    formData.append('nid', teacher.nid);
+    formData.append('userName', teacher.userName);
+    formData.append('fatherName', teacher.fatherName);
+    formData.append('motherName', teacher.motherName);
+    formData.append('gender', teacher.gender);
+    formData.append('contactNo', teacher.contactNo);
+    formData.append('email', teacher.email);
+    formData.append('dob', teacher.dob);
+    formData.append('address', teacher.address);
+    formData.append('password', teacher.password);
+    formData.append('eduQualification', teacher.eduQualification);
+    formData.append('expertise', teacher.expertise);
+    return this.httpClient.post(this.url+"public/request-to-join-as-teacher", formData);
   }
 }

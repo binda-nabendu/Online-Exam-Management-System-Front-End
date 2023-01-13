@@ -44,7 +44,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Date-of-Birth</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="dob" >
+        <input matInput [matDatepicker]="picker" [formControlName]="'dob'" >
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -73,8 +73,6 @@
         <mat-label>Expert</mat-label>
         <input  matInput placeholder="Machine Learning" formControlName = "expertise">
       </mat-form-field>
-
-
       <button class ="signup" mat-raised-button color="primary" type='submit'>SIGNUP</button>
     </form>
   </mat-card-content>

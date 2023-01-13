@@ -11,6 +11,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {MomentDateModule} from "@angular/material-moment-adapter";
 
 @NgModule({
     exports:[
@@ -25,7 +26,8 @@ import {MatNativeDateModule} from "@angular/material/core";
         MatCheckboxModule,
         MatRadioModule,
         MatDatepickerModule,
-        MatNativeDateModule
+        MatNativeDateModule,
+        MomentDateModule
     ]
 })
 export class MaterialModule{
