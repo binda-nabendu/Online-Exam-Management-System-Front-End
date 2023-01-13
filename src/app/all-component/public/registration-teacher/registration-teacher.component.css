@@ -35,6 +35,7 @@ button{
 body{
   padding-top: 130px;
   background-image: url(../../../../assets/images/choosing-bg.jpg);
+  height: auto;
 
 }
 .example-full-width{
