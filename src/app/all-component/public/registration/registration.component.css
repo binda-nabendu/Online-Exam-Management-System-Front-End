@@ -49,7 +49,9 @@ mat-radio-group{
 .signup{
   width: 99%;
 }
-::ng-deep mat-radio-group mat-radio-button .radio_button {
-  color: #556EE6 !important;
-}
+
+
+/*::ng-deep mat-radio-group mat-radio-button .radio_button {*/
+/*  color: #556EE6 !important;*/
+/*}*/
 

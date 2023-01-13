@@ -70,12 +70,13 @@ export class RegistrationTeacherComponent implements OnInit{
       eduQualification:this.regTecForm.value.eduQualification,
       expertise:this.regTecForm.value.expertise
     };
-
     if(this.regTecForm.valid){
-        this.service.submitTecReg(teacher).subscribe(item =>{
-          console.log(item);
-        });
-      }
+      this.service.submitTecReg(teacher).subscribe(item =>{
+        console.log(item);
+        this.router.navigate(['public-dashboard/login']);
+      });
+    }
+
   }
   signup(){
     this.router.navigate(['public-dashboard/login']);

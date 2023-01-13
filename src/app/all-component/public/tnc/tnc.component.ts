@@ -16,6 +16,7 @@ export class TncComponent implements OnInit {
 
     this.service.getFaq().subscribe(t => {
       this.f = t;
+      console.log(t);
     })
   }
 }

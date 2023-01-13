@@ -1,62 +1,81 @@
 <body>
 <mat-card>
-  <mat-card-title>Registation As Student</mat-card-title>
+  <mat-card-title>Registration As Student</mat-card-title>
   <mat-card-content>
     <button mat-raised-button color="primary" style="margin: 5px;">Student</button>
     <button mat-raised-button color="accent" (click)="goToRegTecPage()">Teacher</button>
     <form class="example-form" [formGroup]="regStdForm" (ngSubmit)="registerStudent()">
       <mat-form-field class="example-full-width">
-        <mat-label class="name">First Name</mat-label>
-        <input matInput placeholder="Your Username" ngModel required name = "usernames">
+        <mat-label class="name">NID</mat-label>
+        <input matInput placeholder="NID NUMBER" formControlName = "nid">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label class="name">Last Name</mat-label>
-        <input matInput placeholder="Your Username" ngModel required name = "usernames">
+        <mat-label class="name">Name</mat-label>
+        <input matInput placeholder="Your Full Name"  formControlName = "userName">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="---@gmail.com" ngModel required name = "usernames">
+        <mat-label>Father Name</mat-label>
+        <input matInput placeholder="Your Father Full Name"  formControlName = "fatherName">
       </mat-form-field>
 
       <mat-form-field class="example-full-width ">
-        <mat-label >Contact Number</mat-label>
-        <input matInput placeholder="+8801--" ngModel required name = "usernames">
+        <mat-label >Mother Name</mat-label>
+        <input matInput placeholder="Your Mother Full Name"  formControlName = "motherName">
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Birth Reg No or NID</mat-label>
-        <input  type='Password' matInput placeholder="NID-Number" name = "Password" ngModel required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Date-of-Birth</mat-label>
-        <input  type='Password' matInput placeholder="DD-MM-YYY" name = "Password" ngModel required>
-      </mat-form-field>
-
-        <mat-radio-group aria-label="Gander" >
-
+      <mat-radio-group aria-label="Gander"  formControlName = "gender">
         <mat-label>Gender</mat-label><br>
         <mat-radio-button value="1">Male</mat-radio-button>
         <mat-radio-button value="2">Female</mat-radio-button>
         <mat-radio-button value="3">Others</mat-radio-button>
       </mat-radio-group>
+
       <mat-form-field class="example-full-width">
-        <mat-label>Department</mat-label>
-        <input  type='Password' matInput placeholder="CSE" name = "Password" ngModel required>
+        <mat-label>Contact Number</mat-label>
+        <input matInput placeholder="+880" formControlName = "contactNo">
       </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="@email.com" formControlName = "email">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Date-of-Birth</mat-label>
+        <input matInput [matDatepicker]="picker" [formControlName]="'dob'" >
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <input   matInput placeholder="Mirpur, Dhaka" formControlName = "address">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password" formControlName = "password">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Department Name</mat-label>
+        <input  matInput placeholder="CSE" formControlName = "deptId">
+      </mat-form-field>
+
       <mat-form-field class="example-full-width">
         <mat-label>Semester</mat-label>
-        <input  type='Password' matInput placeholder="1st" name = "Password" ngModel required>
+        <input  matInput placeholder="1" formControlName = "semester">
       </mat-form-field>
-      <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-        <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      <input  type='Password' matInput placeholder="Your Password" name = "Password" ngModel required>
-      </mat-form-field>
+
+
       <button class ="signup" mat-raised-button color="primary"  type='submit' >SIGNUP</button>
     </form>
   </mat-card-content>
