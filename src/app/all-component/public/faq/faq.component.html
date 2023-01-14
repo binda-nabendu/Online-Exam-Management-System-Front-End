@@ -2,7 +2,8 @@
   <h1 class="tt">Frequently Ask Question?</h1>
 
   <div *ngFor="let QA of questionAns | keyvalue">
-    Key: <b>{{QA.key}}</b> and Value: <b>{{QA.value}}</b>
+    <h3>{{QA.key}}</h3>
+    <p>{{QA.value}}</p><br><br>
   </div>
 
 </div>
