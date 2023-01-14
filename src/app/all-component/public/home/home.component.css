@@ -659,27 +659,6 @@ section.contact form button {
     border: none;
 }
 
-/* Footer */
-
-footer {
-    background-color: #152036;
-    text-align: center;
-}
-
-footer p {
-    margin-bottom: 0px;
-    padding: 25px 0px;
-    color: #0399FF;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-footer p a,
-footer p a:hover {
-    color: #0399FF;
-}
 
 @media screen and (max-width: 992px) {
   .features { background-color: #0c1228; }
@@ -692,13 +671,5 @@ footer p a:hover {
   nav[role="navigation"].active {
     max-height: calc(80px + 100vh);
     overflow-y: auto;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  footer p {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.25px;
   }
 }
