@@ -22,11 +22,18 @@ const routes: Routes = [
 
     ]
   },
-  {path:"**", component: HomeComponent}
+  {path:"admin", loadChildren: ()=>import ('./all-component/admin/admin.module'). then(opt=>opt.AdminModule)},
+  // {path:"**", component: HomeComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+      onSameUrlNavigation: 'reload',
+      scrollOffset: [0, 50],
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
