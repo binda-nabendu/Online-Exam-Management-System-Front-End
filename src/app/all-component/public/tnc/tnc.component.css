@@ -4,17 +4,21 @@
   text-align: center;
 }
 h3{
-  margin-left: 30px;
+  margin:0 0 0 30px;
   color: white;
 
 }
 p{
-  margin-left: 30px;
-  margin-right: 40px;
+  /*top right bottom left*/
+  margin: 0 40px 0 30px;
   color: #7abaff;
 }
 .body-class{
   background-image: url(/../../../../assets/images/choosing-bg.jpg);
+  background-repeat: repeat;
+
   background-color: #172238;
-  height: auto;
+  min-height: 100vh;
+  height:auto;
+  margin: 0;
 }

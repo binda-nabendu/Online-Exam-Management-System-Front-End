@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../service/user.service";
-import {tncModel} from "../../../model/tncModel";
 
 @Component({
   selector: 'app-tnc',
@@ -15,9 +14,8 @@ export class TncComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let p:tncModel;
+
     this.service.getTnC().subscribe(t => {
-      let d: any = t;
       const map = new Map(Object.entries(t));
       this.Introduction = map.get("introduction");
       this.AccessAndUseOfTheWebsite = map.get("accessAndUseOfTheWebsite");
