@@ -1,0 +1,281 @@
+*{
+  margin:0;
+  padding:0;
+
+}
+ul{
+  padding:0;
+}
+body{
+  margin:0;
+  padding:0;
+
+
+}
+.container{
+  width:100%;
+  margin-top: var(--headerfoterh);
+
+}
+
+  /* background-color:var(--red); */
+
+.sidebar{
+  width:200px;
+  background-color: rgba(22,34,57,1);
+  min-height:calc(100vh - var(--headerfoterh));
+  position:fixed;
+  transition:.5s;
+
+
+  transform:translateX(0px);
+
+}
+.show-sidebar{
+  transform:translateX(-200px);
+}
+.right-body{
+  background-color:lightgray;
+  width:calc(100% - 210px);
+  min-height:calc(100vh - var(--headerfoterh) - var(--headerfoterh));
+  padding-left: calc(200px + 10px);
+  padding-top: 10px;
+  transition: .5s;
+
+}
+.no-padding{
+  padding-left:10px;
+  transition:.5s;
+  width: 100%;
+}
+.fa-user{
+  color: #ffffff;
+  font-size: 20px;
+}
+.padding{
+  padding-left:0;
+}
+.link-header{
+  display:flex;
+  align-items: center;
+
+
+}
+.link-header {
+  display: flex;
+}
+.link-header img{
+  margin-left:15px;
+  cursor: pointer;
+}
+.links{
+  padding-left:30px;
+  display:none;
+
+}
+.links a{
+  text-decoration:none;
+}
+
+.icon{
+  width: 15px;;
+}
+.show{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*header css*/
+a {
+  color: #3CF;
+  text-decoration: none !important;
+}
+/* Header */
+
+.main-header img{
+  padding-right:7px;
+}
+
+.main-header {
+  background-color: rgba(22,34,57,0.95);
+  height: var(--headerfoterh);
+  z-index: 12;
+  width: 100%;
+  top: 0;
+  border-bottom:thin solid #0399FF;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+
+}
+
+.main-header .logo {
+  /*float: left;*/
+  line-height: 60px;
+  padding-left: 10px;
+  margin: auto;
+}
+
+.main-header .logo a {
+  font-size: 31px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+}
+.logo-image{
+  width:  60px;
+  height: 60px;
+}
+.main-header .logo a em {
+  font-style: normal;
+  color: #0399FF;
+  display: flex;
+  letter-spacing:1px;
+}
+
+.main-menu li {
+  display: inline-block;
+  line-height: 79px;
+
+  position: relative;
+}
+
+.main-menu li:first-child {
+  margin-left: 0;
+}
+
+.main-menu li a {
+  padding: 10px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: all 0.5s;
+}
+
+.main-menu li.has-submenu a:after {
+  content: '\f107';
+  font-family: "FontAwesome", serif;
+  margin-left: 5px;
+}
+
+.main-menu li.has-submenu ul li a:after {
+  display: none;
+}
+
+.main-menu li .sub-menu {
+  position: absolute;
+  width: 100%;
+  background-color: #18233a;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.main-menu li:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.main-menu li .sub-menu li {
+  display: block;
+  line-height: 20px;
+  margin-left: 0;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #121b2f;
+}
+
+.main-menu li .sub-menu li:first-child {
+  padding-top: 15px;
+}
+
+.main-menu li .sub-menu li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.main-menu li .sub-menu li a {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 15px;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.5s;
+}
+/*sidebar submenu*/
+.left-nav{
+  padding: 5px 18px 18px;
+  list-style: none;
+}
+.left-nav li.has-left-sub-menu  a:after {
+  content: '\f107';
+  font-family: "FontAwesome", serif;
+  margin-left: 5px;
+}
+
+.left-nav li.has-left-sub-menu ul li a:after {
+  display: none;
+}
+.left-menu{
+  list-style:none;
+  padding:10px 0;
+
+}
+.left-menu a{
+  font-size:15px;
+  color:#fff;
+  padding:0 8px;
+}
+.left-sub-menu{
+  list-style: none;
+  color:#fff;
+  height:0;
+  overflow:hidden;
+  background:#0c1228;
+  margin-top:8px;
+  border-radius:6px;
+  transition:.5s;
+}
+
+ .left-sub-menu-show{
+  height:auto;
+  padding:14px;
+  transition:.5s;
+
+}
+.has-left-sub-menu li{
+
+}
+.left-sub-menu li a{
+  color:#fff;
+  font-size:16px;
+  display: inline-block;
+  padding:4px 0;
+}
+/*hamburger-icon*/
+
+.icon{
+  position:fixed;
+  top: 16px;
+  z-index:12;
+  left:18px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ffff;
+}
+.color-icon{
+  color:#fff;
+  transition:.5s;
+}
+
+.icon-style{
+  padding: 0;
+  color: #fff;
+}

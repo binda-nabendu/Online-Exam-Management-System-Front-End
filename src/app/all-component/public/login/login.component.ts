@@ -21,10 +21,12 @@ export class LoginComponent implements OnInit{
   checkValidate(userDetails:any){
     if(userDetails.valid){
       console.log(userDetails.value);
-      this.service.proceedLogin(userDetails.value).subscribe(item => {
-          console.log(item);
-      });
+      // this.service.proceedLogin(userDetails.value).subscribe(item => {
+      //     console.log(item);
+      // });
+      this.router.navigate(["admin/admin-dashboard"]);
     }
+
   }
   goToRegPage(){
     this.router.navigate(['public-dashboard/register-student']);

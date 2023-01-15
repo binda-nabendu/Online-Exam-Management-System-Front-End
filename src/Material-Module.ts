@@ -27,7 +27,7 @@ import {MomentDateModule} from "@angular/material-moment-adapter";
         MatRadioModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MomentDateModule
+        MomentDateModule,
     ]
 })
 export class MaterialModule{

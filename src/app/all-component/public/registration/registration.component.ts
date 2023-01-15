@@ -6,7 +6,6 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/
 import {MomentDateAdapter} from "@angular/material-moment-adapter";
 import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import * as moment from "moment/moment";
-import {regTec} from "../../../model/regTec";
 
 export const DATE_FORMATS = {
   parse: {
@@ -78,11 +77,8 @@ export class RegistrationComponent implements OnInit{
       });
     }
   }
-  checkValidateReg(userDetails:regStd){
 
-  }
-
-  backlogin(){
+  backLogin(){
     this.router.navigate(['public-dashboard/login']);
   }
 }
