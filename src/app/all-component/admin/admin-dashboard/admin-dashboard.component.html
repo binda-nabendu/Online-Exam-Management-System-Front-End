@@ -1,1 +1,53 @@
-<h1>Admin Dashboard</h1>
+<header class="main-header" role="header">
+  <div class="logo">
+    <a routerLink="home"><em><img class="logo-image" src="assets/images/logo.png" alt="Submit" width="75" height="75">
+      OEMS</em></a>
+  </div>
+  <nav id="menu" class="main-nav" role="navigation">
+    <ul class="main-menu">
+      <li class="has-submenu"><i class="fa fa-user" aria-hidden="true"></i><a>{{username}}</a>
+        <ul class="sub-menu" >
+          <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
+          <li><a routerLink='login'>Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  <div class="sidebar">
+    <div>
+      <div class="link-header">
+
+        <i class="fa fa-bars hamburger" aria-hidden="true" ></i>
+      </div>
+      <nav id="" class="left-nav" role="navigation">
+        <ul class="left-menu">
+          <li class="has-left-sub-menu"><i class="fa fa-user" aria-hidden="true"></i><a>{{username}}</a>
+            <ul class="left-sub-menu" >
+              <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
+              <li><a routerLink='login'>Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="left-menu">
+          <li class="has-left-sub-menu"><i class="fa fa-user" aria-hidden="true"></i><a>{{username}}</a>
+            <ul class="left-sub-menu" >
+              <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
+              <li><a routerLink='login'>Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="left-menu">
+          <li class="has-left-sub-menu"><i class="fa fa-user" aria-hidden="true"></i><a>{{username}}</a>
+            <ul class="left-sub-menu" >
+              <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
+              <li><a routerLink='login'>Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="right-body">dsasdfas</div>
+</div>
