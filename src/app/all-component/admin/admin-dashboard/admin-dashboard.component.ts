@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -6,10 +6,23 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit{
+
+  @HostBinding('class.navbar-opened') navbarOpened = false;
+  @HostBinding('class.navbar-opened') sidebarOpened = false;
   constructor() {
   }
   ngOnInit(): void {
     this.username = "John Doe"
   }
   username:any;
+  isFixedNavbar:any;
+
+  toggleNavbar() {
+    this.navbarOpened = !this.navbarOpened;
+  }
+  toggleSidebar() {
+    this.sidebarOpened = !this.sidebarOpened;
+  }
+  // navbarOpened: any;
+
 }

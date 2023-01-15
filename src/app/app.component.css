@@ -1,31 +1,23 @@
-@import url(../assets/css/fontawesome.css);
 /* Footer */
-
 footer {
   background-color: #152036;
   text-align: center;
-  height: 70px;
+  height: var(--headerfoterh);
 }
 
 footer p {
-  margin-bottom: 0px;
-  padding: 25px 0px;
+  margin-bottom: 0;
+  padding: 25px 0;
   color: #0399FF;
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 footer p a,
 footer p a:hover {
   color: #0399FF;
-}
-@media screen and (max-width: 767px) {
-  footer p {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.25px;
-  }
 }
 
