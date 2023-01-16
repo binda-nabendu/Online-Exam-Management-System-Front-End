@@ -6,6 +6,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/
 import {MomentDateAdapter} from "@angular/material-moment-adapter";
 import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import * as moment from "moment/moment";
+import * as alertify from "alertifyjs";
 
 export const DATE_FORMATS = {
   parse: {
@@ -75,7 +76,10 @@ export class RegistrationComponent implements OnInit{
         console.log(item);
         this.router.navigate(['public-dashboard/login']);
       });
+      alertify.success("Registration Successfully")
     }
+    else
+      alertify.era("Failed try again")
   }
 
   backLogin(){

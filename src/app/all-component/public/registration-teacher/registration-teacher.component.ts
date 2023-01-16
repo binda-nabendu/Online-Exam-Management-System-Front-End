@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
 import {MomentDateAdapter} from "@angular/material-moment-adapter";
 import {regTec} from "../../../model/regTec";
+import * as alertify from "alertifyjs";
 
 export const DATE_FORMATS = {
   parse: {
@@ -75,7 +76,10 @@ export class RegistrationTeacherComponent implements OnInit{
         console.log(item);
         this.router.navigate(['public-dashboard/login']);
       });
+      alertify.success("Registration Successfully")
     }
+    else
+      alertify.fail("Failed try again")
 
   }
   signup(){
