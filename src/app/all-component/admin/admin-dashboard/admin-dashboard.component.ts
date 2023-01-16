@@ -15,11 +15,8 @@ export class AdminDashboardComponent implements OnInit{
     this.username = "John Doe"
   }
   username:any;
-  isFixedNavbar:any;
+  li1=false; li2=false;
 
-  toggleNavbar() {
-    this.navbarOpened = !this.navbarOpened;
-  }
   toggleSidebar() {
     this.sidebarOpened = !this.sidebarOpened;
   }
