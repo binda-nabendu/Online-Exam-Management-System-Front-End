@@ -4,7 +4,7 @@ import {MaterialModule} from "../../../../Material-Module";
 import {FormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserService} from "../../../service/user.service";
-
+import * as alertify from "alertifyjs";
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit{
       // });
       this.router.navigate(["admin/admin-dashboard"]);
     }
+    else
+      alertify.error("Fail to login")
 
   }
   goToRegPage(){
