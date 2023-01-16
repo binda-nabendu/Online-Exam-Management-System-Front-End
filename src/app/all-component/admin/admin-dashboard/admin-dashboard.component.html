@@ -20,23 +20,23 @@
     <div>
 
 
-      <nav id="" class="left-nav" role="navigation">
+      <nav class="left-nav" role="navigation">
         <ul class= "left-menu">
-          <li ><span class="material-icons icon-style">dashboard</span><a>Dashboard</a></li>
+          <li ><a><span class="material-icons icon-style">dashboard</span>Dashboard</a></li>
         </ul>
-        <ul class= "left-menu" (click)="toggleNavbar()">
-          <li class="has-left-sub-menu"><span class="material-icons icon-style">group</span><a>Teacher List</a>
-            <ul class="{{navbarOpened ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu-hide left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'>Present Teacher's</a></li>
-              <li><a routerLink='login'>Pending Teachers</a></li>
+        <ul class= "left-menu" >
+          <li class="has-left-sub-menu"><a (click) = "li1 = !li1"><span class="material-icons icon-style">group</span>Teacher List</a>
+            <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
+              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class="material-icons icon-style sub-icon">group</span>Present Teacher's</a></li>
+              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Teachers</a></li>
             </ul>
           </li>
         </ul>
-        <ul class= "left-menu" (click)="toggleNavbar()">
-          <li class="has-left-sub-menu"><span class='material-icons icon-style'>groups</span><a>Student List</a>
-            <ul class="{{navbarOpened ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu-hide left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'>Present Students</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style'>person_add_alt</span>Pending Student</a></li>
+        <ul class= "left-menu" >
+          <li class="has-left-sub-menu"><a (click) = "li2 = !li2"><span class='material-icons icon-style'>groups</span>Student List</a>
+            <ul class="{{li2 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
+              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>groups</span>Present Students</a></li>
+              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Student</a></li>
             </ul>
           </li>
         </ul>
