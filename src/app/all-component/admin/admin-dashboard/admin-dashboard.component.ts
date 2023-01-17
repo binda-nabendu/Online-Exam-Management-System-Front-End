@@ -12,7 +12,7 @@ export class AdminDashboardComponent implements OnInit{
   constructor() {
   }
   ngOnInit(): void {
-    this.username = "John Doe"
+    this.username = "Acharya Aryabhata"
   }
   username:any;
   li1=false; li2=false;
