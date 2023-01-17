@@ -9,7 +9,7 @@
       <li class="has-submenu"><i class="fa fa-user" aria-hidden="true"></i><a>{{username}}</a>
         <ul class="sub-menu" >
           <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
-          <li><a routerLink='login'>Logout</a></li>
+          <li><a routerLink='login' (click)= "logOut()">Logout</a></li>
         </ul>
       </li>
     </ul>

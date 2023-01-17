@@ -24,7 +24,14 @@ export class LoginComponent implements OnInit{
       // this.service.proceedLogin(userDetails.value).subscribe(item => {
       //     console.log(item);
       // });
-      this.router.navigate(["admin/admin-dashboard"]);
+      if (userDetails.value.username=='student')
+        this.router.navigate(["student/student-dashboard"]);
+      else if (userDetails.value.username=='teacher')
+        this.router.navigate(["teacher/teacher-dashboard"]);
+      else if (userDetails.value.username=='admin')
+        this.router.navigate(["admin/admin-dashboard"]);
+      else
+        alertify.error("Give proper username");
     }
     else
       alertify.error("Fail to login")

@@ -1,4 +1,5 @@
 import {Component, HostBinding, HostListener, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-student-dashboard',
@@ -9,7 +10,7 @@ export class StudentDashboardComponent implements OnInit{
 
   @HostBinding('class.navbar-opened') navbarOpened = false;
   @HostBinding('class.navbar-opened') sidebarOpened = false;
-  constructor() {
+  constructor(private router: Router) {
   }
   ngOnInit(): void {
     this.username = "John Doe"
@@ -22,4 +23,7 @@ export class StudentDashboardComponent implements OnInit{
   }
   // navbarOpened: any;
 
+  logOut() {
+    this.router.navigate(["public-dashboard/login"]);
+  }
 }

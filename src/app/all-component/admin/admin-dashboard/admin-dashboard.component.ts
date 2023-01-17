@@ -1,4 +1,5 @@
 import {Component, HostBinding, HostListener, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,7 +10,7 @@ export class AdminDashboardComponent implements OnInit{
 
   @HostBinding('class.navbar-opened') navbarOpened = false;
   @HostBinding('class.navbar-opened') sidebarOpened = false;
-  constructor() {
+  constructor(private router: Router) {
   }
   ngOnInit(): void {
     this.username = "Acharya Aryabhata"
@@ -21,5 +22,7 @@ export class AdminDashboardComponent implements OnInit{
     this.sidebarOpened = !this.sidebarOpened;
   }
   // navbarOpened: any;
-
+  logOut() {
+    this.router.navigate(["public-dashboard/login"]);
+  }
 }
