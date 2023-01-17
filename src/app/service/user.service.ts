@@ -49,4 +49,12 @@ export class UserService {
   getTnC() {
     return this.httpClient.get(this.url+"public/terms-and-condition");
   }
+  GetRole() {
+    var token = localStorage.getItem('token');
+    if(token != null){
+      var userRole = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).role;
+      const allRoles = new Map(Object.entries(userRole));
+      return allRoles.get('authority');
+    }
+  }
 }
