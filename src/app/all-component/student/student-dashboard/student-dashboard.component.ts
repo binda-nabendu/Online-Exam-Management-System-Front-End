@@ -16,7 +16,7 @@ export class StudentDashboardComponent implements OnInit{
     this.username = "John Doe"
   }
   username:any;
-  li1=false; li2=false;
+  li1=false; li2=false; li3= false;
 
   toggleSidebar() {
     this.sidebarOpened = !this.sidebarOpened;
