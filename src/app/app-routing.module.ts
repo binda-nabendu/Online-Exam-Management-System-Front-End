@@ -23,6 +23,10 @@ const routes: Routes = [
     ]
   },
   {path:"admin", loadChildren: ()=>import ('./all-component/admin/admin.module'). then(opt=>opt.AdminModule)},
+  {path:"teacher", loadChildren: ()=>import ('./all-component/teacher/teacher.module'). then(opt=>opt.TeacherModule)},
+  {path:"student", loadChildren: ()=>import ('./all-component/student/student.module'). then(opt=>opt.StudentModule)},
+
+
   // {path:"**", component: HomeComponent}
 ];
 
