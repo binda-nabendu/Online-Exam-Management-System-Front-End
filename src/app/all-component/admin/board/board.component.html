@@ -1,0 +1,5 @@
+
+<mat-card *ngFor="let card of cardSet | keyvalue">
+  <mat-card-title>{{card.key}}</mat-card-title>
+  <mat-card-content>{{card.value}}</mat-card-content>
+</mat-card>

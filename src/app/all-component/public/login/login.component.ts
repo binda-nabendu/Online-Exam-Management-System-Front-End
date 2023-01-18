@@ -17,21 +17,29 @@ export class LoginComponent implements OnInit{
   }
   private t: string = "hei ";
   ngOnInit(): void {
+
   }
+  respond:any;
   checkValidate(userDetails:any){
     if(userDetails.valid){
-      console.log(userDetails.value);
-      // this.service.proceedLogin(userDetails.value).subscribe(item => {
-      //     console.log(item);
-      // });
-      if (userDetails.value.username=='student')
-        this.router.navigate(["student/student-dashboard"]);
-      else if (userDetails.value.username=='teacher')
-        this.router.navigate(["teacher/teacher-dashboard"]);
-      else if (userDetails.value.username=='admin')
-        this.router.navigate(["admin/admin-dashboard"]);
-      else
-        alertify.error("Give proper username");
+      localStorage.clear();
+      this.service.proceedLogin(userDetails.value).subscribe(item => {
+        this.respond = item;
+
+          if(this.respond != null){
+
+            localStorage.setItem('OEMSToken',this.respond.jwt);
+            // console.log(this.service.GetRole());
+            if (this.service.GetRole() == 'STUDENT')
+              this.router.navigate(["student/student-dashboard"]);
+            else if (this.service.GetRole() == 'TEACHER')
+              this.router.navigate(["teacher/teacher-dashboard"]);
+            else if (this.service.GetRole() == 'ADMIN')
+              this.router.navigate(["admin/admin-dashboard"]);
+            }else{
+              alertify.error("Fail to login")
+            }
+      });
     }
     else
       alertify.error("Fail to login")

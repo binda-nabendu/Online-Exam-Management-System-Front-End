@@ -12,12 +12,12 @@ export class StudentSpecialGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;  // when api active return this line
-    // if(this.service.GetRole() == 'ADMIN'){
-    //   return true;
-    // }else{
-    //   return false;
-    // }
+    // return true;  // when api active return this line
+    if(this.service.GetRole() == 'STUDENT'){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 }

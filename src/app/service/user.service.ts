@@ -15,10 +15,34 @@ export class UserService {
   proceedLogin(user:any){
      return this.httpClient.post(this.url+"authenticate",user);
   }
-  getFaq(){
-    return this.httpClient.get(this.url+"public/faq");
+  GetToken() {
+    return localStorage.getItem('token') != null ? localStorage.getItem('OEMSToken') : '';
   }
+  IsLoggedIn(){
+    return localStorage.getItem('OEMSToken') != null;
+  }
+  GetRole()  {
 
+    // this will need for fix buffer error
+    (window as any).global = window;
+    // @ts-ignore
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+    //____________________*********___________________
+
+
+    let token = localStorage.getItem('OEMSToken');
+    if(token != null){
+      let getRolesFromPayload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).role;
+      let allRoles = new Map(Object.entries(getRolesFromPayload));
+      let v =allRoles.get('0');
+      // @ts-ignore
+      allRoles = new Map(Object.entries(v));
+      return  allRoles.get('authority');
+    }else return "public";
+  }
+  LoggedOut(){
+    localStorage.clear();
+  }
   buildFormDataComn(person: regPerson): FormData{
     let formData: FormData = new FormData();
     formData.append('nid', person.nid);
@@ -49,12 +73,7 @@ export class UserService {
   getTnC() {
     return this.httpClient.get(this.url+"public/terms-and-condition");
   }
-  GetRole() {
-    var token = localStorage.getItem('token');
-    if(token != null){
-      var userRole = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).role;
-      const allRoles = new Map(Object.entries(userRole));
-      return allRoles.get('authority');
-    }
+  getFaq(){
+    return this.httpClient.get(this.url+"public/faq");
   }
 }
