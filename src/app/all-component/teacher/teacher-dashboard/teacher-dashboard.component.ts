@@ -14,11 +14,15 @@ export class TeacherDashboardComponent implements OnInit{
   constructor(private router: Router, private service: UserService) {
   }
   ngOnInit(): void {
-    this.username = "Acharjha Chanakkaya"
+    this.username = "Acharjha Chanakkaya";
+    this.router.navigate(['teacher/teacher-dashboard/board']);
   }
   username:any;
-  li1=false; li2=false; li3=false; li4=false; li5= false;
+  li1=false; li2=false; li3=false; li4=false;
+  enableSubMenu(){
+    this.li1=false; this.li2=false; this.li3=false; this.li4=false;
 
+  }
   toggleSidebar() {
     this.sidebarOpened = !this.sidebarOpened;
   }

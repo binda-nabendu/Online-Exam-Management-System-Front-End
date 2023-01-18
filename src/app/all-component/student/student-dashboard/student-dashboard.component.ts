@@ -15,10 +15,14 @@ export class StudentDashboardComponent implements OnInit{
   }
   ngOnInit(): void {
     this.username = "John Doe"
+    this.router.navigate(['student/student-dashboard/board']);
   }
   username:any;
   li1=false; li2=false; li3= false;
+  enableSubMenu(){
+    this.li1=false; this.li2=false; this.li3=false;
 
+  }
   toggleSidebar() {
     this.sidebarOpened = !this.sidebarOpened;
   }
