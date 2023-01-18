@@ -1,0 +1,34 @@
+mat-card{
+  background-image: linear-gradient(#03204c, #035c96);
+  min-width: 190px;
+  width: fit-content;
+  max-width: 60%;
+  opacity: 90%;
+  min-height: 100px;
+  display: inline-block;
+  margin: 10px;
+
+
+}
+mat-card-title{
+  color: #0096ff;
+
+  text-align: center;
+  padding: 8px;
+
+}
+mat-card-content{
+  color: #fff;
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+mat-card img{
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 100%;
+  padding: 3px;
+}
+.upcoming{
+  margin-top: 30px;
+}

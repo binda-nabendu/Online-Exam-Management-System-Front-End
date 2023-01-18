@@ -1,0 +1,12 @@
+<div>
+  <mat-card *ngFor="let card of cardSet | keyvalue">
+    <mat-card-title>{{card.key}}</mat-card-title>
+    <mat-card-content>{{card.value}}</mat-card-content>
+  </mat-card>
+</div>
+<div class = "upcoming">
+  <mat-card>
+    <mat-card-title>MY SCHEDULE</mat-card-title>
+    <img mat-card-image src="assets/images/schedule.jpg" alt="Avatar" class="avatar">
+  </mat-card>
+</div>

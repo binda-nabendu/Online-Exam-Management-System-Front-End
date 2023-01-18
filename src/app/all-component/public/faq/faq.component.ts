@@ -14,7 +14,6 @@ export class FaqComponent implements OnInit{
 
     this.service.getFaq().subscribe(t=>{
       this.questionAns = new Map(Object.entries(t));
-      console.log(this.questionAns);
     })
   }
 }
