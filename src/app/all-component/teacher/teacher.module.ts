@@ -9,6 +9,7 @@ import { AllTeacherComponent } from './all-teacher/all-teacher.component';
 import {MatTableModule} from "@angular/material/table";
 import {MaterialModule} from "../../../Material-Module";
 import { MyStudentComponent } from './my-student/my-student.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -18,12 +19,13 @@ import { MyStudentComponent } from './my-student/my-student.component';
     AllTeacherComponent,
     MyStudentComponent
   ],
-  imports: [
-    CommonModule,
-    TeacherRoutingModule,
-    MatCardModule,
-    MatTableModule,
-    MaterialModule
-  ]
+    imports: [
+        CommonModule,
+        TeacherRoutingModule,
+        MatCardModule,
+        MatTableModule,
+        MaterialModule,
+        ReactiveFormsModule
+    ]
 })
 export class TeacherModule { }

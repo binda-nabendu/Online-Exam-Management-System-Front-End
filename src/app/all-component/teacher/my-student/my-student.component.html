@@ -1,3 +1,19 @@
+<mat-card>
+  <mat-card-title>Select Subject</mat-card-title>
+  <form [formGroup]="updateForm" (ngSubmit)="submitCourse()">
+    <mat-form-field >
+      <mat-label>Course</mat-label>
+      <mat-select formControlName="crs">
+        <mat-option *ngFor="let crs of courses" [value]="crs.courseCode" >
+          {{crs.courseName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary">See Students</button>
+  </form>
+</mat-card>
+
+
 <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
@@ -8,5 +24,5 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
 </mat-table>

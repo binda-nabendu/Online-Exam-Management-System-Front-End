@@ -319,6 +319,9 @@ a {
   margin-right: 8px;
   color: #fff;
 }
+.hot{
+  color: #ba8b00;
+}
 @media only screen and (max-width : 767px){
   .userName{
     display: none;

@@ -4,13 +4,15 @@ import {TeacherDashboardComponent} from "./teacher-dashboard/teacher-dashboard.c
 import {TeacherSpecialGuard} from "../../guard/teacher-special.guard";
 import {BoardComponent} from "./board/board.component";
 import {AllTeacherComponent} from "./all-teacher/all-teacher.component";
+import {MyStudentComponent} from "./my-student/my-student.component";
 
 const routes: Routes = [
   {
     path: "teacher-dashboard", component: TeacherDashboardComponent,
     children:[
       {path: "board", component: BoardComponent},
-      {path: "all-teacher", component: AllTeacherComponent}
+      {path: "all-teacher", component: AllTeacherComponent},
+      {path: "my-students", component: MyStudentComponent}
     ], canActivate: [TeacherSpecialGuard]
   }
 ];
