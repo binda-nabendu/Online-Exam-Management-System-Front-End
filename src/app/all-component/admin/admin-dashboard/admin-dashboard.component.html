@@ -6,10 +6,10 @@
   </div>
   <nav id="menu" class="main-nav" role="navigation">
     <ul class="main-menu">
-      <li class="has-submenu"><i class="fa fa-user" aria-hidden="true"></i><a>{{username}}</a>
+      <li class="has-submenu"><i class="fa fa-user" aria-hidden="true"></i><a > <span class = "userName">{{username}}</span> </a>
         <ul class="sub-menu" >
           <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
-          <li><a routerLink='login' (click) = "logOut()">Logout</a></li>
+          <li><a routerLink='login' (click)= "logOut()">Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -17,17 +17,18 @@
 </header>
 <div class="container">
   <div class="{{sidebarOpened ? 'show-sidebar sidebar': 'sidebar'}}">
-    <div>
+    <img src="assets/images/hamburger.svg" alt="<"  class="hamburger" (click)="toggleSidebar()">
+    <div class="{{sidebarOpened ? 'sidebar-wrapper show-sidebar-wrapper': 'sidebar-wrapper'}}">
+      <div>
 
-
-      <nav class="left-nav" role="navigation">
+        <nav class="left-nav" role="navigation">
         <ul class= "left-menu">
           <li ><a routerLink="board"><span class="material-icons icon-style">dashboard</span>Dashboard</a></li>
         </ul>
         <ul class= "left-menu" >
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">group</span>Teacher List</a>
             <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class="material-icons icon-style sub-icon">group</span>Present Teacher's</a></li>
+              <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">group</span>Present Teacher's</a></li>
               <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Teachers</a></li>
             </ul>
           </li>
@@ -82,13 +83,15 @@
 
 
       </nav>
+      </div>
     </div>
 
   </div>
   <div class=" {{sidebarOpened ? 'no-padding right-body': 'right-body'}}">
     <router-outlet></router-outlet>
   </div>
- <i class=" {{sidebarOpened ? 'color-icon fa fa-bars icon': 'fa fa-bars icon'}}" (click)="toggleSidebar()"></i>
+
+  <img src="assets/images/hamburger.svg" alt="<" class= "{{sidebarOpened ? 'show-damburger damburger': ' damburger'}}" (click)="toggleSidebar()">
 
 
 
