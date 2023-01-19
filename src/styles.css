@@ -15,3 +15,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 *{
   scroll-behavior: smooth;
 }
+
+/* Footer */
+footer {
+  background-color: #152036;
+  text-align: center;
+  height: var(--headerfoterh);
+  padding: 25px 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+footer p {
+  margin-bottom: 0;
+;
+  color: #0399FF;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+footer p a,
+footer p a:hover {
+  color: #0399FF;
+}

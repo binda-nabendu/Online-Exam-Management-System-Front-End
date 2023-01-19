@@ -1,0 +1,26 @@
+mat-card{
+  border: #1f2d49;
+  margin:10px 0 10px 0;
+  width: 250px;
+  padding: 15px;
+  text-align:center;
+}
+h2{
+  font-weight: bold;
+  color: #0c1228;
+}
+mat-select{
+  min-height:40px;
+  font-size:20px;
+}
+mat-cell{
+  word-break: break-all;
+}
+button{
+  width:100%;
+}
+mat-form-field{
+  width:100%;
+}
+
+

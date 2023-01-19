@@ -7,19 +7,23 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { BoardComponent } from './board/board.component';
 import {MatCardModule} from "@angular/material/card";
+import { PresentTeacherComponent } from './present-teacher/present-teacher.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
-    BoardComponent
+    BoardComponent,
+    PresentTeacherComponent
   ],
     imports: [
         CommonModule,
         AdminRoutingModule,
         MatButtonModule,
         MatIconModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ]
 })
 export class AdminModule { }
