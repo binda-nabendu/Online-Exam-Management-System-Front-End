@@ -35,12 +35,16 @@ export class MyStudentComponent implements OnInit{
       }
     )
 }
-
+  isemp = false;
   submitCourse() {
     if(this.updateForm.valid){
       console.log(this.updateForm.value.crs);
       // @ts-ignore
       this.getAllStudents(this.updateForm.value.crs)
+      if(this.dataSource.length <= 0){
+        this.isemp = false;
+
+      }else this.isemp = true;
     }
   }
 }

@@ -4,13 +4,15 @@ import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.compone
 import {AdminSpecialGuard} from "../../guard/admin-special.guard";
 import {BoardComponent} from "./board/board.component";
 import { PresentTeacherComponent } from './present-teacher/present-teacher.component';
+import {MyStudentComponent} from "../teacher/my-student/my-student.component";
 
 const routes: Routes = [
   {
     path: "admin-dashboard", component: AdminDashboardComponent,
     children: [
       {path: "board", component: BoardComponent},
-      {path: "present-teacher", component: PresentTeacherComponent}
+      {path: "present-teacher", component: PresentTeacherComponent},
+      {path: "my-students", component: MyStudentComponent}
     ], canActivate: [AdminSpecialGuard]
   },
 ];

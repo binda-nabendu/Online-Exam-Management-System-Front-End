@@ -14,7 +14,7 @@
 </mat-card>
 
 
-<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="isemp">
 
   <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
     <mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</mat-header-cell>
@@ -26,3 +26,4 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
 </mat-table>
+<h4 *ngIf="!isemp">You Don't Have any student in this Course...</h4>
