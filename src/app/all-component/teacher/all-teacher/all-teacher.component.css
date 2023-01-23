@@ -3,5 +3,14 @@ table {
 }
 mat-cell{
   word-break: break-all;
+  color: var(--themcolor);
 }
-
+.color-show{
+  background-image: linear-gradient(#9fcdff, #F0f8fb);
+}
+.title-color-show{
+  background-image: linear-gradient(#03204c, #035c96);
+}
+mat-header-cell{
+  color: #80bdff;
+}
