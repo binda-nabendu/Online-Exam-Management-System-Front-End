@@ -19,7 +19,7 @@ export class TeacherService {
   getAllTeacher(): Observable<regTec[]> {
     return this.httpClient.get<regTec[]>(this.url+"teacher/all-teachers", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
-  getAllStudent(courseCode: String): Observable<regStd[]> {
+  getSpecificCoursesStudent(courseCode: String): Observable<regStd[]> {
     return this.httpClient.get<regStd[]>(this.url+"teacher/courses/my-students/" + courseCode, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
   getAllStudents(): Observable<regStd[]> {

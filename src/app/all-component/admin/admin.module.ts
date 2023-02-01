@@ -9,13 +9,15 @@ import { BoardComponent } from './board/board.component';
 import {MatCardModule} from "@angular/material/card";
 import { PresentTeacherComponent } from './present-teacher/present-teacher.component';
 import {MatTableModule} from "@angular/material/table";
+import { PendingStudentComponent } from './pending-student/pending-student.component';
 
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     BoardComponent,
-    PresentTeacherComponent
+    PresentTeacherComponent,
+    PendingStudentComponent
   ],
     imports: [
         CommonModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TeacherService} from "../../../service/teacher.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -7,7 +7,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './all-student.component.html',
   styleUrls: ['./all-student.component.css']
 })
-export class AllStudentComponent {
+export class AllStudentComponent implements OnInit{
   constructor(private service: TeacherService) {
   }
   ngOnInit(): void {
