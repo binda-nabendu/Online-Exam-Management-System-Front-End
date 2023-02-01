@@ -22,6 +22,9 @@ export class TeacherService {
   getAllStudent(courseCode: String): Observable<regStd[]> {
     return this.httpClient.get<regStd[]>(this.url+"teacher/courses/my-students/" + courseCode, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+  getAllStudents(): Observable<regStd[]> {
+    return this.httpClient.get<regStd[]>(this.url+"teacher/all-students" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
   getMyCourses(): Observable<course[]>{
     return this.httpClient.get<course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }

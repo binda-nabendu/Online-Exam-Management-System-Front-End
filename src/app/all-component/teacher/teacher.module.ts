@@ -10,6 +10,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MaterialModule} from "../../../Material-Module";
 import { MyStudentComponent } from './my-student/my-student.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { AllStudentComponent } from './all-student/all-student.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     TeacherDashboardComponent,
     BoardComponent,
     AllTeacherComponent,
-    MyStudentComponent
+    MyStudentComponent,
+    AllStudentComponent
   ],
     imports: [
         CommonModule,
