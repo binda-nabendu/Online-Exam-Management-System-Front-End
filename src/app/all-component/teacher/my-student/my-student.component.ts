@@ -20,7 +20,7 @@ export class MyStudentComponent implements OnInit{
   displayedColumns: string[] = ['userName', 'fatherName', 'motherName', 'contactNo', 'email', 'address', 'deptId', 'semester'];
   dataSource:any;
   getAllStudents(courseCode: String){
-    this.service.getAllStudent(courseCode).subscribe(student =>{
+    this.service.getSpecificCoursesStudent(courseCode).subscribe(student =>{
       this.dataSource = student;
       console.log(student)
     })

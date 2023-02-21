@@ -17,6 +17,7 @@
         <li><a href="public-dashboard/faq">FAQ</a></li>
         <li><a a routerLink='home' fragment='section4'>Contact</a></li>
         <li><a href="public-dashboard/t&c" >T&C</a></li>
+        <li *ngIf="isLogin"><button  (click)="goToDashBoard()">Dashboard</button></li>
       </ul>
     </nav>
 </header>
