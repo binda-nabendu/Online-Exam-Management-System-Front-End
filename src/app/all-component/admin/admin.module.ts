@@ -15,6 +15,7 @@ import { PendingTeacherComponent } from './pending-teacher/pending-teacher.compo
 import { AddDepartmentComponent } from './add-department/add-department.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MaterialModule} from "../../../Material-Module";
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import {MatInputModule} from "@angular/material/input";
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

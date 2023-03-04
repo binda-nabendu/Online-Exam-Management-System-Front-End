@@ -1,27 +1,23 @@
-# OEMSFrontEnd
+<h1 style="color:blue;">Online exam management system =======></h1>
+<h2><u>Available Features:</u></h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+<ul>
+  <li>Here student can give mcq exam(text and pdf based exam in future).</li>
+  <li>Student can request for review depend on any exam answer sheet teacher can review them.</li>
+  <li>Also maintaining semester system.</li>
+  <li>Also get a secure platform.</li>
+  <li>Student get access of any subject when admin approve them</li>
+  <li>This secure system able to maintain and change semester with session</li>
+</ul>  
 
-## Development server
+<h2><u>Technology uses:</u></h2>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<ul>
+  <li>Here we use angular freamework for build frontend of this application.</li>
+  <li>Here we use Spring Boot freamework for build this application.</li>
+  <li>For Database we use MySql relational database.</li>
+  <li>For security we use Spring boot security with bCrypt password encoder.</li>
+  <li>Available jwt token based Authorization.</li>
+  <li>Here we also use rest api.</li>
+</ul> 
+<h1>\________________ -0O0- ________________/</h1>

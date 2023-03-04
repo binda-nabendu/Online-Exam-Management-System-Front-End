@@ -1,1 +1,69 @@
-<h2>User Details </h2>
+<body>
+
+<mat-card>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="approveStd" (ngSubmit)="approveStudent()">
+      <mat-form-field class="example-full-width">
+        <h4>NID</h4>
+        <input matInput placeholder="NID" formControlName = "nid">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Name</h4>
+        <input matInput formControlName = "userName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Father Name</h4>
+        <input matInput formControlName = "fatherName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <h4>Mother Name</h4>
+        <input matInput formControlName = "motherName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <h4>Gender</h4>
+        <input matInput formControlName = "gender">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Contact Number</h4>
+        <input formControlName = "contactNo">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Email</h4>
+        <input formControlName = "email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Date-of-Birth</h4>
+        <input formControlName='dob' >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Address</h4>
+        <input formControlName = "address">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Department Name</h4>
+        <input formControlName = "deptId">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <h4>Semester</h4>
+        <input formControlName = "semester">
+      </mat-form-field>
+
+      <button class ="signup" mat-raised-button color="primary"  type='submit' >Approve</button>
+      <button class ="signup" mat-raised-button color="primary"  type='submit' >Delete</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+</body>
+
+
