@@ -1,0 +1,44 @@
+.new-dept{
+  width: 100%;
+  background-image: url(../../../../assets/images/choosing-bg.jpg);
+  padding: 10px;
+}
+.new-dept .dept .title{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--them-color-lite);
+}
+.new-dept .dept{
+  background-color: var(--themcolor);
+  margin: 0 auto;
+  width: 50%;
+  opacity: 90%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--them-color-lite);
+}
+.new-dept .dept .add-dept{
+
+}
+.new-dept .dept .add-dept .submitDept{
+  width: 100%;
+}
+.new-dept .dept .add-dept .deptId{
+  width: 100%;
+}
+.new-dept .dept .add-dept .title{
+  color: var(--themcolor);
+}
+.new-dept .dept .add-dept .deptName{
+  width: 100%;
+}
+.new-dept .dept .add-dept .submitDept{
+  padding: 8px;
+  text-transform: uppercase;
+  border: none;
+  background: #e83e8c;
+  color: #fff;
+  font-weight: 500;
+}

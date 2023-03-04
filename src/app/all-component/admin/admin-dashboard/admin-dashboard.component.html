@@ -29,7 +29,7 @@
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">group</span>Teacher List</a>
             <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
               <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">group</span>Present Teacher's</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Teachers</a></li>
+              <li><a routerLink='pending-teachers'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Teachers</a></li>
             </ul>
           </li>
         </ul>
@@ -43,7 +43,7 @@
           </li>
         </ul>
         <ul class= "left-menu">
-          <li ><a><span class="material-icons icon-style">add_box</span>Add department</a></li>
+          <li ><a routerLink="add-department"><span class="material-icons icon-style">add_box</span>Add department</a></li>
         </ul>
         <ul class= "left-menu">
           <li ><a><span class="material-icons icon-style">add_moderator</span>Change Semester</a></li>

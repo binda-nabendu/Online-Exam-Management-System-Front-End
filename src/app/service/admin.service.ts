@@ -18,4 +18,8 @@ export class AdminService {
   getPendingStudents(): Observable<regStd[]> {
     return this.httpClient.get<regStd[]>(this.url+"admin/approve-student/list" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  getPendingTeachers() {
+    return this.httpClient.get<regStd[]>(this.url+"admin/approve-teachers/list" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }

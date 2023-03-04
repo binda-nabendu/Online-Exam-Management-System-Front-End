@@ -11,6 +11,10 @@ import { PresentTeacherComponent } from './present-teacher/present-teacher.compo
 import {MatTableModule} from "@angular/material/table";
 import { PendingStudentComponent } from './pending-student/pending-student.component';
 import { PopupComponent } from './popup/popup.component';
+import { PendingTeacherComponent } from './pending-teacher/pending-teacher.component';
+import { AddDepartmentComponent } from './add-department/add-department.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -19,15 +23,19 @@ import { PopupComponent } from './popup/popup.component';
     BoardComponent,
     PresentTeacherComponent,
     PendingStudentComponent,
-    PopupComponent
+    PopupComponent,
+    PendingTeacherComponent,
+    AddDepartmentComponent
   ],
-    imports: [
-        CommonModule,
-        AdminRoutingModule,
-        MatButtonModule,
-        MatIconModule,
-        MatCardModule,
-        MatTableModule
-    ]
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatInputModule
+  ]
 })
 export class AdminModule { }

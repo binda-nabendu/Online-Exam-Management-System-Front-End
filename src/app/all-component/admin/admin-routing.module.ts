@@ -7,6 +7,8 @@ import { PresentTeacherComponent } from './present-teacher/present-teacher.compo
 import {MyStudentComponent} from "../teacher/my-student/my-student.component";
 import {AllStudentComponent} from "../teacher/all-student/all-student.component";
 import {PendingStudentComponent} from "./pending-student/pending-student.component";
+import {PendingTeacherComponent} from "./pending-teacher/pending-teacher.component";
+import {AddDepartmentComponent} from "./add-department/add-department.component";
 
 const routes: Routes = [
   {
@@ -17,6 +19,8 @@ const routes: Routes = [
       {path: "my-students", component: MyStudentComponent},
       {path: "all-students", component: AllStudentComponent},
       {path: "pending-students", component: PendingStudentComponent},
+      {path: "pending-teachers", component: PendingTeacherComponent},
+      {path: "add-department", component: AddDepartmentComponent},
     ], canActivate: [AdminSpecialGuard]
   },
 ];
