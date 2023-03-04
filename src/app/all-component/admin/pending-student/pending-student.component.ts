@@ -4,6 +4,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../../../service/admin.service";
 import {MatDialog} from "@angular/material/dialog";
 import {PopupComponent} from "../popup/popup.component";
+import {regStd} from "../../../model/regStd";
 
 @Component({
   selector: 'app-pending-student',
@@ -36,14 +37,14 @@ export class PendingStudentComponent implements OnInit{
     crs: new FormControl("", Validators.required),
   })
 
-  FunctionUpdate(userid: any) {
+  FunctionUpdate(user: regStd) {
     this.dialog.open(PopupComponent,{
         width: '400px',
         height: '400px',
         exitAnimationDuration: '500ms',
         enterAnimationDuration:'500ms',
       data:{
-          userid:userid
+          student: user,
       }
     })
   }
