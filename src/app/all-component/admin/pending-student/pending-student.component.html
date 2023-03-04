@@ -1,13 +1,42 @@
-<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="isemp">
+<!--<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="isemp">-->
 
-  <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
-    <mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</mat-header-cell>
-    <mat-cell *matCellDef="let element "> {{element[disCol]}}
-    </mat-cell>
+<!--  <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">-->
+<!--    <mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</mat-header-cell>-->
+<!--    <mat-cell *matCellDef="let element "> {{element[disCol]}}-->
+<!--    </mat-cell>-->
+<!--&lt;!&ndash;    <mat-cell><a>see details</a></mat-cell>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button mat-button color="primary">Primary</button>&ndash;&gt;-->
 
-  </ng-container>
+<!--  </ng-container>-->
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"  [ngClass]="{'title-color-show': true}"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'color-show': true}"></mat-row>
-</mat-table>
-<h4 *ngIf="!isemp">You Don't Have any student in this Course...</h4>
+<!--  <mat-header-row *matHeaderRowDef="displayedColumns"  [ngClass]="{'title-color-show': true}"></mat-header-row>-->
+<!--  <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'color-show': true}"></mat-row>-->
+<!--</mat-table>-->
+<!--<h4 *ngIf="!isemp">You Don't Have any student in this Course...</h4>-->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="isemp">
+
+  <div  *ngFor="let disCol of displayedColumns; let colIndex = index; let last = last">
+
+    <ng-container *ngIf="!last" matColumnDef="{{disCol}}">
+      <th mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</th>
+      <td mat-cell *matCellDef="let element " > {{element[disCol]}}</td>
+    </ng-container>
+    <ng-container *ngIf="last" matColumnDef="{{disCol}}">
+      <th mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="FunctionUpdate(element)">Details & Decision</button>
+      </td>
+    </ng-container>
+
+  </div>
+<!--  <ng-container matColumnDef="Action">-->
+<!--    <th mat-header-cell *matHeaderCellDef>Action</th>-->
+<!--    <td mat-cell *matCellDef="let element">-->
+<!--      <button mat-raised-button color="primary" (click)="FunctionUpdate(element)">Change</button>-->
+<!--    </td>-->
+<!--  </ng-container>-->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"  [ngClass]="{'title-color-show': true}"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'color-show': true}"></tr>
+</table>
