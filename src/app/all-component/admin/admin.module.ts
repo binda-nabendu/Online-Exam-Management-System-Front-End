@@ -10,6 +10,7 @@ import {MatCardModule} from "@angular/material/card";
 import { PresentTeacherComponent } from './present-teacher/present-teacher.component';
 import {MatTableModule} from "@angular/material/table";
 import { PendingStudentComponent } from './pending-student/pending-student.component';
+import { PopupComponent } from './popup/popup.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PendingStudentComponent } from './pending-student/pending-student.compo
     AdminDashboardComponent,
     BoardComponent,
     PresentTeacherComponent,
-    PendingStudentComponent
+    PendingStudentComponent,
+    PopupComponent
   ],
     imports: [
         CommonModule,

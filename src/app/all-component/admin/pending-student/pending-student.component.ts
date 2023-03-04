@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {TeacherService} from "../../../service/teacher.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../../../service/admin.service";
+import {MatDialog} from "@angular/material/dialog";
+import {PopupComponent} from "../popup/popup.component";
 
 @Component({
   selector: 'app-pending-student',
@@ -9,13 +11,15 @@ import {AdminService} from "../../../service/admin.service";
   styleUrls: ['./pending-student.component.css']
 })
 export class PendingStudentComponent implements OnInit{
-  constructor(private tecService: TeacherService, private admService: AdminService) {
+  constructor(private tecService: TeacherService, private admService: AdminService, private dialog: MatDialog) {
   }
   ngOnInit(): void {
     this.getAllStudents();
   }
-  displayedColumnName: string[] = ['nid', 'Name', 'Father', 'Mother','Phone', 'Email', 'Address', 'DEPT', 'Requested Semester', 'DOB'];
-  displayedColumns: string[] = ['nid', 'userName', 'fatherName', 'motherName', 'contactNo', 'email', 'address', 'deptId', 'semester', 'dob'];
+  // displayedColumnName: string[] = ['nid', 'Name', 'Father', 'Mother','Phone', 'Email', 'Address', 'DEPT', 'Requested Semester', 'DOB', 'Action'];
+  // displayedColumns: string[] = ['nid', 'userName', 'fatherName', 'motherName', 'contactNo', 'email', 'address', 'deptId', 'semester', 'dob', 'gender'];
+  displayedColumnName: string[] = ['Name', 'Father', 'Mother','Phone', 'Email', 'Action'];
+  displayedColumns: string[] = ['userName', 'fatherName', 'motherName', 'contactNo', 'email', 'gender'];
   dataSource:any;
   isemp = false;
   getAllStudents(){
@@ -32,4 +36,15 @@ export class PendingStudentComponent implements OnInit{
     crs: new FormControl("", Validators.required),
   })
 
+  FunctionUpdate(userid: any) {
+    this.dialog.open(PopupComponent,{
+        width: '400px',
+        height: '400px',
+        exitAnimationDuration: '500ms',
+        enterAnimationDuration:'500ms',
+      data:{
+          userid:userid
+      }
+    })
+  }
 }
