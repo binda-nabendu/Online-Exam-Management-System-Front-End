@@ -4,11 +4,11 @@
     <form class="add-dept" [formGroup] = "addDepartment" (ngSubmit)="createNewDepartment()">
         <mat-form-field class="deptId example-full-width">
           <mat-label class="title">Assign A Department Id</mat-label>
-          <input matInput placeholder="Department Id" formControlName = "">
+          <input matInput placeholder="Department Id" formControlName = "deptId">
         </mat-form-field>
         <mat-form-field class="deptName example-full-width">
           <mat-label class="title">Assign A Department Name</mat-label>
-          <input matInput placeholder="Name" formControlName = "">
+          <input matInput placeholder="Name" formControlName = "name">
         </mat-form-field>
         <button class = "submitDept" type="submit">Create Department</button>
     </form>
