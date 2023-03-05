@@ -40,21 +40,23 @@ export class PopupComponent implements OnInit{
 
   approveStudent() {
     let data: any = this.userDetailsPending.getRawValue().dob;
+    alertify.confirm("Add User","do you want Add this user?",()=>{
+      if(this.data.userDetails.semester != undefined) {
+        this.service.addStudent(this.data.userDetails.nid).subscribe(item => {
+          this.service.getPendingStudents();
+          alertify.success("Add Student Successfully");
+          this.ref.close;
+        });
+      }else{
+        this.service.addTeacher(this.data.userDetails.nid).subscribe(item => {
+          this.service.getPendingStudents();
+          alertify.success("Add Teacher Successfully");
+          this.ref.close;
+        });
+      }
 
-    // console.log(this.approveStd.value);
-    // let student: approveStd = {
-    //   nid: this.approveStd.value.nid,
-    //   userName: this.approveStd.value.userName,
-    //   fatherName: this.approveStd.value.fatherName,
-    //   motherName: this.approveStd.value.motherName,
-    //   gender: this.approveStd.value.gender,
-    //   contactNo: this.approveStd.value.contactNo,
-    //   email: this.approveStd.value.email,
-    //   dob: this.approveStd.value.dob,
-    //   address: this.approveStd.value.address,
-    //   deptId: this.approveStd.value.deptId,
-    //   semester: this.approveStd.value.semester
-    // };
+
+    },function(){})
 
   }
 
