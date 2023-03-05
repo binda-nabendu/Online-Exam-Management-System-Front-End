@@ -22,4 +22,12 @@ export class AdminService {
   getPendingTeachers() {
     return this.httpClient.get<regStd[]>(this.url+"admin/approve-teachers/list" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  removeStudent(nid: any) {
+    return this.httpClient.post(this.url+"admin/approve-student/delete/"+nid, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  removeTeacher(nid: any) {
+    return this.httpClient.post(this.url+"admin/approve-teachers/delete/"+nid, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }

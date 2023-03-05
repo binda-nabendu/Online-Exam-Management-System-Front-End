@@ -76,4 +76,6 @@ export class UserService {
   getFaq(){
     return this.httpClient.get(this.url+"public/faq");
   }
+
+
 }

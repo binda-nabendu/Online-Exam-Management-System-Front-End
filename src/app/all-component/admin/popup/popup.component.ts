@@ -1,9 +1,13 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import * as moment from "moment";
 import {regStd} from "../../../model/regStd";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {regTec} from "../../../model/regTec";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
+import alertify from "alertifyjs";
+import {AdminService} from "../../../service/admin.service";
 class approveStd {
 }
 
@@ -13,8 +17,7 @@ class approveStd {
   styleUrls: ['./popup.component.css']
 })
 export class PopupComponent implements OnInit{
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private service: AdminService) {
 
   }
   userDetailsPending = new UntypedFormGroup({
@@ -57,7 +60,9 @@ export class PopupComponent implements OnInit{
   ngOnInit(): void {
     console.log(this.data.userDetails.nid);
     this.updatePopup();
+
   }
+
   updatePopup(): void {
     this.userDetailsPending.setValue({
       nid: this.data.userDetails.nid,
@@ -80,5 +85,23 @@ export class PopupComponent implements OnInit{
       this.stp1 = "Educational Qualification";
       this.stp2 = "Expertise"
     }
+  }
+
+  FunctionDelete() {
+    alertify.confirm("Remove User","do you want remove this user?",()=>{
+      if(this.data.userDetails.semester != undefined) {
+        this.service.removeStudent(this.data.userDetails.nid).subscribe(item => {
+          this.service.getPendingStudents();
+          alertify.success("Removed Student Successfully");
+        });
+      }else{
+        this.service.removeTeacher(this.data.userDetails.nid).subscribe(item => {
+          this.service.getPendingStudents();
+          alertify.success("Removed Teacher Successfully");
+        });
+      }
+
+    },function(){})
+
   }
 }
