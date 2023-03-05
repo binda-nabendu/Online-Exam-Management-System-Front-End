@@ -2,7 +2,7 @@ import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import * as moment from "moment";
 import {regStd} from "../../../model/regStd";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {regTec} from "../../../model/regTec";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
@@ -17,7 +17,8 @@ class approveStd {
   styleUrls: ['./popup.component.css']
 })
 export class PopupComponent implements OnInit{
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private service: AdminService) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private service: AdminService,
+              private ref: MatDialogRef<PopupComponent>) {
 
   }
   userDetailsPending = new UntypedFormGroup({
@@ -93,13 +94,16 @@ export class PopupComponent implements OnInit{
         this.service.removeStudent(this.data.userDetails.nid).subscribe(item => {
           this.service.getPendingStudents();
           alertify.success("Removed Student Successfully");
+          this.ref.close;
         });
       }else{
         this.service.removeTeacher(this.data.userDetails.nid).subscribe(item => {
           this.service.getPendingStudents();
           alertify.success("Removed Teacher Successfully");
+          this.ref.close;
         });
       }
+
 
     },function(){})
 

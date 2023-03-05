@@ -1,12 +1,12 @@
 <div class = "new-dept">
   <mat-card-content class="dept">
-    <p class = "title">Create New Department</p>
+    <p class = "main-title">Create New Department</p>
     <form class="add-dept" [formGroup] = "addDepartment" (ngSubmit)="createNewDepartment()">
-        <mat-form-field class="deptId">
+        <mat-form-field class="deptId example-full-width">
           <mat-label class="title">Assign A Department Id</mat-label>
           <input matInput placeholder="Department Id" formControlName = "">
         </mat-form-field>
-        <mat-form-field class="deptName">
+        <mat-form-field class="deptName example-full-width">
           <mat-label class="title">Assign A Department Name</mat-label>
           <input matInput placeholder="Name" formControlName = "">
         </mat-form-field>

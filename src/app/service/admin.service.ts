@@ -24,10 +24,10 @@ export class AdminService {
   }
 
   removeStudent(nid: any) {
-    return this.httpClient.post(this.url+"admin/approve-student/delete/"+nid, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+    return this.httpClient.post(this.url+"admin/approve-student/delete/"+nid,null, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
   removeTeacher(nid: any) {
-    return this.httpClient.post(this.url+"admin/approve-teachers/delete/"+nid, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+    return this.httpClient.post(this.url+"admin/approve-teachers/delete/"+nid,null, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }

@@ -4,58 +4,58 @@
   <mat-card-content>
     <form class="example-form" [formGroup]="userDetailsPending" (ngSubmit)="approveStudent()">
       <mat-form-field class="example-full-width">
-        <h4>NID</h4>
+        <mat-card-title>NID</mat-card-title>
         <input matInput placeholder="NID" formControlName = "nid">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Name</h4>
+        <mat-card-title>Name</mat-card-title>
         <input matInput formControlName = "userName">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Father Name</h4>
+        <mat-card-title>Father Name</mat-card-title>
         <input matInput formControlName = "fatherName">
       </mat-form-field>
 
       <mat-form-field class="example-full-width ">
-        <h4>Mother Name</h4>
+        <mat-card-title>Mother Name</mat-card-title>
         <input matInput formControlName = "motherName">
       </mat-form-field>
 
       <mat-form-field class="example-full-width ">
-        <h4>Gender</h4>
-        <input matInput formControlName = "gender">
+        <mat-card-title>Gender</mat-card-title>
+        <input  matInput formControlName = "gender">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Contact Number</h4>
-        <input formControlName = "contactNo">
+        <mat-card-title>Contact Number</mat-card-title>
+        <input matInput formControlName = "contactNo">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Email</h4>
-        <input formControlName = "email">
+        <mat-card-title>Email</mat-card-title>
+        <input matInput formControlName = "email">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Date-of-Birth</h4>
-        <input formControlName='dob' >
+        <mat-card-title>Date-of-Birth</mat-card-title>
+        <input matInput formControlName='dob' >
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Address</h4>
-        <input formControlName = "address">
+        <mat-card-title>Address</mat-card-title>
+        <input matInput formControlName = "address">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>{{stp1}}</h4>
-        <input formControlName = "property1">
+        <mat-card-title>{{stp1}}</mat-card-title>
+        <input matInput formControlName = "property1">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>{{stp2}}</h4>
-        <input formControlName = "property2">
+        <mat-card-title>{{stp2}}</mat-card-title>
+        <input matInput formControlName = "property2">
       </mat-form-field>
 
       <button class ="signup" mat-raised-button color="primary"  type='submit' >Approve</button>
