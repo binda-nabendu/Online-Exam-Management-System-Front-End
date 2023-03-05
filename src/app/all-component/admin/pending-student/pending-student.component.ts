@@ -44,7 +44,7 @@ export class PendingStudentComponent implements OnInit{
         exitAnimationDuration: '500ms',
         enterAnimationDuration:'500ms',
       data:{
-          student: user,
+        userDetails: user,
       }
     })
   }

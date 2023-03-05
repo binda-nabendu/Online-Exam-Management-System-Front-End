@@ -4,6 +4,7 @@ import {AdminService} from "../../../service/admin.service";
 import {MatDialog} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {PopupComponent} from "../popup/popup.component";
+import {regTec} from "../../../model/regTec";
 
 @Component({
   selector: 'app-pending-teacher',
@@ -30,14 +31,14 @@ export class PendingTeacherComponent implements OnInit{
       }else this.isemp = true;
     })
   }
-  FunctionUpdate(userid: any) {
+  FunctionUpdate(teacher: regTec) {
     this.dialog.open(PopupComponent,{
       width: '400px',
       height: '400px',
       exitAnimationDuration: '500ms',
       enterAnimationDuration:'500ms',
       data:{
-        userid:userid
+        userDetails:teacher,
       }
     })
   }

@@ -2,7 +2,7 @@
 
 <mat-card>
   <mat-card-content>
-    <form class="example-form" [formGroup]="approveStd" (ngSubmit)="approveStudent()">
+    <form class="example-form" [formGroup]="userDetailsPending" (ngSubmit)="approveStudent()">
       <mat-form-field class="example-full-width">
         <h4>NID</h4>
         <input matInput placeholder="NID" formControlName = "nid">
@@ -49,13 +49,13 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Department Name</h4>
-        <input formControlName = "deptId">
+        <h4>{{stp1}}</h4>
+        <input formControlName = "property1">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <h4>Semester</h4>
-        <input formControlName = "semester">
+        <h4>{{stp2}}</h4>
+        <input formControlName = "property2">
       </mat-form-field>
 
       <button class ="signup" mat-raised-button color="primary"  type='submit' >Approve</button>

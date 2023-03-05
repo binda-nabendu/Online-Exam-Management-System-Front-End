@@ -41,7 +41,7 @@ export class UserService {
     }else return "public";
   }
   LoggedOut(){
-    localStorage.clear();
+    localStorage.removeItem('OEMSToken');
   }
   buildFormDataComn(person: regPerson): FormData{
     let formData: FormData = new FormData();
