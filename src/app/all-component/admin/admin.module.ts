@@ -13,7 +13,7 @@ import { PendingStudentComponent } from './pending-student/pending-student.compo
 import { PopupComponent } from './popup/popup.component';
 import { PendingTeacherComponent } from './pending-teacher/pending-teacher.component';
 import { AddDepartmentComponent } from './add-department/add-department.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MaterialModule} from "../../../Material-Module";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -33,17 +33,18 @@ import { AddCourseComponent } from './add-course/add-course.component';
     ChangeSemesterComponent,
     AddCourseComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatTableModule,
-    MatInputModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    MatFormFieldModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCardModule,
+        MatTableModule,
+        MatInputModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        FormsModule
+    ]
 })
 export class AdminModule { }

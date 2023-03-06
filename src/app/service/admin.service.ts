@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {regStd} from "../model/regStd";
 import {Department} from "../model/Department";
+import {Course} from "../model/Course";
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,17 @@ export class AdminService {
     formData.append('deptId', dept.deptId);
     formData.append('deptName', dept.deptName);
     this.httpClient.post(this.url+"admin/add-department/",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  createCourse(crs: Course) {
+    let formData: FormData = new FormData();
+    formData.append('courseCode', crs.courseCode);
+    formData.append('courseName', crs.courseName);
+    formData.append('deptId', crs.deptId);
+    this.httpClient.post(this.url+"admin/add-courses/",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  changeSem(formData: FormData){
+    return this.httpClient.post(this.url+"admin/action/changeSemester",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }

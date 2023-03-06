@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {regTec} from "../model/regTec";
-import {course} from "../model/course";
+import {Course} from "../model/Course";
 import {regStd} from "../model/regStd";
 
 @Injectable({
@@ -25,7 +25,7 @@ export class TeacherService {
   getAllStudents(): Observable<regStd[]> {
     return this.httpClient.get<regStd[]>(this.url+"teacher/all-students" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
-  getMyCourses(): Observable<course[]>{
-    return this.httpClient.get<course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  getMyCourses(): Observable<Course[]>{
+    return this.httpClient.get<Course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }

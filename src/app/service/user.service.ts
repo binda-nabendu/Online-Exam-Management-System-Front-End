@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {regStd} from "../model/regStd";
 import {regTec} from "../model/regTec";
 import {regPerson} from "../model/regPerson";
+import {Observable} from "rxjs";
+import {Department} from "../model/Department";
 
 
 @Injectable({
@@ -80,6 +82,8 @@ export class UserService {
   getFaq(){
     return this.httpClient.get(this.url+"public/faq");
   }
-
+  getAvailableDept(): Observable<Department[]>{
+    return this.httpClient.get<Department[]>(this.url+"public/get-available-dept");
+  }
 
 }
