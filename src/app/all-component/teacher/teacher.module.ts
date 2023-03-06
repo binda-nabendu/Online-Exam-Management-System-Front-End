@@ -11,6 +11,7 @@ import {MaterialModule} from "../../../Material-Module";
 import { MyStudentComponent } from './my-student/my-student.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { AllStudentComponent } from './all-student/all-student.component';
+import { AllCoursesComponent } from './all-courses/all-courses.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AllStudentComponent } from './all-student/all-student.component';
     BoardComponent,
     AllTeacherComponent,
     MyStudentComponent,
-    AllStudentComponent
+    AllStudentComponent,
+    AllCoursesComponent
   ],
     imports: [
         CommonModule,

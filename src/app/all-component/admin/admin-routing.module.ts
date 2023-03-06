@@ -11,6 +11,7 @@ import {PendingTeacherComponent} from "./pending-teacher/pending-teacher.compone
 import {AddDepartmentComponent} from "./add-department/add-department.component";
 import {ChangeSemesterComponent} from "./change-semester/change-semester.component";
 import {AddCourseComponent} from "./add-course/add-course.component";
+import {AllCoursesComponent} from "../teacher/all-courses/all-courses.component";
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
       {path: "pending-teachers", component: PendingTeacherComponent},
       {path: "add-department", component: AddDepartmentComponent},
       {path: "shift-semester", component: ChangeSemesterComponent},
-      {path: "add-course", component:AddCourseComponent}
+      {path: "add-course", component:AddCourseComponent},
+      {path: "all-courses", component: AllCoursesComponent},
     ], canActivate: [AdminSpecialGuard]
   },
 ];

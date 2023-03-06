@@ -28,4 +28,8 @@ export class TeacherService {
   getMyCourses(): Observable<Course[]>{
     return this.httpClient.get<Course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  allCourses() : Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.url+"teacher/all-courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }

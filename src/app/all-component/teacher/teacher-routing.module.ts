@@ -6,6 +6,7 @@ import {BoardComponent} from "./board/board.component";
 import {AllTeacherComponent} from "./all-teacher/all-teacher.component";
 import {MyStudentComponent} from "./my-student/my-student.component";
 import {AllStudentComponent} from "./all-student/all-student.component";
+import {AllCoursesComponent} from "./all-courses/all-courses.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       {path: "all-teacher", component: AllTeacherComponent},
       {path: "my-students", component: MyStudentComponent},
       {path: "all-students", component: AllStudentComponent},
+      {path: "all-courses", component: AllCoursesComponent},
     ], canActivate: [TeacherSpecialGuard]
   }
 ];
