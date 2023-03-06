@@ -17,6 +17,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MaterialModule} from "../../../Material-Module";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { ChangeSemesterComponent } from './change-semester/change-semester.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     PendingStudentComponent,
     PopupComponent,
     PendingTeacherComponent,
-    AddDepartmentComponent
+    AddDepartmentComponent,
+    ChangeSemesterComponent,
+    AddCourseComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,17 @@
+<div class = "new-semester">
+  <mat-card-content class="semester">
+    <p class = "main-title">Create New Semester</p>
+    <form class="add-semester" [formGroup] = "addSemester" (ngSubmit)="createNewSemester()">
+      <mat-form-field class="deptId example-full-width">
+        <mat-label class="title">NID</mat-label>
+        <input matInput placeholder="Department Id" formControlName = "deptId">
+      </mat-form-field>
+      <mat-form-field class="deptName example-full-width">
+        <mat-label class="title">Password</mat-label>
+        <input matInput placeholder="Name" formControlName = "name">
+      </mat-form-field>
+      <button class = "submitDept" type="submit">Welcome New Semester</button>
+    </form>
+  </mat-card-content>
+</div>
+

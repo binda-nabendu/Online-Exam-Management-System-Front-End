@@ -1,0 +1,16 @@
+<div class = "new-course">
+  <mat-card-content class="course">
+    <p class = "main-title">Create New Course</p>
+    <form class="add-course" [formGroup] = "addCourse" (ngSubmit)="createNewCourse()">
+      <mat-form-field class="deptId example-full-width">
+        <mat-label class="title">Course Name</mat-label>
+        <input matInput placeholder="Department Id" formControlName = "deptId">
+      </mat-form-field>
+      <mat-form-field class="deptName example-full-width">
+        <mat-label class="title">Course Code</mat-label>
+        <input matInput placeholder="Name" formControlName = "name">
+      </mat-form-field>
+      <button class = "submitCourse" type="submit">Create Course</button>
+    </form>
+  </mat-card-content>
+</div>
