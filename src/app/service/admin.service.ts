@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {regStd} from "../model/regStd";
+import {Department} from "../model/Department";
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,12 @@ export class AdminService {
 
   removeTeacher(nid: any) {
     return this.httpClient.post(this.url+"admin/approve-teachers/delete/"+nid,null, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  createDept(dept: Department) {
+    let formData: FormData = new FormData();
+    formData.append('deptId', dept.deptId);
+    formData.append('deptName', dept.deptName);
+    this.httpClient.post(this.url+"admin/add-department/",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }

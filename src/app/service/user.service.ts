@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {HostListener, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {regStd} from "../model/regStd";
 import {regTec} from "../model/regTec";
@@ -39,6 +39,10 @@ export class UserService {
       allRoles = new Map(Object.entries(v));
       return  allRoles.get('authority');
     }else return "public";
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  onBeforeUnload(event: any) {
+    localStorage.removeItem('OEMSToken');
   }
   LoggedOut(){
     localStorage.removeItem('OEMSToken');

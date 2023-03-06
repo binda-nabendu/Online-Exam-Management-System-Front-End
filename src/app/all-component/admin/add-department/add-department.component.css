@@ -1,9 +1,7 @@
 .new-dept{
   background-image: url(../../../../assets/images/choosing-bg.jpg);
   padding: 10px;
-  height: 100vh;
-}
-.new-dept img{
+  height: 74vh;
 }
 .new-dept .dept{
   background-color: var(--themcolor);
@@ -12,6 +10,7 @@
   opacity: 90%;
   padding: 10px;
   border: 1px solid var(--them-color-lite);
+  margin-top: 13vh;
 }
 .new-dept .dept .main-title{
   text-align: center;
