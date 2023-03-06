@@ -12,6 +12,7 @@ import {AddDepartmentComponent} from "./add-department/add-department.component"
 import {ChangeSemesterComponent} from "./change-semester/change-semester.component";
 import {AddCourseComponent} from "./add-course/add-course.component";
 import {AllCoursesComponent} from "../teacher/all-courses/all-courses.component";
+import {AssignTeacherToSubjectComponent} from "./assign-teacher-to-subject/assign-teacher-to-subject.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       {path: "shift-semester", component: ChangeSemesterComponent},
       {path: "add-course", component:AddCourseComponent},
       {path: "all-courses", component: AllCoursesComponent},
+      {path: "assign-course", component: AssignTeacherToSubjectComponent},
     ], canActivate: [AdminSpecialGuard]
   },
 ];

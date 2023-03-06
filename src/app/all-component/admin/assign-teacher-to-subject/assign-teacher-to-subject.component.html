@@ -1,0 +1,22 @@
+<div class = "assing-course">
+  <mat-card-content class="course">
+    <p class = "main-title">Create New Course</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Course</mat-label>
+      <mat-select  [(ngModel)]="selectedCourse" name="dept">
+        <mat-option *ngFor="let sbj of courses" [value]="sbj" class="option">
+          Department Id:{{sbj.deptId}}, Course Code:{{sbj.courseCode}}, Course Name:{{sbj.courseName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Teacher</mat-label>
+      <mat-select  [(ngModel)]="selectedTeacher" name="dept">
+        <mat-option *ngFor="let tec of teachers" [value]="tec" class="option">
+          Teacher Id: {{tec.nid}}, Teacher Name: {{tec.userName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class = "assign-course" (click)="reqToAssignCourse()">Create Course</button>
+  </mat-card-content>
+</div>

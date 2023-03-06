@@ -58,4 +58,8 @@ export class AdminService {
   changeSem(formData: FormData){
     return this.httpClient.post(this.url+"admin/action/changeSemester",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  assingTecToCourse(formData: FormData) {
+    return this.httpClient.post(this.url+"admin/course/assign-teacher",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }
