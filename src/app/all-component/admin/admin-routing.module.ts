@@ -13,6 +13,7 @@ import {ChangeSemesterComponent} from "./change-semester/change-semester.compone
 import {AddCourseComponent} from "./add-course/add-course.component";
 import {AllCoursesComponent} from "../teacher/all-courses/all-courses.component";
 import {AssignTeacherToSubjectComponent} from "./assign-teacher-to-subject/assign-teacher-to-subject.component";
+import {MyCoursesComponent} from "../teacher/my-courses/my-courses.component";
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
       {path: "add-course", component:AddCourseComponent},
       {path: "all-courses", component: AllCoursesComponent},
       {path: "assign-course", component: AssignTeacherToSubjectComponent},
+      {path: "my-courses", component: MyCoursesComponent},
     ], canActivate: [AdminSpecialGuard]
   },
 ];

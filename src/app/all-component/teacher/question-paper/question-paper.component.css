@@ -1,0 +1,41 @@
+.question *{
+  margin: 0;
+}
+.question{
+  background-image: url(../../../../assets/images/choosing-bg.jpg);
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.college-name{
+  color: var(--them-color-lite);
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.question-paper{
+  background-color: var(--themcolor);
+  margin: 0 auto;
+  width: fit-content;
+  opacity: 90%;
+  padding: 10px;
+  border: 1px solid var(--them-color-lite);
+}
+.question-paper .header{
+  display: flex;
+}
+.question-paper .header .left{
+  margin: 10px;
+}
+.question-paper .header .middle{
+  margin: 10px;
+  text-align: center;
+  color: #fff;
+
+}
+.question-paper .header .right{
+  margin: 10px;
+}

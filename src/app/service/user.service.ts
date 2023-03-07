@@ -42,6 +42,25 @@ export class UserService {
       return  allRoles.get('authority');
     }else return "public";
   }
+  getId(): string {
+
+    // this will need for fix buffer error
+    (window as any).global = window;
+    // @ts-ignore
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+    //____________________*********___________________
+
+
+    let token = localStorage.getItem('OEMSToken');
+    if(token != null){
+      // let getIdFromPayload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).sub;
+      const getIdFromPayload: string = JSON.parse(
+        atob(token.split('.')[1])
+      ).sub;
+      return  getIdFromPayload;
+    }
+    else return '';
+  }
   @HostListener('window:beforeunload', ['$event'])
   onBeforeUnload(event: any) {
     localStorage.removeItem('OEMSToken');

@@ -9,9 +9,11 @@ import { AllTeacherComponent } from './all-teacher/all-teacher.component';
 import {MatTableModule} from "@angular/material/table";
 import {MaterialModule} from "../../../Material-Module";
 import { MyStudentComponent } from './my-student/my-student.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AllStudentComponent } from './all-student/all-student.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { QuestionPaperComponent } from './question-paper/question-paper.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AllCoursesComponent } from './all-courses/all-courses.component';
     AllTeacherComponent,
     MyStudentComponent,
     AllStudentComponent,
-    AllCoursesComponent
+    AllCoursesComponent,
+    MyCoursesComponent,
+    QuestionPaperComponent
   ],
     imports: [
         CommonModule,
@@ -29,7 +33,8 @@ import { AllCoursesComponent } from './all-courses/all-courses.component';
         MatCardModule,
         MatTableModule,
         MaterialModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class TeacherModule { }

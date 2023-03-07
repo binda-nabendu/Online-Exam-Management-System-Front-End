@@ -1,0 +1,47 @@
+<div class = 'question'>
+  <mat-card-content class="question-paper">
+    <h3 class="college-name">{{collegeName}}</h3>
+    <div class="header">
+      <div class = "left">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label class="title">Exam Id</mat-label>
+            <input matInput placeholder="Exam Id" [formControl] = "examId">
+          </mat-form-field><br>
+          <mat-form-field class="example-full-width">
+            <mat-label class="title">Percent Value</mat-label>
+            <input matInput placeholder="10%" [formControl] = "percent">
+          </mat-form-field>
+        </form>
+      </div>
+      <div class = "middle">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Select Course</mat-label>
+            <mat-select  [(ngModel)]="selectedCourse"  name="course">
+              <mat-option *ngFor="let sbj of courses" [value]="sbj" class="option">
+                {{sbj.courseName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field><br>
+          <h3>Department Id: {{selectedCourse.deptId}}</h3><br>
+          <h3>Course Code: {{selectedCourse.courseCode}}</h3><br>
+          <h3>Teacher ID: {{teacherId}}</h3><br>
+
+        </form>
+      </div>
+      <div class = "right">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label class="title">marks</mat-label>
+            <input matInput placeholder="total Marks" [formControl] = "marks">
+          </mat-form-field><br>
+          <mat-form-field class="example-full-width">
+            <mat-label class="title">Session</mat-label>
+            <input matInput placeholder="total Marks" [formControl] = "session">
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</div>

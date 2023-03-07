@@ -32,4 +32,8 @@ export class TeacherService {
   allCourses() : Observable<Course[]> {
     return this.httpClient.get<Course[]>(this.url+"teacher/all-courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  myCourses() : Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }
