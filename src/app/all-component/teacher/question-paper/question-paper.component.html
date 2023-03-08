@@ -12,6 +12,11 @@
             <mat-label class="title">Percent Value</mat-label>
             <input matInput placeholder="10%" [formControl] = "percent">
           </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label class="title">Start Date & Time</mat-label>
+            <input matInput placeholder="total Marks" [formControl] = "startDateTime">
+            <mat-hint class="hint">YYYY-mm-dd HH:MM:SS <br>Must be Maintain</mat-hint>
+          </mat-form-field>
         </form>
       </div>
       <div class = "middle">
@@ -40,7 +45,60 @@
             <mat-label class="title">Session</mat-label>
             <input matInput placeholder="total Marks" [formControl] = "session">
           </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label class="title">End Date & Time</mat-label>
+            <input matInput placeholder="total Marks" [formControl] = "endDateTime">
+            <mat-hint class="hint">YYYY-mm-dd HH:MM:SS <br>Must be Maintain</mat-hint>
+          </mat-form-field>
         </form>
+      </div>
+    </div>
+    <br>
+    <div class="q-body">
+      <div class="individual-q" *ngFor="let q of questions">
+
+        <form class="example-form">
+          <div class = "i-q-title">
+            <h1>Q-1</h1>
+            <mat-form-field class="example-full-width q">
+              <mat-label class="title">Write Question</mat-label>
+              <input matInput placeholder="Write Your Question-" [formControl] = "examId">
+            </mat-form-field>
+            <mat-form-field class="example-full-width m">
+              <mat-label class="title">Mark</mat-label>
+              <input matInput placeholder="mark" [formControl] = "examId">
+            </mat-form-field>
+          </div>
+          <div class="option-type">
+            <h1>Option Type</h1>
+            <mat-radio-group  [formControl]="floatLabelControl">
+              <mat-radio-button value="1" class="tr">single True</mat-radio-button>
+              <mat-radio-button value="2">Multiple True</mat-radio-button>
+              <mat-radio-button value="3">Text Box</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class = 'i-q-option' *ngFor="let op of options">
+            <div class = 'option-p'>
+              <h1 class = 'op-id'>Option-1</h1>
+              <mat-form-field class="example-full-width op">
+                <mat-label class="title">Option</mat-label>
+                <input matInput placeholder="Write Your option" [formControl] = "examId">
+              </mat-form-field>
+              <mat-radio-group  [formControl]="floatLabelControl" class="status">
+                <mat-label>  Option Status</mat-label><br>
+                <mat-radio-button value="1" class="tr">True</mat-radio-button>
+                <mat-radio-button value="2">False</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div>
+            <button class = "create-q-button" (click)="createOption()">Add Option</button>
+          </div>
+        </form>
+
+      </div>
+      <div>
+        <button class = "create-q-button" (click)="createQuestion()">Create Question</button>
       </div>
     </div>
   </mat-card-content>

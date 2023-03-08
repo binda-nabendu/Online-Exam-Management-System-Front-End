@@ -53,11 +53,8 @@ export class UserService {
 
     let token = localStorage.getItem('OEMSToken');
     if(token != null){
-      // let getIdFromPayload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).sub;
-      const getIdFromPayload: string = JSON.parse(
-        atob(token.split('.')[1])
-      ).sub;
-      return  getIdFromPayload;
+      const getIdFromPayload: string = JSON.parse( atob(token.split('.')[1])).sub;
+      return   getIdFromPayload;
     }
     else return '';
   }

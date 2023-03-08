@@ -26,6 +26,9 @@
 }
 .question-paper .header{
   display: flex;
+  margin: 10px;
+  border: 1px solid var(--them-color-lite);
+  padding: 7px;
 }
 .question-paper .header .left{
   margin: 10px;
@@ -39,3 +42,62 @@
 .question-paper .header .right{
   margin: 10px;
 }
+.hint{
+  color: #fff;
+}
+.create-q-button{
+  width: 100%;
+  background: #e83e8c;
+  padding: 4px;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 21px;
+}
+.q-body .individual-q{
+  margin-bottom: 10px;
+}
+.q-body .individual-q .i-q-title{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.q-body .individual-q .i-q-title h1{
+  padding-right: 7px;
+  width: 5%;
+  color: var(--them-color-lite);
+}
+.q-body .individual-q .i-q-title .q{
+  padding-right: 7px;
+  width: 75%;
+}
+.q-body .individual-q .i-q-title .m{
+  width: 20%;
+}
+.q-body .individual-q .option-type{
+  background: #fff;
+  padding: 7px;
+}
+.q-body .individual-q .i-q-option .option-p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.q-body .individual-q .i-q-option .option-p .op-id{
+  width: 15%;
+}
+.q-body .individual-q .i-q-option .option-p .op{
+  width: 55%;
+  padding-right: 7px;
+}
+.q-body .individual-q .i-q-option .option-p .status{
+  width: 30%;
+}
+.q-body .individual-q .i-q-option .option-p .status mat-label{
+  margin-left: 10px;
+  font-size: 20px;
+  background: #e0a800;
+}
+
+

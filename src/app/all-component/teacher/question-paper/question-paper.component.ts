@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import {TeacherService} from "../../../service/teacher.service";
-import {AdminService} from "../../../service/admin.service";
 import {Course} from "../../../model/Course";
-import {regTec} from "../../../model/regTec";
 import {UserService} from "../../../service/user.service";
 import {FormControl, Validators} from "@angular/forms";
 
@@ -22,15 +20,28 @@ export class QuestionPaperComponent {
   teacherId: string = '';
   marks = new FormControl('',[Validators.required]);
   session = new FormControl('',[Validators.required]);
+  startDateTime = new FormControl('',[Validators.required]);
+  endDateTime = new FormControl('',[Validators.required]);
+  questions: number[] = [];
+  options: any[] = [];
+  floatLabelControl = new FormControl('', [Validators.required]);
   ngOnInit(): void {
     this.getAllCourse();
     this.teacherId = this.userService.getId()
   }
 
   getAllCourse(){
-    this.tecService.allCourses().subscribe(crs =>{
+    this.tecService.myCourses().subscribe(crs =>{
       this.courses = crs;
     });
   }
 
+  createQuestion() {
+    this.questions.push(1);
+    this.options.push(1);
+  }
+
+  createOption() {
+    this.options.push(1);
+  }
 }
