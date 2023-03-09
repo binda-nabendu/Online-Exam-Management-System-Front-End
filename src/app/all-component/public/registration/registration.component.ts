@@ -78,7 +78,7 @@ export class RegistrationComponent implements OnInit{
       alertify.success("Registration Successfully")
     }
     else
-      alertify.era("Failed try again")
+      alertify.error("Failed try again")
   }
 
   backLogin(){

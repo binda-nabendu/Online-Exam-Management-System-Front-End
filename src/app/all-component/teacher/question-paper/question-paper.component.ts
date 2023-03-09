@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import {TeacherService} from "../../../service/teacher.service";
 import {Course} from "../../../model/Course";
 import {UserService} from "../../../service/user.service";
-import {FormControl, Validators} from "@angular/forms";
+import {FormArray, FormControl, Validators} from "@angular/forms";
 import {QuestionScript} from "../../../model/QuestionScript";
 import {IndividualQuestion} from "../../../model/IndividualQuestion";
 import {Option} from "../../../model/Option";
+import alertify from "alertifyjs";
 
 @Component({
   selector: 'app-question-paper',
@@ -14,6 +15,10 @@ import {Option} from "../../../model/Option";
 })
 export class QuestionPaperComponent {
   constructor(private tecService: TeacherService, private userService: UserService) {
+    this.allQuestionReceiver = [];
+    this.markReceiver = [];
+    this.allOptionReceiver = [[]];
+    this.allOptionStateReceiver = [[]];
   }
   courses: Course[] = [];
   selectedCourse: { courseCode: string; deptId: string ; courseName: string} = {courseCode:'',deptId:'', courseName:''};
@@ -34,6 +39,12 @@ export class QuestionPaperComponent {
 
   iQuestion = new FormControl('', [Validators.required]);
   mark = new FormControl('', [Validators.required]);
+
+  allQuestionReceiver: FormControl[];
+
+  allOptionReceiver: FormControl[][];
+  allOptionStateReceiver: FormControl[][];
+  markReceiver: FormControl[];
 
   ngOnInit(): void {
     this.getAllCourse();
@@ -57,7 +68,10 @@ export class QuestionPaperComponent {
       ]
     });
     this.optionTracker.push(0);
-
+    this.allQuestionReceiver.push(new FormControl('', [Validators.required]));
+    this.markReceiver.push(new FormControl('', [Validators.required]));
+    this.allOptionReceiver.push([]);
+    this.allOptionStateReceiver.push([]);
     this.qId++;
   }
 
@@ -65,14 +79,32 @@ export class QuestionPaperComponent {
     let properQuestionNo: number = questionNo - 1;
     this.questions[properQuestionNo].allOptions.push({
       optionNo: this.optionTracker[properQuestionNo] + 1,
-        optionValue: 'oeoe',
+        optionValue: '',
         ansStatus: false
     });
+    this.allOptionReceiver[properQuestionNo].push(new FormControl('', [Validators.required]));
+    this.allOptionStateReceiver[properQuestionNo].push(new FormControl('0', [Validators.required]));
     this.optionTracker[properQuestionNo]++;
   }
 
   SubmitQuestion() {
-
+    for (let t in this.allQuestionReceiver){
+      if(this.allQuestionReceiver[t].valid && this.markReceiver[t].value > 0) {
+        this.questions[t].question = this.allQuestionReceiver[t].value;
+        this.questions[t].mark = this.markReceiver[t].value;
+        for(let o in this.allOptionReceiver[t]){
+          if(this.allOptionReceiver[t][o].valid){
+            this.questions[t].allOptions[o].optionValue = this.allOptionReceiver[t][o].value;
+          }else{
+            alertify.error("Please fill all option and their state");
+            return;
+          }
+        }
+      }else{
+        alertify.error("Please fill all question and mark");
+        return;
+      }
+    }
     let qs: QuestionScript = {
       teacherId: this.teacherId,
       courseCode: this.selectedCourse.courseCode,
@@ -85,24 +117,5 @@ export class QuestionPaperComponent {
       allIndividualQuestions: this.questions
     };
     console.log(qs);
-  }
-  // LockOption(questionNo: number, optionNo: number) {
-  //   let properQuestionNo: number = questionNo - 1;
-  //   let properOptionNo: number = optionNo - 1;
-  //   this.questions[properQuestionNo].allOptions[properOptionNo].optionValue = this.
-  // }
-
-  lockQuestion(questionNo: number, question: any, mark: any) {
-    let properQuestionNo: number = questionNo - 1;
-    this.questions[properQuestionNo].question = question;
-    this.questions[properQuestionNo].mark = mark;
-  }
-
-  LockOption(questionNo: number, optionNo: number, value: any, optionState: any) {
-    let properQuestionNo: number = questionNo - 1;
-      let properOptionNo: number = optionNo - 1;
-      this.questions[properQuestionNo].allOptions[properOptionNo].optionValue = value;
-    this.questions[properQuestionNo].allOptions[properOptionNo].ansStatus = (optionState == "1");
-
   }
 }

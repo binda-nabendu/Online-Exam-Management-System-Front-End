@@ -69,22 +69,13 @@
 }
 .q-body .individual-q .i-q-title .q{
   padding-right: 7px;
-  width: 68%;
+  width: 75%;
 }
 .q-body .individual-q .i-q-title .m{
   width: 20%;
   padding-right: 7px;
 }
-.q-body .individual-q .i-q-title .lock{
-  background: #e83e8c;
-  padding: 4px;
-  border: none;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 21px;
-  width: 7%;
-  height: 40px;
-}
+
 .q-body .individual-q .option-type{
   background: #fff;
   padding: 7px;
@@ -99,15 +90,11 @@
   width: 10%;
 }
 .q-body .individual-q .i-q-option .option-p .op{
-  width: 50%;
+  width: 60%;
   padding-right: 7px;
 }
 .q-body .individual-q .i-q-option .option-p .status{
   width: 30%;
-}
-.q-body .individual-q .i-q-option .option-p .lock{
-  width: 10%;
-  margin-right:7px;
 }
 .q-body .individual-q .i-q-option .option-p .status mat-label{
   margin-left: 10px;

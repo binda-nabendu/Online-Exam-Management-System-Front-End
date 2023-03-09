@@ -62,13 +62,12 @@
             <h1>Q-{{q.questionNo}}</h1>
             <mat-form-field class="example-full-width q">
               <mat-label class="title">Write Question</mat-label>
-              <input matInput placeholder="Write Your Question-" [formControl] = "iQuestion">
+              <input matInput placeholder="Write Your Question-" [formControl] = "allQuestionReceiver[q.questionNo-1]">
             </mat-form-field>
             <mat-form-field class="example-full-width m">
               <mat-label class="title">Mark</mat-label>
-              <input matInput placeholder="mark" [formControl] = "mark">
+              <input matInput placeholder="mark" [formControl] = "markReceiver[q.questionNo-1]">
             </mat-form-field>
-            <button class = "lock" (click)="lockQuestion(q.questionNo, iQuestion.value, mark.value)">LOCK</button>
           </div>
           <div class="option-type">
             <h1>Option Type</h1>
@@ -83,15 +82,13 @@
               <h1 class = 'op-id'>Option-{{op.optionNo}}</h1>
               <mat-form-field class="example-full-width op">
                 <mat-label class="title">Option</mat-label>
-                <input matInput placeholder="Write Your option" [formControl] = "optionValue">
+                <input matInput placeholder="Write Your option" [formControl] = "allOptionReceiver[q.questionNo-1][op.optionNo-1]">
               </mat-form-field>
-              <mat-radio-group  [formControl]="optionState" class="status">
+              <mat-radio-group  [formControl]="allOptionStateReceiver[q.questionNo-1][op.optionNo-1]" class="status">
                 <mat-label>  Option Status</mat-label><br>
                 <mat-radio-button value=1 class="tr">True</mat-radio-button>
                 <mat-radio-button value=0>False</mat-radio-button>
               </mat-radio-group>
-              <button class = "lock" (click)="LockOption(q.questionNo, op.optionNo,optionValue.value, optionState.value)">Lock Option</button>
-
             </div>
           </div>
           <div>
