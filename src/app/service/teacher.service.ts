@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {regTec} from "../model/regTec";
 import {Course} from "../model/Course";
 import {regStd} from "../model/regStd";
+import {QuestionSummery} from "../model/QuestionSummery";
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,13 @@ export class TeacherService {
 
   myCourses() : Observable<Course[]> {
     return this.httpClient.get<Course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  setQuestion(jsonData: string) {
+    return this.httpClient.post(this.url+"teacher/create-exams/question",jsonData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  getMyQuestionList() : Observable<QuestionSummery[]> {
+    return this.httpClient.get<QuestionSummery[]>(this.url+"teacher/all-questions" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }

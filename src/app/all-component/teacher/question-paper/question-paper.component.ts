@@ -16,32 +16,25 @@ import alertify from "alertifyjs";
 export class QuestionPaperComponent {
   constructor(private tecService: TeacherService, private userService: UserService) {
     this.allQuestionReceiver = [];
+    this.allOptionTypeReceiver = [];
     this.markReceiver = [];
     this.allOptionReceiver = [[]];
     this.allOptionStateReceiver = [[]];
   }
   courses: Course[] = [];
-  selectedCourse: { courseCode: string; deptId: string ; courseName: string} = {courseCode:'',deptId:'', courseName:''};
+  selectedCourse: { courseCode: string; deptId: string ; courseName: string ; courseSessions: number} = {courseCode:'',deptId:'', courseName:'', courseSessions: -1};
   collegeName: string = 'GURUGRIHO PATHSHALA';
   percent = new FormControl(0.3,[Validators.required]);
   examId = new FormControl('',[Validators.required]);
   teacherId: string = '';
   marks = new FormControl(20,[Validators.required]);
-  session = new FormControl(2,[Validators.required]);
+  session = new FormControl({value:'Auto Generated', disabled: true}, [Validators.required]);
   startDateTime = new FormControl('2023-07-18 20:22:30',[Validators.required]);
   endDateTime = new FormControl('',[Validators.required]);
-  optionValue = new FormControl('',[Validators.required]);
-  optionState = new FormControl('',[Validators.required]);
-
   questions: IndividualQuestion[] = [];
-
   floatLabelControl = new FormControl('', [Validators.required]);
-
-  iQuestion = new FormControl('', [Validators.required]);
-  mark = new FormControl('', [Validators.required]);
-
   allQuestionReceiver: FormControl[];
-
+  allOptionTypeReceiver: FormControl[];
   allOptionReceiver: FormControl[][];
   allOptionStateReceiver: FormControl[][];
   markReceiver: FormControl[];
@@ -70,6 +63,7 @@ export class QuestionPaperComponent {
     this.optionTracker.push(0);
     this.allQuestionReceiver.push(new FormControl('', [Validators.required]));
     this.markReceiver.push(new FormControl('', [Validators.required]));
+    this.allOptionTypeReceiver.push(new FormControl('', [Validators.required]));
     this.allOptionReceiver.push([]);
     this.allOptionStateReceiver.push([]);
     this.qId++;
@@ -89,8 +83,8 @@ export class QuestionPaperComponent {
 
   SubmitQuestion() {
     for (let t in this.allQuestionReceiver){
-      if(this.allQuestionReceiver[t].valid && this.markReceiver[t].value > 0) {
-        this.questions[t].question = this.allQuestionReceiver[t].value;
+      if(this.allQuestionReceiver[t].valid && this.markReceiver[t].value > 0 && this.allOptionTypeReceiver[t].valid) {
+        this.questions[t].question = this.allOptionTypeReceiver[t].value + this.allQuestionReceiver[t].value;
         this.questions[t].mark = this.markReceiver[t].value;
         for(let o in this.allOptionReceiver[t]){
           if(this.allOptionReceiver[t][o].valid){
@@ -109,13 +103,27 @@ export class QuestionPaperComponent {
       teacherId: this.teacherId,
       courseCode: this.selectedCourse.courseCode,
       deptId:this.selectedCourse.deptId,
-      percentageValue: this.percent.value == null ? .3 : this.percent.value,
-      startingDateTime: (this.startDateTime.value ?? "2023-07-18 20:22:30").toString(),
-      endingDateTime: (this.endDateTime.value ?? "2023-07-18 20:22:30").toString(),
-      courseSession: this.session.value == null? -33 : this.session.value,
-      total: this.marks.value == null? 20 : this.marks.value,
+      percentageValue: this.percent.value == null ? .001 : this.percent.value,
+      startingDateTime: (this.startDateTime.value ?? "2021-07-18 20:22:30").toString(),
+      endingDateTime: (this.endDateTime.value ?? "2021-07-18 20:22:30").toString(),
+      courseSession: this.selectedCourse.courseSessions,
+      total: this.marks.value == null? 0 : this.marks.value,
       allIndividualQuestions: this.questions
     };
-    console.log(qs);
+    if(qs.teacherId.length < 1 || qs.courseCode.length < 1 || qs.deptId.length < 1 || qs.percentageValue == 0.001 ||
+      qs.startingDateTime == "2021-07-18 20:22:30" || qs.endingDateTime == "2021-07-18 20:22:30" || qs.courseSession < 1 ||
+      qs.total == 0){
+      alertify.error("Please fill all header with proper value");
+      return;
+    }
+    alertify.confirm("Submit Question", "Do you want to submit this question ?", ()=>{
+      const jsonData = JSON.stringify(qs);
+      console.log(jsonData);
+
+      // this.tecService.setQuestion(jsonData).subscribe(t=>{
+      //   console.log(t);
+      // })
+    },function(){});
+
   }
 }

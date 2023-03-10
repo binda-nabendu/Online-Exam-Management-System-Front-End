@@ -9,6 +9,7 @@ import {AllStudentComponent} from "./all-student/all-student.component";
 import {AllCoursesComponent} from "./all-courses/all-courses.component";
 import {MyCoursesComponent} from "./my-courses/my-courses.component";
 import {QuestionPaperComponent} from "./question-paper/question-paper.component";
+import {MyQuestionComponent} from "./my-question/my-question.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       {path: "all-courses", component: AllCoursesComponent},
       {path: "my-courses", component: MyCoursesComponent},
       {path: "set-question", component: QuestionPaperComponent},
+      {path: "my-questions", component: MyQuestionComponent},
     ], canActivate: [TeacherSpecialGuard]
   }
 ];

@@ -11,7 +11,7 @@
           <mat-form-field class="example-full-width">
             <mat-label class="title">Percent Value</mat-label>
             <input matInput placeholder="10%" [formControl] = "percent">
-          </mat-form-field>
+          </mat-form-field><br>
           <mat-form-field class="example-full-width">
             <mat-label class="title">Start Date & Time</mat-label>
             <input matInput placeholder="total Marks" [formControl] = "startDateTime">
@@ -32,6 +32,7 @@
           <h3>Department Id: {{selectedCourse.deptId}}</h3><br>
           <h3>Course Code: {{selectedCourse.courseCode}}</h3><br>
           <h3>Teacher ID: {{teacherId}}</h3><br>
+          <h3>Course Session: {{selectedCourse.courseSessions}}</h3><br>
 
         </form>
       </div>
@@ -44,7 +45,7 @@
           <mat-form-field class="example-full-width">
             <mat-label class="title">Session</mat-label>
             <input matInput placeholder="total Marks" [formControl] = "session">
-          </mat-form-field>
+          </mat-form-field><br>
           <mat-form-field class="example-full-width">
             <mat-label class="title">End Date & Time</mat-label>
             <input matInput placeholder="total Marks" [formControl] = "endDateTime">
@@ -71,7 +72,7 @@
           </div>
           <div class="option-type">
             <h1>Option Type</h1>
-            <mat-radio-group  [formControl]="floatLabelControl">
+            <mat-radio-group  [formControl]="allOptionTypeReceiver[q.questionNo-1]">
               <mat-radio-button value="1" class="tr">single True</mat-radio-button>
               <mat-radio-button value="2">Multiple True</mat-radio-button>
               <mat-radio-button value="3">Text Box</mat-radio-button>
@@ -101,8 +102,9 @@
         <button class = "create-q-button" (click)="createQuestion()">Create Question</button>
       </div>
     </div>
-    <div class = "submit-question">
-      <button (click)="SubmitQuestion()">Submit Question</button>
+    <br>
+    <div class = 'submit-pane'>
+      <button class = "submit-question" (click)="SubmitQuestion()">Submit Question</button>
     </div>
   </mat-card-content>
 </div>
