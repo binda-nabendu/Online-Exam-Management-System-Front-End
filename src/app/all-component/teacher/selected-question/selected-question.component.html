@@ -1,45 +1,42 @@
-<div class = 'question'>
-  <mat-card-content class="question-paper">
-    <h3 class="college-name">{{collegeName}}</h3>
-    <div class="header">
-      <div class = "left">
-        <h1 class="title">Exam Id</h1>
-        <h1 class="title">Percent Value: {{questions.percentageValue}}</h1>
-        <h1 class="title">Start Time: {{questions.startingDateTime}}</h1>
+<div class='question'>
+  <mat-card-content class='question-paper'>
+    <h3 class='college-name'>{{collegeName}}</h3>
+    <div class='header'>
+      <div class='left'>
+        <h1 class='title'>Exam Id</h1>
+        <h1 class='title'>Percent Value: {{questions.percentageValue}}</h1>
+        <h1 class='title'>Start: {{questions.startingDateTime}}</h1>
       </div>
-      <div class = "middle">
-          <h3>Department Id: {{questions.deptId}}</h3><br>
-          <h3>Course Code: {{questions.courseCode}}</h3><br>
-          <h3>Teacher ID: {{questions.teacherId}}</h3><br>
+      <div class='middle'>
+        <h3>Department Id: {{questions.deptId}}</h3>
+        <h3>Course Code: {{questions.courseCode}}</h3>
+        <h3>Teacher ID: {{questions.teacherId}}</h3>
       </div>
-      <div class = "right">
-        <h1 class="title">Mark: {{questions.total}}</h1>
-        <h1 class="title">Session: {{questions.courseSession}}</h1>
-        <h1 class="title">End Time: {{questions.endingDateTime}}</h1>
+      <div class='right'>
+        <h1 class='title'>Mark: {{questions.total}}</h1>
+        <h1 class='title'>Session: {{questions.courseSession}}</h1>
+        <h1 class='title'>End: {{questions.endingDateTime}}</h1>
       </div>
     </div>
     <br>
-    <div class="q-body">
-      <div class="individual-q" *ngFor="let q of questions.allIndividualQuestions">
+    <div class='q-body'>
+      <div class='individual-q' *ngFor='let q of questions.allIndividualQuestions'>
 
-        <form class="example-form">
-          <div class = "i-q-title">
-            <h3>Q-{{q.questionNo}}</h3>
-              <h3 class="title">{{q.question}}</h3>
-              <h3 class="title">{{q.mark}}</h3>
+        <form class='example-form'>
+          <div class='i-q-title'>
+            <h3 class='q-no'>Q-{{q.questionNo}}</h3>
+            <h3 class='q-title'>{{q.question}}</h3>
+            <h3 class='q-mark'>{{q.mark}}</h3>
           </div>
-          <div class="option-type">
+          <div class='option-type'>
             <h3>Option Type: </h3>
-<!--            <mat-radio-group  [formControl]="allOptionTypeReceiver[q.questionNo-1]">-->
-<!--              <mat-radio-button value="1" class="tr">single True</mat-radio-button>-->
-<!--              <mat-radio-button value="2">Multiple True</mat-radio-button>-->
-<!--              <mat-radio-button value="3">Text Box</mat-radio-button>-->
-<!--            </mat-radio-group>-->
           </div>
-          <div class = 'i-q-option' *ngFor="let op of q.allOptions">
-            <div class = 'option-p'>
-              <h1 class = 'op-id'>Option-{{op.optionNo}}</h1>
-                <h3 class="title">  {{op.optionValue}} velidity: {{op.ansStatus}}</h3>
+          <div class='i-q-option' *ngFor='let op of q.allOptions'>
+            <div class='option-p'>
+              <h1 class='op-id'>({{op.optionNo}})  {{op.optionValue}}</h1>
+            </div>
+            <div class="option-s">
+              <h3 class='op-velidity'>velidity: {{op.ansStatus}}</h3>
             </div>
           </div>
         </form>
@@ -47,8 +44,8 @@
       </div>
     </div>
     <br>
-    <div class = 'submit-pane'>
-      <button class = "submit-question" (click)="close()">close</button>
+    <div class='submit-pane'>
+      <button class='submit-question' (click)='close()'>close</button>
     </div>
   </mat-card-content>
 </div>

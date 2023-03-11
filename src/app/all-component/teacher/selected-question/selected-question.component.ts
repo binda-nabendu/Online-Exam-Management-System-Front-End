@@ -4,6 +4,8 @@ import {UserService} from "../../../service/user.service";
 import {Course} from "../../../model/Course";
 import {FormControl, Validators} from "@angular/forms";
 import {QuestionScript} from "../../../model/QuestionScript";
+import {MatDialogRef} from "@angular/material/dialog";
+import {PopupComponent} from "../../admin/popup/popup.component";
 
 @Component({
   selector: 'app-selected-question',
