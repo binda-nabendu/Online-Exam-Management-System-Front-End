@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {regStd} from "../../../model/regStd";
 import {PopupComponent} from "../../admin/popup/popup.component";
+import {SelectedQuestionComponent} from "../selected-question/selected-question.component";
 
 @Component({
   selector: 'app-my-question',
@@ -36,9 +37,9 @@ export class MyQuestionComponent implements OnInit{
   })
 
   FunctionUpdate(user: regStd) {
-    this.dialog.open(PopupComponent,{
-      width: '400px',
-      height: '400px',
+    this.dialog.open(SelectedQuestionComponent,{
+      width: '80%',
+      height: '80%',
       exitAnimationDuration: '500ms',
       enterAnimationDuration:'500ms',
       data:{

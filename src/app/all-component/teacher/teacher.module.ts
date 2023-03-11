@@ -15,6 +15,7 @@ import { AllCoursesComponent } from './all-courses/all-courses.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { QuestionPaperComponent } from './question-paper/question-paper.component';
 import { MyQuestionComponent } from './my-question/my-question.component';
+import { SelectedQuestionComponent } from './selected-question/selected-question.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MyQuestionComponent } from './my-question/my-question.component';
     AllCoursesComponent,
     MyCoursesComponent,
     QuestionPaperComponent,
-    MyQuestionComponent
+    MyQuestionComponent,
+    SelectedQuestionComponent
   ],
     imports: [
         CommonModule,
