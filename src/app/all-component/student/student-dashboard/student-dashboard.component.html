@@ -30,16 +30,16 @@
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">school</span>Courses</a>
             <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
               <li><a routerLink='my-courses' fragment='not-assign'><span class="material-icons icon-style sub-icon">pending</span>Present Courses</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>checklist</span>Departmental Courses</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>view_list</span>Completed Courses</a></li>
+              <li><a routerLink='departmental-course'><span class='material-icons icon-style sub-icon'>checklist</span>Departmental Courses</a></li>
+              <li><a routerLink='course-completed'><span class='material-icons icon-style sub-icon'>view_list</span>Completed Courses</a></li>
             </ul>
           </li>
         </ul>
         <ul class= "left-menu" >
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li2 = !li2"><span class='material-icons icon-style'>history_edu</span>Exam</a>
             <ul class="{{li2 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>library_books</span>Upcoming Exam</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>elevator</span>Previous Exam</a></li>
+              <li><a routerLink='exams/upcoming' fragment='not-assign'><span class='material-icons icon-style sub-icon'>library_books</span>Upcoming Exam</a></li>
+              <li><a routerLink='exams/previous'><span class='material-icons icon-style sub-icon'>elevator</span>Previous Exam</a></li>
             </ul>
           </li>
         </ul>

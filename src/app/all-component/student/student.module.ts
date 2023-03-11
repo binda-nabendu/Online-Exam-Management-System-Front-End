@@ -6,6 +6,8 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { BoardComponent } from './board/board.component';
 import {MatCardModule} from "@angular/material/card";
 import { CourseComponent } from './course/course.component';
+import {MatTableModule} from "@angular/material/table";
+import { ExamsComponent } from './exams/exams.component';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { CourseComponent } from './course/course.component';
     StudentDashboardComponent,
     BoardComponent,
     CourseComponent,
+    ExamsComponent,
   ],
-  imports: [
-    CommonModule,
-    StudentRoutingModule,
-    MatCardModule
-  ]
+    imports: [
+        CommonModule,
+        StudentRoutingModule,
+        MatCardModule,
+        MatTableModule
+    ]
 })
 export class StudentModule { }
