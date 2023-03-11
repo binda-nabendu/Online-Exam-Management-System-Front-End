@@ -6,6 +6,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {regStd} from "../../../model/regStd";
 import {PopupComponent} from "../../admin/popup/popup.component";
 import {SelectedQuestionComponent} from "../selected-question/selected-question.component";
+import {QuestionSummery} from "../../../model/QuestionSummery";
 
 @Component({
   selector: 'app-my-question',
@@ -36,14 +37,14 @@ export class MyQuestionComponent implements OnInit{
     crs: new FormControl("", Validators.required),
   })
 
-  FunctionUpdate(user: regStd) {
+  FunctionUpdate(user: QuestionSummery) {
     this.dialog.open(SelectedQuestionComponent,{
       width: '80%',
       height: '80%',
       exitAnimationDuration: '500ms',
       enterAnimationDuration:'500ms',
       data:{
-        userDetails: user,
+        userDetails: user.examId,
       }
     })
   }

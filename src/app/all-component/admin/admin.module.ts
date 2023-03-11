@@ -20,6 +20,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { ChangeSemesterComponent } from './change-semester/change-semester.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AssignTeacherToSubjectComponent } from './assign-teacher-to-subject/assign-teacher-to-subject.component';
+import { RequestedCourseByStudentComponent } from './requested-course-by-student/requested-course-by-student.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AssignTeacherToSubjectComponent } from './assign-teacher-to-subject/ass
     AddDepartmentComponent,
     ChangeSemesterComponent,
     AddCourseComponent,
-    AssignTeacherToSubjectComponent
+    AssignTeacherToSubjectComponent,
+    RequestedCourseByStudentComponent
   ],
     imports: [
         CommonModule,

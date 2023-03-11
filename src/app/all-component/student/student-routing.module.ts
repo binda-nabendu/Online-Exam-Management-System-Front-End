@@ -15,7 +15,8 @@ const routes: Routes = [
       {path: "departmental-course", component: CourseComponent},
       {path: "course-completed", component: CourseComponent},
       {path: "exams/upcoming", component: ExamsComponent},
-      {path: "exams/previous", component: ExamsComponent}
+      {path: "exams/previous", component: ExamsComponent},
+      {path: "request-for-course", component: ExamsComponent},
     ], canActivate: [ StudentSpecialGuard]
   },
 ];

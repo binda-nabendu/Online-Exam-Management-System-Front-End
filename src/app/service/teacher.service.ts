@@ -5,6 +5,7 @@ import {regTec} from "../model/regTec";
 import {Course} from "../model/Course";
 import {regStd} from "../model/regStd";
 import {QuestionSummery} from "../model/QuestionSummery";
+import {QuestionScript} from "../model/QuestionScript";
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,8 @@ export class TeacherService {
 
   getMyQuestionList() : Observable<QuestionSummery[]> {
     return this.httpClient.get<QuestionSummery[]>(this.url+"teacher/all-questions" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+  getQuestion(qId: string) : Observable<QuestionScript>{
+    return this.httpClient.get<QuestionScript>(this.url+"teacher/see-questions/"+qId , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }

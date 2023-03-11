@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {TeacherService} from "../../../service/teacher.service";
 import {UserService} from "../../../service/user.service";
 import {Course} from "../../../model/Course";
 import {FormControl, Validators} from "@angular/forms";
 import {QuestionScript} from "../../../model/QuestionScript";
-import {MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {PopupComponent} from "../../admin/popup/popup.component";
+import {AdminService} from "../../../service/admin.service";
 
 @Component({
   selector: 'app-selected-question',
@@ -13,7 +14,7 @@ import {PopupComponent} from "../../admin/popup/popup.component";
   styleUrls: ['./selected-question.component.css']
 })
 export class SelectedQuestionComponent implements OnInit{
-  constructor(private tecService: TeacherService, private userService: UserService) {
+  constructor(private tecService: TeacherService, private userService: UserService, @Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<PopupComponent>) {
 
   }
   courses: Course[] = [];
@@ -83,10 +84,17 @@ export class SelectedQuestionComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
+    // console.log(this.data.userDetails);
+    this.requestForQuestion(this.data.userDetails);
   }
 
   close() {
+    this.ref.close();
+  }
 
+  private requestForQuestion(id: string) {
+    this.tecService.getQuestion(id).subscribe(q=>{
+      this.questions = q;
+    })
   }
 }

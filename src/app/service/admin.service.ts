@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {regStd} from "../model/regStd";
 import {Department} from "../model/Department";
 import {Course} from "../model/Course";
+import {RequestedCourses} from "../model/RequestedCourses";
 
 @Injectable({
   providedIn: 'root'
@@ -61,5 +62,17 @@ export class AdminService {
 
   assingTecToCourse(formData: FormData) {
     return this.httpClient.post(this.url+"admin/course/assign-teacher",formData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  stdReqCrs(): Observable<RequestedCourses[]> {
+    return this.httpClient.get<RequestedCourses[]>(this.url+"admin/requested-courses" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+  approveReqCourse(reqCrs : RequestedCourses) : boolean {
+    this.httpClient.post(this.url+"admin/requested-courses/approve",JSON.stringify(reqCrs), {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+    return true;
+  }
+  deleteReqCourse(reqCrs : RequestedCourses): boolean {
+    this.httpClient.post(this.url+"admin/requested-courses/delete",JSON.stringify(reqCrs), {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+    return true;
   }
 }

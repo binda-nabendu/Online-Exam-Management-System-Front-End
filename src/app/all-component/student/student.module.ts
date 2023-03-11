@@ -8,6 +8,7 @@ import {MatCardModule} from "@angular/material/card";
 import { CourseComponent } from './course/course.component';
 import {MatTableModule} from "@angular/material/table";
 import { ExamsComponent } from './exams/exams.component';
+import { RequestForCourseComponent } from './request-for-course/request-for-course.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ExamsComponent } from './exams/exams.component';
     BoardComponent,
     CourseComponent,
     ExamsComponent,
+    RequestForCourseComponent,
   ],
     imports: [
         CommonModule,

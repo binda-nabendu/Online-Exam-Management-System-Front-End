@@ -19,15 +19,10 @@ export class CourseComponent implements OnInit{
   displayedColumnName: string[] = ['Department Id', 'Course Code', 'Course Name', 'Teacher Id'];
   displayedColumns: string[] = ['deptId', 'courseCode', 'courseName', 'teacherId'];
   dataSource:any;
-  // getCourses(){
-  //   // this.service.Courses().subscribe(course =>{
-  //   //   this.dataSource = course;
-  //   // })
-  // }
   private getCourses(path: string) {
       this.service.Courses(path).subscribe(course =>{
         this.dataSource = course;
-        console.log(path);
+        // console.log(path);
       })
   }
 }

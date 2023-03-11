@@ -16,6 +16,7 @@ import {AssignTeacherToSubjectComponent} from "./assign-teacher-to-subject/assig
 import {MyCoursesComponent} from "../teacher/my-courses/my-courses.component";
 import {QuestionPaperComponent} from "../teacher/question-paper/question-paper.component";
 import {MyQuestionComponent} from "../teacher/my-question/my-question.component";
+import {RequestedCourseByStudentComponent} from "./requested-course-by-student/requested-course-by-student.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
       {path: "my-courses", component: MyCoursesComponent},
       {path: "set-question", component: QuestionPaperComponent},
       {path: "my-questions", component: MyQuestionComponent},
+      {path: "requested-course", component: RequestedCourseByStudentComponent},
     ], canActivate: [AdminSpecialGuard]
   },
 ];
