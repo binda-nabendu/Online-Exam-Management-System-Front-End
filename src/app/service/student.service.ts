@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {regTec} from "../model/regTec";
 import {Course} from "../model/Course";
 import {QuestionSummery} from "../model/QuestionSummery";
+import {User} from "../model/User";
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,14 @@ export class StudentService {
 
   requestForCourses(listOfCourses: string) {
     return this.httpClient.post(this.url+"student/request-for-courses",listOfCourses, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
+  sendForReExaming(examId: number) {
+    return this.httpClient.post(this.url+"student/exams/send-review/"+examId,'', {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+  getUserInfo(id: string) : Observable<User> {
+    return this.httpClient.get<User>(this.url+"student/exams/req-for-info", {
+      headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""}),
+      params: new HttpParams().set('id', id)});
   }
 }

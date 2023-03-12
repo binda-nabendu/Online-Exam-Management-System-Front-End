@@ -15,6 +15,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatInputModule} from "@angular/material/input";
+import { ReExamingScriptComponent } from './re-examing-script/re-examing-script.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {MatInputModule} from "@angular/material/input";
     ExamsComponent,
     RequestForCourseComponent,
     QuestionPaperWithAnsScriptComponent,
+    ReExamingScriptComponent,
   ],
   imports: [
     CommonModule,

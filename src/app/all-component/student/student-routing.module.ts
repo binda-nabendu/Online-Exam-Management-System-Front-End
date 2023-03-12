@@ -9,6 +9,7 @@ import {RequestForCourseComponent} from "./request-for-course/request-for-course
 import {
   QuestionPaperWithAnsScriptComponent
 } from "./question-paper-with-ans-script/question-paper-with-ans-script.component";
+import {ReExamingScriptComponent} from "./re-examing-script/re-examing-script.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,8 @@ const routes: Routes = [
       {path: "exams/previous", component: ExamsComponent},
       {path: "request-for-course", component: RequestForCourseComponent},
       {path: "get-question-paper-with-ans-script", component:QuestionPaperWithAnsScriptComponent},
+      {path: "re-examined", component:ReExamingScriptComponent},
+      {path: "request-ans-script", component:ReExamingScriptComponent},
     ], canActivate: [ StudentSpecialGuard]
   },
 ];
