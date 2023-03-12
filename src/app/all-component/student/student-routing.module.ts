@@ -5,6 +5,10 @@ import {StudentSpecialGuard} from "../../guard/student-special.guard";
 import {BoardComponent} from "./board/board.component";
 import {CourseComponent} from "./course/course.component";
 import {ExamsComponent} from "./exams/exams.component";
+import {RequestForCourseComponent} from "./request-for-course/request-for-course.component";
+import {
+  QuestionPaperWithAnsScriptComponent
+} from "./question-paper-with-ans-script/question-paper-with-ans-script.component";
 
 const routes: Routes = [
   {
@@ -16,7 +20,8 @@ const routes: Routes = [
       {path: "course-completed", component: CourseComponent},
       {path: "exams/upcoming", component: ExamsComponent},
       {path: "exams/previous", component: ExamsComponent},
-      {path: "request-for-course", component: ExamsComponent},
+      {path: "request-for-course", component: RequestForCourseComponent},
+      {path: "get-question-paper-with-ans-script", component:QuestionPaperWithAnsScriptComponent},
     ], canActivate: [ StudentSpecialGuard]
   },
 ];

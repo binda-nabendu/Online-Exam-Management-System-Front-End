@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit{
   checkValidate(userDetails:any){
     if(userDetails.valid){
       localStorage.clear();
-      this.service.proceedLogin(userDetails.value).subscribe(item => {
-        this.respond = item;
+      this.service.proceedLogin(userDetails.value).subscribe(response => {
+        this.respond = response;
 
           if(this.respond != null){
 
@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit{
             }else{
               alertify.error("Fail to login")
             }
+      }, error=>{
+        alertify.error("Fail to login");
       });
     }
     else

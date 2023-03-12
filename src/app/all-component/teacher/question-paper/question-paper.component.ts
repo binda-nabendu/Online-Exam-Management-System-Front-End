@@ -31,13 +31,13 @@ export class QuestionPaperComponent {
   session = new FormControl({value:'Auto Generated', disabled: true}, [Validators.required]);
   startDateTime = new FormControl('2023-07-18 20:22:30',[Validators.required]);
   endDateTime = new FormControl('',[Validators.required]);
-  questions: IndividualQuestion[] = [];
   floatLabelControl = new FormControl('', [Validators.required]);
   allQuestionReceiver: FormControl[];
   allOptionTypeReceiver: FormControl[];
   allOptionReceiver: FormControl[][];
   allOptionStateReceiver: FormControl[][];
   markReceiver: FormControl[];
+  questions: IndividualQuestion[] = [];
 
   ngOnInit(): void {
     this.getAllCourse();
@@ -82,13 +82,17 @@ export class QuestionPaperComponent {
   }
 
   SubmitQuestion() {
-    for (let t in this.allQuestionReceiver){
-      if(this.allQuestionReceiver[t].valid && this.markReceiver[t].value > 0 && this.allOptionTypeReceiver[t].valid) {
-        this.questions[t].question = this.allOptionTypeReceiver[t].value + this.allQuestionReceiver[t].value;
-        this.questions[t].mark = this.markReceiver[t].value;
-        for(let o in this.allOptionReceiver[t]){
-          if(this.allOptionReceiver[t][o].valid){
-            this.questions[t].allOptions[o].optionValue = this.allOptionReceiver[t][o].value;
+    for (let i in this.allQuestionReceiver){
+      if(this.allQuestionReceiver[i].valid && this.markReceiver[i].value > 0 && this.allOptionTypeReceiver[i].valid) {
+        this.questions[i].question = this.allOptionTypeReceiver[i].value + this.allQuestionReceiver[i].value;
+        this.questions[i].mark = this.markReceiver[i].value;
+        if(this.allOptionTypeReceiver[i].value == '▓'){
+          this.questions[i].allOptions.push({optionNo: 1, optionValue:'', ansStatus: true});
+        }
+        for(let j in this.allOptionReceiver[i]){
+          if(this.allOptionReceiver[i][j].valid && this.allOptionStateReceiver[i][j].valid){
+            this.questions[i].allOptions[j].optionValue = this.allOptionReceiver[i][j].value;
+            this.questions[i].allOptions[j].ansStatus = this.allOptionStateReceiver[i][j].value;
           }else{
             alertify.error("Please fill all option and their state");
             return;
@@ -100,6 +104,7 @@ export class QuestionPaperComponent {
       }
     }
     let qs: QuestionScript = {
+      examId: 0,
       teacherId: this.teacherId,
       courseCode: this.selectedCourse.courseCode,
       deptId:this.selectedCourse.deptId,
@@ -118,7 +123,7 @@ export class QuestionPaperComponent {
     }
     alertify.confirm("Submit Question", "Do you want to submit this question ?", ()=>{
       const jsonData = JSON.stringify(qs);
-      console.log(jsonData);
+      console.log(qs);
 
       // this.tecService.setQuestion(jsonData).subscribe(t=>{
       //   console.log(t);

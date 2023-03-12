@@ -30,4 +30,8 @@ export class StudentService {
   ExamHistory(path: string) : Observable<QuestionSummery[]> {
     return this.httpClient.get<QuestionSummery[]>(this.url+"student/"+path, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  requestForCourses(listOfCourses: string) {
+    return this.httpClient.post(this.url+"student/request-for-courses",listOfCourses, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }

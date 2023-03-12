@@ -1,6 +1,7 @@
 import {IndividualQuestion} from "./IndividualQuestion";
 
 export interface QuestionScript{
+  examId: number;
   teacherId: string;
   courseCode: string;
   deptId: string;

@@ -22,6 +22,7 @@ export class SelectedQuestionComponent implements OnInit{
 
 
   questions: QuestionScript = {
+    examId: 0,
     teacherId: "6118194062",
     courseCode: "CSE315",
     deptId:"2019",

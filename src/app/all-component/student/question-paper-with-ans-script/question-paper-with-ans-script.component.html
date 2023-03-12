@@ -1,0 +1,56 @@
+<div class='question'>
+  <mat-card-content class='question-paper'>
+    <h3 class='college-name'>{{collegeName}}</h3>
+    <div class='header'>
+      <div class='left'>
+        <h1 class='title'>Exam Id</h1>
+        <h1 class='title'>Percent Value: {{questions.percentageValue}}</h1>
+        <h1 class='title'>Start: {{questions.startingDateTime}}</h1>
+      </div>
+      <div class='middle'>
+        <h3>Department Id: {{questions.deptId}}</h3>
+        <h3>Course Code: {{questions.courseCode}}</h3>
+        <h3>Teacher ID: {{questions.teacherId}}</h3>
+      </div>
+      <div class='right'>
+        <h1 class='title'>Mark: {{questions.total}}</h1>
+        <h1 class='title'>Session: {{questions.courseSession}}</h1>
+        <h1 class='title'>End: {{questions.endingDateTime}}</h1>
+      </div>
+    </div>
+    <br>
+    <div class='q-body'>
+      <div class='individual-q' *ngFor='let q of questions.allIndividualQuestions'>
+
+        <form class='example-form'>
+          <div class='i-q-title'>
+            <h3 class='q-no'>Q-{{q.questionNo}}</h3>
+            <h3 class='q-title'>{{q.question.slice(1)}}</h3>
+            <h3 class='q-mark'>{{q.mark}}</h3>
+          </div>
+          <div class = 'options-all-types'>
+            <div *ngIf="q.question.charAt(0) == '░'">
+              <mat-radio-group [formControl]="allAnsReceiver[q.questionNo - 1][0]">
+                <mat-radio-button *ngFor="let op of q.allOptions" value="{{op.optionNo}}">{{op.optionValue}}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div *ngIf="q.question.charAt(0) == '▒'" class="multiple-select">
+              <mat-checkbox *ngFor="let op of q.allOptions" [formControl]="allAnsReceiver[q.questionNo - 1][op.optionNo - 1]">{{op.optionValue}}</mat-checkbox>
+            </div>
+            <div *ngIf="q.question.charAt(0) == '▓'" class="text-box">
+              <mat-form-field appearance="fill">
+                <mat-label>Textarea</mat-label>
+                <textarea matInput  [formControl] = "allAnsReceiver[q.questionNo - 1][0]"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <br>
+    <div class='submit-pane'>
+      <button class='submit-question' (click)='submit()'>Submit</button>
+    </div>
+  </mat-card-content>
+</div>

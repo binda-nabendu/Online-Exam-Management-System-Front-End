@@ -14,7 +14,7 @@ export class AdminDashboardComponent implements OnInit{
   constructor(private router: Router, private service: UserService) {
   }
   ngOnInit(): void {
-    this.username = "Acharya Aryabhata";
+    this.username = 'Admin Id: '+this.service.getId();
     this.router.navigate(['admin/admin-dashboard/board']);
   }
   username:any;
