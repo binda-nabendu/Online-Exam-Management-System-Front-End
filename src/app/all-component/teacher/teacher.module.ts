@@ -17,6 +17,8 @@ import { QuestionPaperComponent } from './question-paper/question-paper.componen
 import { MyQuestionComponent } from './my-question/my-question.component';
 import { SelectedQuestionComponent } from './selected-question/selected-question.component';
 import { ExamineAnsScriptComponent } from './examine-ans-script/examine-ans-script.component';
+import { ExaminSelectScriptComponent } from './examin-select-script/examin-select-script.component';
+import { AssignGradeComponent } from './assign-grade/assign-grade.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { ExamineAnsScriptComponent } from './examine-ans-script/examine-ans-scri
     MyQuestionComponent,
     SelectedQuestionComponent,
     ExamineAnsScriptComponent,
+    ExaminSelectScriptComponent,
+    AssignGradeComponent,
   ],
     imports: [
         CommonModule,

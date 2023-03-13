@@ -6,6 +6,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {regStd} from "../../../model/regStd";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../service/user.service";
+import {SelectedQuestionComponent} from "../selected-question/selected-question.component";
+import {ExaminSelectScriptComponent} from "../examin-select-script/examin-select-script.component";
+import {QuestionScript} from "../../../model/QuestionScript";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-examine-ans-script',
@@ -13,7 +17,7 @@ import {UserService} from "../../../service/user.service";
   styleUrls: ['./examine-ans-script.component.css']
 })
 export class ExamineAnsScriptComponent  implements OnInit{
-  constructor(private userService: UserService,private tecService: TeacherService, private router: Router, private route: ActivatedRoute) {
+  constructor(private userService: UserService,private tecService: TeacherService, private router: Router, private route: ActivatedRoute,  private dialog: MatDialog) {
     this.link = 'waiting-for-examining-question-list';
     this.btnNm = '';
   }
@@ -35,6 +39,7 @@ export class ExamineAnsScriptComponent  implements OnInit{
       this.getStdList();
     }
   }
+  questionPaper: any;
   link : string;
   btnNm: string;
   displayedColumnName: string[] = [];
@@ -54,7 +59,7 @@ export class ExamineAnsScriptComponent  implements OnInit{
     crs: new FormControl("", Validators.required),
   })
 
-  FunctionUpdate(id: String) {
+  FunctionUpdate(element: any) {
     let frontLink : string = '';
     if(this.userService.getRole()=='TEACHER'){
       frontLink = 'teacher/teacher-dashboard/';
@@ -62,14 +67,28 @@ export class ExamineAnsScriptComponent  implements OnInit{
       frontLink = 'admin/admin-dashboard/';
     }
     if(this.link == 'waiting-for-examining-question-list'){
-      this.router.navigate([frontLink+'student-list-of-that-exam/'+id]);
+      this.router.navigate([frontLink+'student-list-of-that-exam/'+element.examId]);
     }else if(this.link == 'student-list-of-that-exam'){
-
+      // console.log(this.questionPaper);
+      this.dialog.open(ExaminSelectScriptComponent,{
+        width: '80%',
+        height: '80%',
+        exitAnimationDuration: '500ms',
+        enterAnimationDuration:'500ms',
+        data:{
+          userDetails: {examId: this.examId, stdId: element.nid , question: this.questionPaper},
+        }
+      })
     }
   }
-
+  examId:any;
   private getStdList() {
     if(this.route.snapshot.paramMap.get('examId') != null){
+      this.examId = this.route.snapshot.paramMap.get('examId');
+
+      this.tecService.getQuestion(this.examId).subscribe( qp =>{
+        this.questionPaper = qp;
+      });
       //@ts-ignore
       this.tecService.getStdList(this.route.snapshot.paramMap.get('examId')).subscribe(std =>{
         this.dataSource = std;
@@ -77,7 +96,6 @@ export class ExamineAnsScriptComponent  implements OnInit{
           this.isemp = false;
 
         }else this.isemp = true;
-        console.log(std);
       });
     }
   }

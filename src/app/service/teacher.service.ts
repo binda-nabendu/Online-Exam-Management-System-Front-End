@@ -6,6 +6,8 @@ import {Course} from "../model/Course";
 import {regStd} from "../model/regStd";
 import {QuestionSummery} from "../model/QuestionSummery";
 import {QuestionScript} from "../model/QuestionScript";
+import {AnswerScript} from "../model/AnswerScript";
+import {StudentMark} from "../model/StudentMark";
 
 @Injectable({
   providedIn: 'root'
@@ -54,4 +56,11 @@ export class TeacherService {
     return this.httpClient.get<regStd[]>(this.url+"teacher/all-pending-result/student-list/"+examId , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
+  reqFroAnsScript(examId : number, stdId : string): Observable<AnswerScript>{
+  return this.httpClient.get<AnswerScript>(this.url+"teacher/get-ans-script/"+examId+"/"+stdId , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+}
+
+  sendMark(stdMark: StudentMark) {
+    return this.httpClient.post(this.url+"teacher/assign-mark-for-ans-script",JSON.stringify(stdMark), {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
 }
