@@ -8,6 +8,7 @@ import {QuestionScript} from "../../../model/QuestionScript";
 import {FormControl, Validators} from "@angular/forms";
 import {StudentService} from "../../../service/student.service";
 import {AnswerScript} from "../../../model/AnswerScript";
+import alertify from "alertifyjs";
 
 @Component({
   selector: 'app-question-paper-with-ans-script',
@@ -120,37 +121,45 @@ export class QuestionPaperWithAnsScriptComponent implements OnInit{
   }
 
   submit() {
-    let ans: AnswerScript = {
-      examId: this.questions.examId,
-      stdId: this.stdId,
-      allQuestionAnswer: []
-    }
-    for (let i in this.questions.allIndividualQuestions) {
-      if (this.questions.allIndividualQuestions[i].allOptions.length > 0 && this.questions.allIndividualQuestions[i].question.charAt(0) != '░') {
-        for (let j in this.questions.allIndividualQuestions[i].allOptions) {
-          if (this.allAnsReceiver[i][j].value == true) {
-            ans.allQuestionAnswer.push({
-              questionNo: this.questions.allIndividualQuestions[i].questionNo,
-              optionNo: this.questions.allIndividualQuestions[i].allOptions[j].optionNo,
-              value: ''
-            });
-          }
+    alertify.confirm("Re Examine Request", "did you really want to re examine this script?", () => {
 
-        }
-      } else if (this.questions.allIndividualQuestions[i].question.charAt(0) == '░') {
-        ans.allQuestionAnswer.push({
-          questionNo: this.questions.allIndividualQuestions[i].questionNo,
-          optionNo: this.allAnsReceiver[i][0].value,
-          value: ''
-        })
-      } else {
-        ans.allQuestionAnswer.push({
-          questionNo: this.questions.allIndividualQuestions[i].questionNo,
-          optionNo: 1,
-          value: this.allAnsReceiver[i][0].value
-        })
+
+      let ans: AnswerScript = {
+        examId: this.questions.examId,
+        stdId: this.stdId,
+        allQuestionAnswer: []
       }
-    }
-    console.log(ans);
+      for (let i in this.questions.allIndividualQuestions) {
+        if (this.questions.allIndividualQuestions[i].allOptions.length > 0 && this.questions.allIndividualQuestions[i].question.charAt(0) != '░') {
+          for (let j in this.questions.allIndividualQuestions[i].allOptions) {
+            if (this.allAnsReceiver[i][j].value == true) {
+              ans.allQuestionAnswer.push({
+                questionNo: this.questions.allIndividualQuestions[i].questionNo,
+                optionNo: this.questions.allIndividualQuestions[i].allOptions[j].optionNo,
+                value: ''
+              });
+            }
+
+          }
+        } else if (this.questions.allIndividualQuestions[i].question.charAt(0) == '░') {
+          ans.allQuestionAnswer.push({
+            questionNo: this.questions.allIndividualQuestions[i].questionNo,
+            optionNo: this.allAnsReceiver[i][0].value,
+            value: ''
+          })
+        } else {
+          ans.allQuestionAnswer.push({
+            questionNo: this.questions.allIndividualQuestions[i].questionNo,
+            optionNo: 1,
+            value: this.allAnsReceiver[i][0].value
+          })
+        }
+      }
+      console.log(ans);
+      // then we redirect it to dashboard
+
+
+    }, function () {
+    });
   }
 }

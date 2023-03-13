@@ -51,7 +51,7 @@ export class ReExamingScriptComponent   implements OnInit{
         this.stdService.sendForReExaming(element.examId);
         alertify.success("Re Examine Request Successfully Completed");
       }, function () {
-      })
+      });
     }else if(this.path == 'request-ans-script') {
       this.stdService.getUserInfo(element.teacherId).subscribe(usr =>{
         const emailTo = usr.email;

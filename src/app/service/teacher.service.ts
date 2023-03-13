@@ -43,10 +43,15 @@ export class TeacherService {
     return this.httpClient.post(this.url+"teacher/create-exams/question",jsonData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
-  getMyQuestionList() : Observable<QuestionSummery[]> {
-    return this.httpClient.get<QuestionSummery[]>(this.url+"teacher/all-questions" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  getQuestionHeadDependOnLink(link: String) : Observable<QuestionSummery[]> {
+    return this.httpClient.get<QuestionSummery[]>(this.url+link , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
   getQuestion(qId: string) : Observable<QuestionScript>{
     return this.httpClient.get<QuestionScript>(this.url+"teacher/see-questions/"+qId , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
+
+  getStdList(examId: string): Observable<regStd[]>{
+    return this.httpClient.get<regStd[]>(this.url+"teacher/all-pending-result/student-list/"+examId , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
+  }
+
 }

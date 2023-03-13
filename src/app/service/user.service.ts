@@ -23,7 +23,7 @@ export class UserService {
   IsLoggedIn(){
     return localStorage.getItem('OEMSToken') != null;
   }
-  GetRole()  {
+  getRole()  {
 
     // this will need for fix buffer error
     (window as any).global = window;

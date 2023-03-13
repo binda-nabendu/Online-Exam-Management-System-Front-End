@@ -10,6 +10,7 @@ import {AllCoursesComponent} from "./all-courses/all-courses.component";
 import {MyCoursesComponent} from "./my-courses/my-courses.component";
 import {QuestionPaperComponent} from "./question-paper/question-paper.component";
 import {MyQuestionComponent} from "./my-question/my-question.component";
+import {ExamineAnsScriptComponent} from "./examine-ans-script/examine-ans-script.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,8 @@ const routes: Routes = [
       {path: "my-courses", component: MyCoursesComponent},
       {path: "set-question", component: QuestionPaperComponent},
       {path: "my-questions", component: MyQuestionComponent},
+      {path: "waiting-for-examining-question-list", component: ExamineAnsScriptComponent},
+      {path: "student-list-of-that-exam/:examId", component: ExamineAnsScriptComponent},
     ], canActivate: [TeacherSpecialGuard]
   }
 ];

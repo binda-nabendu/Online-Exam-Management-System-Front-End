@@ -17,12 +17,12 @@ export class PublicDashboardComponent implements OnInit{
   constructor(private service: UserService, private router: Router) {
   }
   ngOnInit(): void {
-    if(this.service.GetRole() != 'public') this.isLogin = true;
-    if (this.service.GetRole() == 'STUDENT')
+    if(this.service.getRole() != 'public') this.isLogin = true;
+    if (this.service.getRole() == 'STUDENT')
       this.router.navigate(["student/student-dashboard"]);
-    else if (this.service.GetRole() == 'TEACHER')
+    else if (this.service.getRole() == 'TEACHER')
       this.router.navigate(["teacher/teacher-dashboard"]);
-    else if (this.service.GetRole() == 'ADMIN')
+    else if (this.service.getRole() == 'ADMIN')
       this.router.navigate(["admin/admin-dashboard"]);
   }
 }

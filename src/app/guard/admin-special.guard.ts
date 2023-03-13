@@ -13,7 +13,7 @@ export class AdminSpecialGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // return true;  // when api active return this line
-    if(this.service.GetRole() == 'ADMIN'){
+    if(this.service.getRole() == 'ADMIN'){
       return true;
     }else{
       return false;

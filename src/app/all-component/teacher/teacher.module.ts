@@ -16,6 +16,7 @@ import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { QuestionPaperComponent } from './question-paper/question-paper.component';
 import { MyQuestionComponent } from './my-question/my-question.component';
 import { SelectedQuestionComponent } from './selected-question/selected-question.component';
+import { ExamineAnsScriptComponent } from './examine-ans-script/examine-ans-script.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SelectedQuestionComponent } from './selected-question/selected-question
     MyCoursesComponent,
     QuestionPaperComponent,
     MyQuestionComponent,
-    SelectedQuestionComponent
+    SelectedQuestionComponent,
+    ExamineAnsScriptComponent,
   ],
     imports: [
         CommonModule,

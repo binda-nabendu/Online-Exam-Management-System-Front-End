@@ -13,7 +13,7 @@ export class TeacherSpecialGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // return true;  // when api active return this line
-    if(this.service.GetRole() == 'TEACHER'){
+    if(this.service.getRole() == 'TEACHER'){
       return true;
     }else{
       return false;
