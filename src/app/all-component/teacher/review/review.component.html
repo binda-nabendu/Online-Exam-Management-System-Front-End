@@ -9,7 +9,7 @@
     <ng-container *ngIf="last" matColumnDef="{{disCol}}">
       <th mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-raised-button color="primary" (click)="FunctionUpdate(element)">See Students</button>
+        <button mat-raised-button color="primary" (click)="openScript(element)">See Students</button>
       </td>
     </ng-container>
 

@@ -19,6 +19,8 @@ import { SelectedQuestionComponent } from './selected-question/selected-question
 import { ExamineAnsScriptComponent } from './examine-ans-script/examine-ans-script.component';
 import { ExaminSelectScriptComponent } from './examin-select-script/examin-select-script.component';
 import { AssignGradeComponent } from './assign-grade/assign-grade.component';
+import { AssignCgpaComponent } from './assign-cgpa/assign-cgpa.component';
+import { ReviewComponent } from './review/review.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { AssignGradeComponent } from './assign-grade/assign-grade.component';
     ExamineAnsScriptComponent,
     ExaminSelectScriptComponent,
     AssignGradeComponent,
+    AssignCgpaComponent,
+    ReviewComponent,
   ],
     imports: [
         CommonModule,

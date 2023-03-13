@@ -11,6 +11,9 @@ import {MyCoursesComponent} from "./my-courses/my-courses.component";
 import {QuestionPaperComponent} from "./question-paper/question-paper.component";
 import {MyQuestionComponent} from "./my-question/my-question.component";
 import {ExamineAnsScriptComponent} from "./examine-ans-script/examine-ans-script.component";
+import {AssignGradeComponent} from "./assign-grade/assign-grade.component";
+import {AssignCgpaComponent} from "./assign-cgpa/assign-cgpa.component";
+import {ReviewComponent} from "./review/review.component";
 
 const routes: Routes = [
   {
@@ -26,6 +29,9 @@ const routes: Routes = [
       {path: "my-questions", component: MyQuestionComponent},
       {path: "waiting-for-examining-question-list", component: ExamineAnsScriptComponent},
       {path: "student-list-of-that-exam/:examId", component: ExamineAnsScriptComponent},
+      {path: "assign-grade-course", component: AssignGradeComponent},
+      {path: "assign-cgpa/:courseCode", component: AssignCgpaComponent},
+      {path: "review", component: ReviewComponent},
     ], canActivate: [TeacherSpecialGuard]
   }
 ];

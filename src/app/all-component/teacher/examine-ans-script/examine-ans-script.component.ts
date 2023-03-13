@@ -1,15 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {TeacherService} from "../../../service/teacher.service";
-import {AdminService} from "../../../service/admin.service";
 import {MatDialog} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {regStd} from "../../../model/regStd";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../service/user.service";
-import {SelectedQuestionComponent} from "../selected-question/selected-question.component";
 import {ExaminSelectScriptComponent} from "../examin-select-script/examin-select-script.component";
-import {QuestionScript} from "../../../model/QuestionScript";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-examine-ans-script',

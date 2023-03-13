@@ -93,7 +93,7 @@ export class SelectedQuestionComponent implements OnInit{
     this.ref.close();
   }
 
-  private requestForQuestion(id: string) {
+  private requestForQuestion(id: number) {
     this.tecService.getQuestion(id).subscribe(q=>{
       this.questions = q;
     })

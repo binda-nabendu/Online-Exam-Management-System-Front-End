@@ -59,12 +59,12 @@
             <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li4 = !li4"><span class='material-icons icon-style'>verified</span>Result</a>
               <ul class="{{li4 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
                 <li><a routerLink='waiting-for-examining-question-list' fragment='not-assign'><span class='material-icons icon-style sub-icon'>description</span>Examine AnswerScript</a></li>
-                <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>check_circle</span>Assign Grade</a></li>
+                <li><a routerLink='assign-grade-course' fragment='not-assign'><span class='material-icons icon-style sub-icon'>check_circle</span>Assign Grade</a></li>
               </ul>
             </li>
           </ul>
           <ul class= "left-menu">
-            <li ><a><span class="material-icons icon-style">add_moderator</span>Review</a></li>
+            <li ><a routerLink="review"><span class="material-icons icon-style">add_moderator</span>Review</a></li>
           </ul>
 
 
