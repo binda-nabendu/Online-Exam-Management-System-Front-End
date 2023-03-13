@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import {HostListener, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {regStd} from "../model/regStd";
 import {regTec} from "../model/regTec";
 import {regPerson} from "../model/regPerson";
+import {Observable} from "rxjs";
+import {Department} from "../model/Department";
 
 
 @Injectable({
@@ -21,7 +23,7 @@ export class UserService {
   IsLoggedIn(){
     return localStorage.getItem('OEMSToken') != null;
   }
-  GetRole()  {
+  getRole()  {
 
     // this will need for fix buffer error
     (window as any).global = window;
@@ -40,8 +42,28 @@ export class UserService {
       return  allRoles.get('authority');
     }else return "public";
   }
+  getId(): string {
+
+    // this will need for fix buffer error
+    (window as any).global = window;
+    // @ts-ignore
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+    //____________________*********___________________
+
+
+    let token = localStorage.getItem('OEMSToken');
+    if(token != null){
+      const getIdFromPayload: string = JSON.parse( atob(token.split('.')[1])).sub;
+      return   getIdFromPayload;
+    }
+    else return '';
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  onBeforeUnload(event: any) {
+    localStorage.removeItem('OEMSToken');
+  }
   LoggedOut(){
-    localStorage.clear();
+    localStorage.removeItem('OEMSToken');
   }
   buildFormDataComn(person: regPerson): FormData{
     let formData: FormData = new FormData();
@@ -76,4 +98,8 @@ export class UserService {
   getFaq(){
     return this.httpClient.get(this.url+"public/faq");
   }
+  getAvailableDept(): Observable<Department[]>{
+    return this.httpClient.get<Department[]>(this.url+"public/get-available-dept");
+  }
+
 }

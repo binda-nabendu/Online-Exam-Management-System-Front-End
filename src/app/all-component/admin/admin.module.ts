@@ -11,6 +11,16 @@ import { PresentTeacherComponent } from './present-teacher/present-teacher.compo
 import {MatTableModule} from "@angular/material/table";
 import { PendingStudentComponent } from './pending-student/pending-student.component';
 import { PopupComponent } from './popup/popup.component';
+import { PendingTeacherComponent } from './pending-teacher/pending-teacher.component';
+import { AddDepartmentComponent } from './add-department/add-department.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MaterialModule} from "../../../Material-Module";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { ChangeSemesterComponent } from './change-semester/change-semester.component';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { AssignTeacherToSubjectComponent } from './assign-teacher-to-subject/assign-teacher-to-subject.component';
+import { RequestedCourseByStudentComponent } from './requested-course-by-student/requested-course-by-student.component';
 
 
 @NgModule({
@@ -19,7 +29,13 @@ import { PopupComponent } from './popup/popup.component';
     BoardComponent,
     PresentTeacherComponent,
     PendingStudentComponent,
-    PopupComponent
+    PopupComponent,
+    PendingTeacherComponent,
+    AddDepartmentComponent,
+    ChangeSemesterComponent,
+    AddCourseComponent,
+    AssignTeacherToSubjectComponent,
+    RequestedCourseByStudentComponent
   ],
     imports: [
         CommonModule,
@@ -27,7 +43,12 @@ import { PopupComponent } from './popup/popup.component';
         MatButtonModule,
         MatIconModule,
         MatCardModule,
-        MatTableModule
+        MatTableModule,
+        MatInputModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        FormsModule
     ]
 })
 export class AdminModule { }

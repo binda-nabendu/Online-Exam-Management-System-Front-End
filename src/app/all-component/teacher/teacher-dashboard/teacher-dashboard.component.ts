@@ -14,7 +14,7 @@ export class TeacherDashboardComponent implements OnInit{
   constructor(private router: Router, private service: UserService) {
   }
   ngOnInit(): void {
-    this.username = "Acharjha Chanakkaya";
+    this.username = 'Teacher Id: '+this.service.getId();
     this.router.navigate(['teacher/teacher-dashboard/board']);
   }
   username:any;

@@ -56,7 +56,6 @@ export class RegistrationComponent implements OnInit{
   registerStudent() {
     let data: any = this.regStdForm.getRawValue().dob;
     this.regStdForm.value.dob = moment(data).format('YYYY-MM-DD');
-    console.log(this.regStdForm.value);
     let student: regStd = {
       nid: this.regStdForm.value.nid,
       userName: this.regStdForm.value.userName,
@@ -79,7 +78,7 @@ export class RegistrationComponent implements OnInit{
       alertify.success("Registration Successfully")
     }
     else
-      alertify.era("Failed try again")
+      alertify.error("Failed try again")
   }
 
   backLogin(){

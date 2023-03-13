@@ -1,0 +1,19 @@
+<div class = "new-semester">
+  <mat-card-content class="semester">
+    <p class = "main-title">Shift To The New Semester</p>
+    <form class="add-semester" [formGroup] = "addSemester" (ngSubmit)="createNewSemester()">
+      <mat-form-field class="deptId example-full-width">
+        <mat-label class="title">NID</mat-label>
+        <input matInput placeholder="Your NID No" formControlName = "nid">
+      </mat-form-field>
+      <mat-form-field class="deptName example-full-width">
+        <mat-label class="title">Password</mat-label>
+        <input matInput placeholder="Your Password" type = password formControlName = "pass">
+      </mat-form-field>
+      <button class = "submitDept" type="submit">Welcome New Semester</button>
+    </form>
+  </mat-card-content>
+  <br>
+  <h3>***Note: Very Carefully deal with this section If you Shift to new Semester You Cannot back to Previous Semester.</h3>
+</div>
+

@@ -23,22 +23,24 @@ export class LoginComponent implements OnInit{
   checkValidate(userDetails:any){
     if(userDetails.valid){
       localStorage.clear();
-      this.service.proceedLogin(userDetails.value).subscribe(item => {
-        this.respond = item;
+      this.service.proceedLogin(userDetails.value).subscribe(response => {
+        this.respond = response;
 
           if(this.respond != null){
 
             localStorage.setItem('OEMSToken',this.respond.jwt);
             // console.log(this.service.GetRole());
-            if (this.service.GetRole() == 'STUDENT')
+            if (this.service.getRole() == 'STUDENT')
               this.router.navigate(["student/student-dashboard"]);
-            else if (this.service.GetRole() == 'TEACHER')
+            else if (this.service.getRole() == 'TEACHER')
               this.router.navigate(["teacher/teacher-dashboard"]);
-            else if (this.service.GetRole() == 'ADMIN')
+            else if (this.service.getRole() == 'ADMIN')
               this.router.navigate(["admin/admin-dashboard"]);
             }else{
               alertify.error("Fail to login")
             }
+      }, error=>{
+        alertify.error("Fail to login");
       });
     }
     else

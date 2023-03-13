@@ -41,7 +41,7 @@ export class MyStudentComponent implements OnInit{
       console.log(this.updateForm.value.crs);
       // @ts-ignore
       this.getAllStudents(this.updateForm.value.crs)
-      if(this.dataSource.length <= 0){
+      if(this.dataSource == null){
         this.isemp = false;
 
       }else this.isemp = true;

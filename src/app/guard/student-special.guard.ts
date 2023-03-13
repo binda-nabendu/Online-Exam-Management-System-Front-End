@@ -13,7 +13,7 @@ export class StudentSpecialGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // return true;  // when api active return this line
-    if(this.service.GetRole() == 'STUDENT'){
+    if(this.service.getRole() == 'STUDENT'){
       return true;
     }else{
       return false;

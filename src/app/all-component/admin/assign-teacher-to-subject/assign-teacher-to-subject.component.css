@@ -1,0 +1,51 @@
+.assing-course{
+  background-image: url(../../../../assets/images/choosing-bg.jpg);
+  padding: 10px;
+  height: 100vh;
+}
+.assing-course .course{
+  background-color: var(--themcolor);
+  margin: 0 auto;
+  width: 50%;
+  opacity: 90%;
+  padding: 10px;
+  border: 1px solid var(--them-color-lite);
+}
+.assing-course .course .main-title{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--them-color-lite);
+  font-weight: 600;
+  width: 100%;
+}
+.option{
+  border-bottom: 1px solid var(--them-color-lite);
+}
+.assing-course .course .add-course{
+
+}
+
+.assing-course .course .add-course .deptId{
+  width: 100%;
+}
+.assing-course .course .add-course .deptName{
+  width: 100%;
+}
+mat-form-field{
+  width: 100% !important;
+}
+.assing-course .course .add-course .title{
+  color: var(--themcolor);
+
+}
+.assign-course{
+  padding: 8px;
+  text-transform: uppercase;
+  border: none;
+  background: #e83e8c;
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+}
+

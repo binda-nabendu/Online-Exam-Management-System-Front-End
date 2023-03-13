@@ -9,8 +9,18 @@ import { AllTeacherComponent } from './all-teacher/all-teacher.component';
 import {MatTableModule} from "@angular/material/table";
 import {MaterialModule} from "../../../Material-Module";
 import { MyStudentComponent } from './my-student/my-student.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AllStudentComponent } from './all-student/all-student.component';
+import { AllCoursesComponent } from './all-courses/all-courses.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { QuestionPaperComponent } from './question-paper/question-paper.component';
+import { MyQuestionComponent } from './my-question/my-question.component';
+import { SelectedQuestionComponent } from './selected-question/selected-question.component';
+import { ExamineAnsScriptComponent } from './examine-ans-script/examine-ans-script.component';
+import { ExaminSelectScriptComponent } from './examin-select-script/examin-select-script.component';
+import { AssignGradeComponent } from './assign-grade/assign-grade.component';
+import { AssignCgpaComponent } from './assign-cgpa/assign-cgpa.component';
+import { ReviewComponent } from './review/review.component';
 
 
 @NgModule({
@@ -19,7 +29,17 @@ import { AllStudentComponent } from './all-student/all-student.component';
     BoardComponent,
     AllTeacherComponent,
     MyStudentComponent,
-    AllStudentComponent
+    AllStudentComponent,
+    AllCoursesComponent,
+    MyCoursesComponent,
+    QuestionPaperComponent,
+    MyQuestionComponent,
+    SelectedQuestionComponent,
+    ExamineAnsScriptComponent,
+    ExaminSelectScriptComponent,
+    AssignGradeComponent,
+    AssignCgpaComponent,
+    ReviewComponent,
   ],
     imports: [
         CommonModule,
@@ -27,7 +47,8 @@ import { AllStudentComponent } from './all-student/all-student.component';
         MatCardModule,
         MatTableModule,
         MaterialModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class TeacherModule { }

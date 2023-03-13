@@ -1,0 +1,63 @@
+<div class='question'>
+  <mat-card-content class='question-paper'>
+    <h3 class='college-name'>{{collegeName}}</h3>
+    <div class='header'>
+      <div class='left'>
+        <h1 class='title'>Exam Id</h1>
+        <h1 class='title'>Percent Value: {{questions.percentageValue}}</h1>
+        <h1 class='title'>Start: {{questions.startingDateTime}}</h1>
+      </div>
+      <div class='middle'>
+        <h3>Department Id: {{questions.deptId}}</h3>
+        <h3>Course Code: {{questions.courseCode}}</h3>
+        <h3>Teacher ID: {{questions.teacherId}}</h3>
+      </div>
+      <div class='right'>
+        <h1 class='title'>Mark: {{questions.total}}</h1>
+        <h1 class='title'>Session: {{questions.courseSession}}</h1>
+        <h1 class='title'>End: {{questions.endingDateTime}}</h1>
+      </div>
+    </div>
+    <br>
+    <div class='q-body'>
+      <div class='individual-q' *ngFor='let q of questions.allIndividualQuestions'>
+
+        <form class='example-form'>
+          <div class='i-q-title'>
+            <h3 class='q-no'>Q-{{q.questionNo}}</h3>
+            <h3 class='q-title'>{{q.question}}</h3>
+            <h3 class='q-mark'>{{q.mark}}</h3>
+          </div>
+          <div class='option-type'>
+            <h3>Option Type: </h3>
+          </div>
+          <div class='i-q-option' *ngFor='let op of q.allOptions'>
+            <div class='option-p'>
+              <h1 class='op-id'>({{op.optionNo}})  {{op.optionValue}}</h1>
+            </div>
+            <div class="option-s">
+              <h3 class='op-velidity'>velidity: {{op.ansStatus}}</h3>
+            </div>
+          </div>
+          <h2>Student Answer</h2>
+          <div class='i-q-option' *ngFor='let op of answerScript.allQuestionAnswer'>
+            <h3 class="std-select" *ngIf="op.questionNo == q.questionNo">Student Select: {{op.optionNo}} </h3>
+            <h3 *ngIf="op.questionNo == q.questionNo && op.value != null">Ans: {{op.value}}</h3>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <br>
+    <div class='submit-pane'>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Assign Mark</mat-label>
+          <input matInput placeholder="Ex. 5" [formControl]="mark" >
+        </mat-form-field>
+      </form>
+      <button class='btn' (click)='submit()'>Submit Mark</button>
+      <button class='btn' (click)='close()'>close</button>
+    </div>
+  </mat-card-content>
+</div>

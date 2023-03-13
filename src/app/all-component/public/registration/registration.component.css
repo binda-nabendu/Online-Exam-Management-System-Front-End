@@ -49,6 +49,9 @@ mat-radio-group{
 .signup{
   width: 99%;
 }
+a{
+  cursor: pointer;
+}
 
 
 /*::ng-deep mat-radio-group mat-radio-button .radio_button {*/

@@ -1,0 +1,117 @@
+.question *{
+  margin: 0;
+}
+.question{
+  background-image: url(../../../../assets/images/choosing-bg.jpg);
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.college-name{
+  color: var(--them-color-lite);
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.question-paper{
+  background-color: var(--themcolor);
+  margin: 0 auto;
+  width: fit-content;
+  opacity: 90%;
+  padding: 10px;
+  border: 1px solid var(--them-color-lite);
+}
+.question-paper .header{
+  display: flex;
+  margin: 10px;
+  border: 1px solid var(--them-color-lite);
+  padding: 7px;
+}
+.question-paper .header .left{
+  margin: 10px;
+}
+.question-paper .header .middle{
+  margin: 10px;
+  text-align: center;
+  color: #fff;
+
+}
+.question-paper .header .right{
+  margin: 10px;
+}
+.hint{
+  color: #fff;
+}
+.create-q-button{
+  width: 100%;
+  background: #e83e8c;
+  padding: 4px;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 19px;
+}
+.q-body .individual-q{
+  margin-bottom: 10px;
+}
+.q-body .individual-q .i-q-title{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.q-body .individual-q .i-q-title h1{
+  padding-right: 7px;
+  width: 8%;
+  color: var(--them-color-lite);
+}
+.q-body .individual-q .i-q-title .q{
+  padding-right: 7px;
+  width: 72%;
+}
+.q-body .individual-q .i-q-title .m{
+  width: 20%;
+  padding-right: 7px;
+}
+
+.q-body .individual-q .option-type{
+  background: #fff;
+  padding: 7px;
+}
+.q-body .individual-q .i-q-option .option-p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.q-body .individual-q .i-q-option .option-p .op-id{
+  width: 10%;
+}
+.q-body .individual-q .i-q-option .option-p .op{
+  width: 60%;
+  padding-right: 7px;
+}
+.q-body .individual-q .i-q-option .option-p .status{
+  width: 30%;
+}
+.q-body .individual-q .i-q-option .option-p .status mat-label{
+  margin-left: 10px;
+  font-size: 20px;
+  background: #e0a800;
+}
+.submit-question{
+  width: 100%;
+  background-image: linear-gradient(#03204c, #035c96);
+  padding: 4px;
+  border: 2px solid var(--them-color-lite);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 21px;
+}
+
+.submit-question:hover{
+  background-image: linear-gradient(#035c96, #03204c);
+}
+

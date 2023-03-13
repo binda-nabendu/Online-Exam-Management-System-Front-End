@@ -1,0 +1,13 @@
+<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
+    <mat-header-cell *matHeaderCellDef>{{displayedColumnName[colIndex]}}</mat-header-cell>
+    <mat-cell *matCellDef="let element "> {{element[disCol]}}
+    </mat-cell>
+
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns" [ngClass]="{'title-color-show': true}"></mat-header-row>
+  <mat-row *matRowDef="let row;let odd = odd; columns: displayedColumns;" [ngClass]="{'color-show': odd }"></mat-row>
+</mat-table><br>
+

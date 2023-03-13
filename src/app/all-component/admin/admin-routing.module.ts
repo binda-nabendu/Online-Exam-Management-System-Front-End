@@ -7,6 +7,20 @@ import { PresentTeacherComponent } from './present-teacher/present-teacher.compo
 import {MyStudentComponent} from "../teacher/my-student/my-student.component";
 import {AllStudentComponent} from "../teacher/all-student/all-student.component";
 import {PendingStudentComponent} from "./pending-student/pending-student.component";
+import {PendingTeacherComponent} from "./pending-teacher/pending-teacher.component";
+import {AddDepartmentComponent} from "./add-department/add-department.component";
+import {ChangeSemesterComponent} from "./change-semester/change-semester.component";
+import {AddCourseComponent} from "./add-course/add-course.component";
+import {AllCoursesComponent} from "../teacher/all-courses/all-courses.component";
+import {AssignTeacherToSubjectComponent} from "./assign-teacher-to-subject/assign-teacher-to-subject.component";
+import {MyCoursesComponent} from "../teacher/my-courses/my-courses.component";
+import {QuestionPaperComponent} from "../teacher/question-paper/question-paper.component";
+import {MyQuestionComponent} from "../teacher/my-question/my-question.component";
+import {RequestedCourseByStudentComponent} from "./requested-course-by-student/requested-course-by-student.component";
+import {ExamineAnsScriptComponent} from "../teacher/examine-ans-script/examine-ans-script.component";
+import {AssignGradeComponent} from "../teacher/assign-grade/assign-grade.component";
+import {AssignCgpaComponent} from "../teacher/assign-cgpa/assign-cgpa.component";
+import {ReviewComponent} from "../teacher/review/review.component";
 
 const routes: Routes = [
   {
@@ -17,6 +31,21 @@ const routes: Routes = [
       {path: "my-students", component: MyStudentComponent},
       {path: "all-students", component: AllStudentComponent},
       {path: "pending-students", component: PendingStudentComponent},
+      {path: "pending-teachers", component: PendingTeacherComponent},
+      {path: "add-department", component: AddDepartmentComponent},
+      {path: "shift-semester", component: ChangeSemesterComponent},
+      {path: "add-course", component:AddCourseComponent},
+      {path: "all-courses", component: AllCoursesComponent},
+      {path: "assign-course", component: AssignTeacherToSubjectComponent},
+      {path: "my-courses", component: MyCoursesComponent},
+      {path: "set-question", component: QuestionPaperComponent},
+      {path: "my-questions", component: MyQuestionComponent},
+      {path: "requested-course", component: RequestedCourseByStudentComponent},
+      {path: "waiting-for-examining-question-list", component: ExamineAnsScriptComponent},
+      {path: "student-list-of-that-exam/:examId", component: ExamineAnsScriptComponent},
+      {path: "assign-grade-course", component: AssignGradeComponent},
+      {path: "assign-cgpa/:courseCode", component: AssignCgpaComponent},
+      {path: "review", component: ReviewComponent},
     ], canActivate: [AdminSpecialGuard]
   },
 ];

@@ -1,1 +1,69 @@
-<h2>User Details </h2>
+<body>
+
+<mat-card>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="userDetailsPending" (ngSubmit)="approveStudent()">
+      <mat-form-field class="example-full-width">
+        <mat-card-title>NID</mat-card-title>
+        <input matInput placeholder="NID" formControlName = "nid">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>Name</mat-card-title>
+        <input matInput formControlName = "userName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>Father Name</mat-card-title>
+        <input matInput formControlName = "fatherName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <mat-card-title>Mother Name</mat-card-title>
+        <input matInput formControlName = "motherName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <mat-card-title>Gender</mat-card-title>
+        <input  matInput formControlName = "gender">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>Contact Number</mat-card-title>
+        <input matInput formControlName = "contactNo">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>Email</mat-card-title>
+        <input matInput formControlName = "email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>Date-of-Birth</mat-card-title>
+        <input matInput formControlName='dob' >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>Address</mat-card-title>
+        <input matInput formControlName = "address">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>{{stp1}}</mat-card-title>
+        <input matInput formControlName = "property1">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-card-title>{{stp2}}</mat-card-title>
+        <input matInput formControlName = "property2">
+      </mat-form-field>
+
+      <button class ="signup" mat-raised-button color="primary"  type='submit' >Approve</button>
+      <button mat-raised-button color="primary" (click)="FunctionDelete()">Delete</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+</body>
+
+

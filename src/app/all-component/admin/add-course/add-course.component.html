@@ -1,0 +1,24 @@
+<div class = "new-course">
+  <mat-card-content class="course">
+    <p class = "main-title">Create New Course</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Department</mat-label>
+      <mat-select  [(ngModel)]="selectedValue" name="dept">
+        <mat-option *ngFor="let dept of depts" [value]="dept.deptId">
+          {{dept.deptName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <form class="add-course" [formGroup] = "addCourse" (ngSubmit)="createNewCourse()">
+      <mat-form-field class="deptId example-full-width">
+        <mat-label class="title">Course Code</mat-label>
+        <input matInput placeholder="Course Code" formControlName = "courseCode">
+      </mat-form-field>
+      <mat-form-field class="deptName example-full-width">
+        <mat-label class="title">Course Name</mat-label>
+        <input matInput placeholder="Name" formControlName = "courseName">
+      </mat-form-field>
+      <button class = "submitCourse" type="submit">Create Course</button>
+    </form>
+  </mat-card-content>
+</div>

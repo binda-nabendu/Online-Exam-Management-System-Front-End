@@ -29,7 +29,7 @@
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">group</span>Teacher List</a>
             <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
               <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">group</span>Present Teacher's</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Teachers</a></li>
+              <li><a routerLink='pending-teachers'><span class='material-icons icon-style sub-icon'>person_add_alt</span>Pending Teachers</a></li>
             </ul>
           </li>
         </ul>
@@ -43,41 +43,42 @@
           </li>
         </ul>
         <ul class= "left-menu">
-          <li ><a><span class="material-icons icon-style">add_box</span>Add department</a></li>
+          <li ><a routerLink="add-department"><span class="material-icons icon-style">add_box</span>Add department</a></li>
         </ul>
         <ul class= "left-menu">
-          <li ><a><span class="material-icons icon-style">add_moderator</span>Change Semester</a></li>
+          <li ><a routerLink="shift-semester"><span class="material-icons icon-style">add_moderator</span>Change Semester</a></li>
         </ul>
 
         <ul class= "left-menu" >
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li3 = !li3"><span class='material-icons icon-style'>school</span>Course</a>
             <ul class="{{li3 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>checklist</span>My Courses</a></li>
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>view_list</span>All Course List</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>playlist_add</span>Add course</a></li>
+              <li><a routerLink='my-courses' fragment='not-assign'><span class='material-icons icon-style sub-icon'>checklist</span>My Courses</a></li>
+              <li><a routerLink='all-courses' fragment='not-assign'><span class='material-icons icon-style sub-icon'>view_list</span>All Course List</a></li>
+              <li><a routerLink='add-course'><span class='material-icons icon-style sub-icon'>playlist_add</span>Add course</a></li>
+              <li><a routerLink='assign-course'><span class='material-icons icon-style sub-icon'>card_giftcard</span>Assign Course</a></li>
+              <li><a routerLink='requested-course'><span class='material-icons icon-style sub-icon'>add_box</span>Requested Course</a></li>
             </ul>
           </li>
         </ul>
         <ul class= "left-menu" >
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li4 = !li4"><span class='material-icons icon-style'>history_edu</span>Question</a>
             <ul class="{{li4 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>post_add</span>Make Question</a></li>
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>library_books</span>My Question List</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>elevator</span>Students of X Exam</a></li>
+              <li><a routerLink='set-question' fragment='not-assign'><span class='material-icons icon-style sub-icon'>post_add</span>Make Question</a></li>
+              <li><a routerLink='my-questions' fragment='not-assign'><span class='material-icons icon-style sub-icon'>library_books</span>My Question List</a></li>
+<!--              <li><a routerLink=''><span class='material-icons icon-style sub-icon'>elevator</span>Students of X Exam</a></li>-->
             </ul>
           </li>
         </ul>
         <ul class= "left-menu" >
           <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li5 = !li5"><span class='material-icons icon-style'>verified</span>Result</a>
             <ul class="{{li5 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>description</span>Examine AnswerScript</a></li>
-              <li><a routerLink='not-assign-yet' fragment='not-assign'><span class='material-icons icon-style sub-icon'>check_circle</span>Assign Grade</a></li>
-              <li><a routerLink='login'><span class='material-icons icon-style sub-icon'>pending_actions</span>Pending Result</a></li>
+              <li><a routerLink='waiting-for-examining-question-list' fragment='not-assign'><span class='material-icons icon-style sub-icon'>description</span>Examine AnswerScript</a></li>
+              <li><a routerLink='assign-grade-course' fragment='not-assign'><span class='material-icons icon-style sub-icon'>check_circle</span>Assign Grade</a></li>
             </ul>
           </li>
         </ul>
         <ul class= "left-menu">
-          <li ><a><span class="material-icons icon-style">add_moderator</span>Review</a></li>
+          <li ><a routerLink="review"><span class="material-icons icon-style">add_moderator</span>Review</a></li>
         </ul>
 
 
