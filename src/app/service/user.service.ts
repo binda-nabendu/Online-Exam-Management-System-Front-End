@@ -5,6 +5,7 @@ import {regTec} from "../model/regTec";
 import {regPerson} from "../model/regPerson";
 import {Observable} from "rxjs";
 import {Department} from "../model/Department";
+import {QuestionScript} from "../model/QuestionScript";
 
 
 @Injectable({
@@ -101,5 +102,4 @@ export class UserService {
   getAvailableDept(): Observable<Department[]>{
     return this.httpClient.get<Department[]>(this.url+"public/get-available-dept");
   }
-
 }

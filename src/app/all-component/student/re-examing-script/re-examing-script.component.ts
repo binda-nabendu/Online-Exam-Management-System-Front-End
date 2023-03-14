@@ -35,7 +35,7 @@ export class ReExamingScriptComponent   implements OnInit{
   dataSource:QuestionSummery[];
   isemp = false;
   getAllStudentRequestedCourse(){
-    this.stdService.ExamHistory("exams/previous").subscribe(req =>{
+    this.stdService.examHistory("exams/previous").subscribe(req =>{
       this.dataSource = req;
       if(this.dataSource.length <= 0){
         this.isemp = false;

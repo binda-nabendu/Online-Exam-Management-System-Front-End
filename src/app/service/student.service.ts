@@ -5,6 +5,7 @@ import {regTec} from "../model/regTec";
 import {Course} from "../model/Course";
 import {QuestionSummery} from "../model/QuestionSummery";
 import {User} from "../model/User";
+import {QuestionScript} from "../model/QuestionScript";
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class StudentService {
     return this.httpClient.get<Course[]>(this.url+"student/"+path, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
-  ExamHistory(path: string) : Observable<QuestionSummery[]> {
+  examHistory(path: string) : Observable<QuestionSummery[]> {
     return this.httpClient.get<QuestionSummery[]>(this.url+"student/"+path, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
@@ -43,5 +44,9 @@ export class StudentService {
     return this.httpClient.get<User>(this.url+"student/exams/req-for-info", {
       headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""}),
       params: new HttpParams().set('id', id)});
+  }
+
+  getExamPaper(qid: number): Observable<QuestionScript> {
+    return this.httpClient.get<QuestionScript>(this.url+"student/give-post-exam/"+qid, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 }
