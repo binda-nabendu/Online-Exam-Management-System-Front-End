@@ -42,7 +42,7 @@ export class AssignTeacherToSubjectComponent implements OnInit{
       formData.append('deptId', this.selectedCourse.deptId);
       formData.append('teacherId', this.selectedTeacher.nid);
 
-      this.adminService.assingTecToCourse(formData).subscribe( msg =>{
+      this.adminService.assignTecToCourse(formData).subscribe(msg =>{
         if(msg != null)
           alertify.success("Teacher assign Successful!");
         else{

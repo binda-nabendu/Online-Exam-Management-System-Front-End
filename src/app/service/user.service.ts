@@ -1,11 +1,9 @@
 import {HostListener, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {regStd} from "../model/regStd";
-import {regTec} from "../model/regTec";
 import {regPerson} from "../model/regPerson";
 import {Observable} from "rxjs";
 import {Department} from "../model/Department";
-import {QuestionScript} from "../model/QuestionScript";
 
 
 @Injectable({
@@ -15,14 +13,16 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
   private url: string = "http://localhost:8080/api/";
+
+  token = localStorage.getItem('OEMSToken');
   proceedLogin(user:any){
      return this.httpClient.post(this.url+"authenticate",user);
   }
   GetToken() {
-    return localStorage.getItem('token') != null ? localStorage.getItem('OEMSToken') : '';
+    return this.token != null ? localStorage.getItem('OEMSToken') : '';
   }
   IsLoggedIn(){
-    return localStorage.getItem('OEMSToken') != null;
+    return this.token != null;
   }
   getRole()  {
 
@@ -52,10 +52,9 @@ export class UserService {
     //____________________*********___________________
 
 
-    let token = localStorage.getItem('OEMSToken');
-    if(token != null){
-      const getIdFromPayload: string = JSON.parse( atob(token.split('.')[1])).sub;
-      return   getIdFromPayload;
+
+    if(this.token != null){
+      return   JSON.parse(atob(this.token.split('.')[1])).sub;
     }
     else return '';
   }
@@ -64,9 +63,10 @@ export class UserService {
     localStorage.removeItem('OEMSToken');
   }
   LoggedOut(){
-    localStorage.removeItem('OEMSToken');
+    // while(localStorage.getItem('OEMSToken') != null)
+      localStorage.removeItem('OEMSToken');
   }
-  buildFormDataComn(person: regPerson): FormData{
+  buildFormData(person: regPerson): FormData{
     let formData: FormData = new FormData();
     formData.append('nid', person.nid);
     formData.append('userName', person.userName);
@@ -81,13 +81,13 @@ export class UserService {
     return formData;
   }
   submitStdReg(student: regStd){
-    let formData: FormData = this.buildFormDataComn(student);
+    let formData: FormData = this.buildFormData(student);
     formData.append('deptId', student.deptId);
     formData.append('semester', student.semester);
     return this.httpClient.post(this.url+"public/request-to-join-as-student", formData);
   }
   submitTecReg(teacher: any){
-    let formData: FormData = this.buildFormDataComn(teacher)
+    let formData: FormData = this.buildFormData(teacher)
     formData.append('eduQualification', teacher.eduQualification);
     formData.append('expertise', teacher.expertise);
     return this.httpClient.post(this.url+"public/request-to-join-as-teacher", formData);
