@@ -48,7 +48,7 @@ export class ReExamingScriptComponent   implements OnInit{
   takeAction(element: QuestionSummery) {
     if(this.path == 're-examined') {
       alertify.confirm("Re Examine Request", "did you really want to re examine this script?", () => {
-        this.stdService.sendForReExaming(element.examId);
+        this.stdService.sendForReExamining(element.examId);
         alertify.success("Re Examine Request Successfully Completed");
       }, function () {
       });
