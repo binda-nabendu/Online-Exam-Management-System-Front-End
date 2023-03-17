@@ -42,7 +42,7 @@ export class TeacherService {
     return this.httpClient.get<Course[]>(this.url+"teacher/courses", {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
-  setQuestion(jsonData: string) {
+  setQuestion(jsonData: QuestionScript) {
     return this.httpClient.post(this.url+"teacher/create-exams/question",jsonData, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token || ""})});
   }
 
