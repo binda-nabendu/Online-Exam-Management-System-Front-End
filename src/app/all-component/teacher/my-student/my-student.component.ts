@@ -22,7 +22,7 @@ export class MyStudentComponent implements OnInit{
   getAllStudents(courseCode: String){
     this.service.getSpecificCoursesStudent(courseCode).subscribe(student =>{
       this.dataSource = student;
-      console.log(student)
+      // console.log(student)
     })
   }
   updateForm = new FormGroup({
@@ -31,14 +31,14 @@ export class MyStudentComponent implements OnInit{
   getMyCourses(){
     this.service.getMyCourses().subscribe(courses =>{
       this.courses = courses;
-      console.log(this.courses);
+      // console.log(this.courses);
       }
     )
 }
   isemp = false;
   submitCourse() {
     if(this.updateForm.valid){
-      console.log(this.updateForm.value.crs);
+      // console.log(this.updateForm.value.crs);
       // @ts-ignore
       this.getAllStudents(this.updateForm.value.crs)
       if(this.dataSource == null){

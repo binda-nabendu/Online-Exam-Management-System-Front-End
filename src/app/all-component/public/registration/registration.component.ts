@@ -72,7 +72,7 @@ export class RegistrationComponent implements OnInit{
     };
     if(this.regStdForm.valid){
       this.service.submitStdReg(student).subscribe(item =>{
-        console.log(item);
+        // console.log(item);
         this.router.navigate(['public-dashboard/login']);
       });
       alertify.success("Registration Successfully")

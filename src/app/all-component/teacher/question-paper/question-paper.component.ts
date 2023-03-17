@@ -123,7 +123,7 @@ export class QuestionPaperComponent {
     }
     alertify.confirm("Submit Question", "Do you want to submit this question ?", ()=>{
       const jsonData = JSON.stringify(qs);
-      console.log(qs);
+      // console.log(qs);
 
       // this.tecService.setQuestion(jsonData).subscribe(t=>{
       //   console.log(t);

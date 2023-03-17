@@ -33,7 +33,7 @@ export class AddCourseComponent implements OnInit{
       teacherId: "Not assigned",
       courseSessions: '-33'
     }
-    console.log(crs);
+   // console.log(crs);
     this.adminService.createCourse(crs);
     this.addCourse.setValue({courseCode: "", courseName: ""});
     alertify.success("Course Add Successful");

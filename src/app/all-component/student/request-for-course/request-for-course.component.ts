@@ -38,13 +38,13 @@ export class RequestForCourseComponent  implements OnInit{
   FunctionSubmit() {
     let reqCourse : Course[] = [];
     for(const e of this.reqCrs){
-      console.log(e);
+      // console.log(e);
       reqCourse.push(e);
     }
     if(reqCourse.length > 0){
       // issue may send same things multiple time have to handle it
       // this.stdService.requestForCourses(JSON.stringify(this.reqCourses));
-      console.log(JSON.stringify(reqCourse));
+      // console.log(JSON.stringify(reqCourse));
 
     }
   }

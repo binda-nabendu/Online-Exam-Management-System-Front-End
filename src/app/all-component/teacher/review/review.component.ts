@@ -16,7 +16,7 @@ export class ReviewComponent  implements OnInit{
   }
   ngOnInit(): void {
     this.getRequestReviewStudentList();
-    console.log(this.dataSource);
+    // console.log(this.dataSource);
   }
   displayedColumnName: string[] =  ['Exam Id', 'Course Code','Name', 'Marks','See Script'];
   displayedColumns: string[] = ['examId', 'courseCode','stdName', 'gotTotalMarks','stdId'];
