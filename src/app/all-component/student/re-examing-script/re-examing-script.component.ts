@@ -35,7 +35,7 @@ export class ReExamingScriptComponent   implements OnInit{
   dataSource:QuestionSummery[];
   isemp = false;
   getAllStudentRequestedCourse(){
-    this.stdService.ExamHistory("exams/previous").subscribe(req =>{
+    this.stdService.examHistory("exams/previous").subscribe(req =>{
       this.dataSource = req;
       if(this.dataSource.length <= 0){
         this.isemp = false;
@@ -48,7 +48,7 @@ export class ReExamingScriptComponent   implements OnInit{
   takeAction(element: QuestionSummery) {
     if(this.path == 're-examined') {
       alertify.confirm("Re Examine Request", "did you really want to re examine this script?", () => {
-        this.stdService.sendForReExaming(element.examId);
+        this.stdService.sendForReExamining(element.examId);
         alertify.success("Re Examine Request Successfully Completed");
       }, function () {
       });

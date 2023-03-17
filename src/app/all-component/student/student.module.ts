@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatInputModule} from "@angular/material/input";
 import { ReExamingScriptComponent } from './re-examing-script/re-examing-script.component';
+import { ExamHallComponent } from './exam-hall/exam-hall.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ReExamingScriptComponent } from './re-examing-script/re-examing-script.
     RequestForCourseComponent,
     QuestionPaperWithAnsScriptComponent,
     ReExamingScriptComponent,
+    ExamHallComponent,
   ],
   imports: [
     CommonModule,

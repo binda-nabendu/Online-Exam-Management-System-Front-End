@@ -1,14 +1,11 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {TeacherService} from "../../../service/teacher.service";
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../service/user.service";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {PopupComponent} from "../../admin/popup/popup.component";
-import {Course} from "../../../model/Course";
 import {QuestionScript} from "../../../model/QuestionScript";
-import {FormControl, Validators} from "@angular/forms";
+import {FormControl} from "@angular/forms";
 import {StudentService} from "../../../service/student.service";
 import {AnswerScript} from "../../../model/AnswerScript";
 import alertify from "alertifyjs";
+import {QuestionSummery} from "../../../model/QuestionSummery";
 
 @Component({
   selector: 'app-question-paper-with-ans-script',
@@ -26,7 +23,7 @@ export class QuestionPaperWithAnsScriptComponent implements OnInit{
   allAnsReceiver: FormControl[][];
   questions: QuestionScript = {
     examId: 13,
-    teacherId: "6118194062",
+    teacherId: "6118194062 This is Demo Question Main Question Not present Now",
     courseCode: "CSE315",
     deptId:"2019",
     percentageValue: 0.5,
@@ -98,14 +95,25 @@ export class QuestionPaperWithAnsScriptComponent implements OnInit{
       }
     ]
   }
-  stdId = "";
+  qid: number = 0;
+  stdId: any;
+
+
   ngOnInit(): void {
     // console.log(this.data.userDetails);
-    // this.requestForQuestion(this.data.userDetails);
+    this.stdService.examHistory("exams/immediate-upcoming").subscribe(qsnHead=>{
+      this.qid = qsnHead[0].examId;
+    });
+    this.requestForQuestion();
     this.stdId = this.userService.getId();
     this.preprocess();
   }
-
+  private requestForQuestion() {
+    this.stdService.getExamPaper(this.qid).subscribe(qs=>{
+      if(qs != null)
+        this.questions = qs;
+    })
+  }
   preprocess(){
     for(let i in this.questions.allIndividualQuestions){
       this.allAnsReceiver.push([]);
@@ -162,4 +170,6 @@ export class QuestionPaperWithAnsScriptComponent implements OnInit{
     }, function () {
     });
   }
+
+
 }

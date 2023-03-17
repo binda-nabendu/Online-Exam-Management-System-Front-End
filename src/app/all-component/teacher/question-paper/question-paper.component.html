@@ -79,18 +79,20 @@
               <mat-radio-button value="▓">Text Box</mat-radio-button>
             </mat-radio-group>
           </div>
-          <div class = 'i-q-option' *ngFor="let op of q.allOptions">
-            <div class = 'option-p'>
-              <h1 class = 'op-id'>Option-{{op.optionNo}}</h1>
-              <mat-form-field class="example-full-width op">
-                <mat-label class="title">Option</mat-label>
-                <input matInput placeholder="Write Your option" [formControl] = "allOptionReceiver[q.questionNo-1][op.optionNo-1]">
-              </mat-form-field>
-              <mat-radio-group  [formControl]="allOptionStateReceiver[q.questionNo-1][op.optionNo-1]" class="status">
-                <mat-label>  Option Status</mat-label><br>
-                <mat-radio-button value=true class="tr">True</mat-radio-button>
-                <mat-radio-button value=false>False</mat-radio-button>
-              </mat-radio-group>
+          <div  *ngIf="q.question.charAt(0) != '▓'">
+            <div class = 'i-q-option' *ngFor="let op of q.allOptions">
+              <div class = 'option-p'>
+                <h1 class = 'op-id'>Option-{{op.optionNo}}</h1>
+                <mat-form-field class="example-full-width op">
+                  <mat-label class="title">Option</mat-label>
+                  <input matInput placeholder="Write Your option" [formControl] = "allOptionReceiver[q.questionNo-1][op.optionNo-1]">
+                </mat-form-field>
+                <mat-radio-group  [formControl]="allOptionStateReceiver[q.questionNo-1][op.optionNo-1]" class="status">
+                  <mat-label>  Option Status</mat-label><br>
+                  <mat-radio-button value=true class="tr">True</mat-radio-button>
+                  <mat-radio-button value=false>False</mat-radio-button>
+                </mat-radio-group>
+              </div>
             </div>
           </div>
           <div>

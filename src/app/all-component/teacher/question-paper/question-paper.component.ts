@@ -25,7 +25,7 @@ export class QuestionPaperComponent {
   selectedCourse: { courseCode: string; deptId: string ; courseName: string ; courseSessions: number} = {courseCode:'',deptId:'', courseName:'', courseSessions: -1};
   collegeName: string = 'GURUGRIHO PATHSHALA';
   percent = new FormControl(0.3,[Validators.required]);
-  examId = new FormControl('',[Validators.required]);
+  examId = new FormControl({value:'Auto Generated', disabled: true}, [Validators.required]);
   teacherId: string = '';
   marks = new FormControl(20,[Validators.required]);
   session = new FormControl({value:'Auto Generated', disabled: true}, [Validators.required]);
@@ -125,9 +125,9 @@ export class QuestionPaperComponent {
       const jsonData = JSON.stringify(qs);
       console.log(qs);
 
-      // this.tecService.setQuestion(jsonData).subscribe(t=>{
-      //   console.log(t);
-      // })
+      this.tecService.setQuestion(qs).subscribe(t=>{
+        console.log(t);
+      })
     },function(){});
 
   }

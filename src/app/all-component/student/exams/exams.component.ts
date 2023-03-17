@@ -20,7 +20,7 @@ export class ExamsComponent  implements OnInit{
   displayedColumns: string[] = ['examId', 'courseCode', 'deptId', 'startingDateTime', 'total',  'teacherId'];
   dataSource:any;
   private getExamHistory(path: string) {
-    this.service.ExamHistory(path).subscribe(course =>{
+    this.service.examHistory(path).subscribe(course =>{
       this.dataSource = course;
       // console.log(path);
     })
