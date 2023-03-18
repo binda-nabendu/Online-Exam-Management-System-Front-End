@@ -8,7 +8,6 @@ import{PublicDashboardComponent} from './all-component/public/public-dashboard/p
 import { RegistrationComponent } from './all-component/public/registration/registration.component';
 import { RegistrationTeacherComponent } from './all-component/public/registration-teacher/registration-teacher.component';
 import {TncComponent} from "./all-component/public/tnc/tnc.component";
-
 const routes: Routes = [
   {path: "public-dashboard", component: PublicDashboardComponent,
     children: [
