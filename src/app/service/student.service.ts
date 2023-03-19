@@ -5,6 +5,7 @@ import {Course} from "../model/Course";
 import {QuestionSummery} from "../model/QuestionSummery";
 import {User} from "../model/User";
 import {QuestionScript} from "../model/QuestionScript";
+import {AnswerScript} from "../model/AnswerScript";
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,9 @@ export class StudentService {
 
   getExamPaper(qid: number): Observable<QuestionScript> {
     return this.httpClient.get<QuestionScript>(this.url+"student/give-post-exam/"+qid, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
+  }
+
+  submitAns(ans: AnswerScript) {
+    return this.httpClient.post(this.url+"student/give-post-exam/"+ans,'', {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
   }
 }

@@ -198,3 +198,12 @@ a {
   }
 
 }
+.download{
+  outline: none;
+  border: none;
+  background: #FFBF00;
+  padding: 7px;
+  font-family: 'Roboto', serif;
+  font-size: 16px;
+  font-weight: 500;
+}

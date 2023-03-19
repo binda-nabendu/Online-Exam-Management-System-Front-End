@@ -86,4 +86,8 @@ export class ExamHallComponent implements OnDestroy, OnInit{
     this.minutes.nativeElement.innerText = String(this.differenceMinute);
     this.seconds.nativeElement.innerText = String(this.differenceSecond);
   }
+
+  navigateDemo() {
+    this.router.navigate(["student/student-dashboard/get-question-paper-with-ans-script"]).then();
+  }
 }
