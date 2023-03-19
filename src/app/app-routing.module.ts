@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:"student", loadChildren: ()=>import ('./all-component/student/student.module'). then(opt=>opt.StudentModule)},
 
 
-  // {path:"**", component: HomeComponent}
+  {path:"**", component: HomeComponent}
 ];
 
 @NgModule({

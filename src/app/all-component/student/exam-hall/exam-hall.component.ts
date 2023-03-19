@@ -70,7 +70,7 @@ export class ExamHallComponent implements OnDestroy, OnInit{
 
       !isNaN(Number(this.days.nativeElement.innerText))
         ? (this.days.nativeElement.innerText = String(Math.floor(this.differenceDays)))
-        : (this.days.nativeElement.innerHTML = '<img src="https://i.gifer.com/VAyR.gif" alt="nabendu"/>');
+        : (this.days.nativeElement.innerHTML = 'Not Set');
     }, 1000);
   }
 

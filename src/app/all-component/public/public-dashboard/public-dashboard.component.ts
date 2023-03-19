@@ -11,13 +11,18 @@ import {Router} from "@angular/router";
 export class PublicDashboardComponent implements OnInit{
   isLogin = false;
 
-  goToDashBoard() {
-
-  }
   constructor(private service: UserService, private router: Router) {
   }
   ngOnInit(): void {
     if(this.service.getRole() != 'public') this.isLogin = true;
+    if (this.service.getRole() == 'STUDENT')
+      this.router.navigate(["student/student-dashboard"]);
+    else if (this.service.getRole() == 'TEACHER')
+      this.router.navigate(["teacher/teacher-dashboard"]);
+    else if (this.service.getRole() == 'ADMIN')
+      this.router.navigate(["admin/admin-dashboard"]);
+  }
+  goToDashBoard() {
     if (this.service.getRole() == 'STUDENT')
       this.router.navigate(["student/student-dashboard"]);
     else if (this.service.getRole() == 'TEACHER')

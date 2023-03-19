@@ -27,7 +27,7 @@
   letter-spacing: -5px;
   font: normal 50px courier, sans-serif;
 }
-.download{
+.demo-button{
   outline: none;
   border: none;
   background: var(--them-color-lite);
