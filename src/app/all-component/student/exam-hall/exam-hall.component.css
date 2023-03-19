@@ -27,3 +27,14 @@
   letter-spacing: -5px;
   font: normal 50px courier, sans-serif;
 }
+.download{
+  outline: none;
+  border: none;
+  background: var(--them-color-lite);
+  padding: 7px;
+  font-family: 'Roboto', serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-left: 42%;
+}

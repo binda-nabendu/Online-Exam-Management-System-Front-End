@@ -164,6 +164,9 @@ export class QuestionPaperWithAnsScriptComponent implements OnInit{
         }
       }
       console.log(ans);
+      if(ans.examId != 0){
+        this.stdService.submitAns(ans);
+      }
       // then we redirect it to dashboard
 
 
