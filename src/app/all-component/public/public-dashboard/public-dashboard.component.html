@@ -18,8 +18,8 @@
         <li><a a routerLink='home' fragment='section4'>Contact</a></li>
         <li><a href="public-dashboard/t&c" >T&C</a></li>
         <li>
-          <a href ="https://github.com/binda-nabendu/Online-Exam-Management-Documentation/raw/main/Online%20Exam%20Management%20System.pdf" target="_blank"  rel="noopener noreferrer"><button class = "download" >Prj Documentation</button></a></li>
-        <li *ngIf="isLogin"><button  (click)="goToDashBoard()">Dashboard</button></li>
+          <a href ="https://github.com/binda-nabendu/Online-Exam-Management-Documentation/raw/main/Online%20Exam%20Management%20System.pdf" target="_blank"  rel="noopener noreferrer"><button class = "menu-button" >Prj Documentation</button></a></li>
+        <li *ngIf="isLogin"><button class = "menu-button" (click)="goToDashBoard()">My Dashboard</button></li>
       </ul>
     </nav>
 </header>
