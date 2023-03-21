@@ -37,15 +37,17 @@ export class RequestForCourseComponent  implements OnInit{
   FunctionSubmit() {
     let reqCourse : Course[] = [];
     for(const e of this.reqCrs){
-      console.log(e);
+      // console.log(e);
       reqCourse.push(e);
     }
     if(reqCourse.length > 0){
       // issue may send same things multiple time have to handle it
-      this.stdService.requestForCourses(reqCourse).subscribe(t=>{
 
+      this.stdService.requestForCourses(reqCourse).subscribe(t=>{
+        console.log(reqCourse);
       });
-      console.log(reqCourse);
+
+
 
     }
   }

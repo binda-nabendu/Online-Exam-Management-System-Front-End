@@ -13,7 +13,7 @@ export class AssignCgpaComponent implements OnInit{
   }
   ngOnInit(): void {
     this.getAssignableAtudent();
-    console.log(this.dataSource);
+    // console.log(this.dataSource);
   }
   displayedColumnName: string[] = ['Department Id', 'Course Code', 'Course Name', 'Teacher Id'];
   displayedColumns: string[] = ['deptId', 'courseCode', 'courseName', 'teacherId'];
