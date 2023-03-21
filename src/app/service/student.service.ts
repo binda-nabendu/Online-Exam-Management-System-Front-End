@@ -15,8 +15,8 @@ import {AnswerScript} from "../model/AnswerScript";
 
 export class StudentService {
   constructor(private httpClient: HttpClient) { }
-  private url: string = "https://oems-production-dec7.up.railway.app/api/";
-  // private url: string = "http://localhost:8080/api/";
+  // private url: string = "https://oems-production-dec7.up.railway.app/api/";
+  private url: string = "http://localhost:8080/api/";
   token = localStorage.getItem('OEMSToken');
 
 
@@ -34,8 +34,8 @@ export class StudentService {
     return this.httpClient.get<QuestionSummery[]>(this.url+"student/"+path, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
   }
 
-  requestForCourses(listOfCourses: string) {
-    return this.httpClient.post(this.url+"student/request-for-courses",listOfCourses, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
+  requestForCourses(listOfCourses: Course[]): Observable<Course[]> {
+    return this.httpClient.post<Course[]>(this.url+"student/request-for-courses",listOfCourses, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
   }
 
   sendForReExamining(examId: number) {

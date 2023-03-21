@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {StudentService} from "../../../service/student.service";
 import {Course} from "../../../model/Course";
 import alertify from "alertifyjs";
@@ -43,8 +42,10 @@ export class RequestForCourseComponent  implements OnInit{
     }
     if(reqCourse.length > 0){
       // issue may send same things multiple time have to handle it
-      // this.stdService.requestForCourses(JSON.stringify(this.reqCourses));
-      console.log(JSON.stringify(reqCourse));
+      this.stdService.requestForCourses(reqCourse).subscribe(t=>{
+
+      });
+      console.log(reqCourse);
 
     }
   }
