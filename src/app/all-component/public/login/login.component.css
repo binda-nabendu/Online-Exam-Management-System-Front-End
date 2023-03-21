@@ -5,7 +5,7 @@
 mat-card{
   background-color: #0c1228;
   margin: 0 auto;
-  width: 40%;
+  width: fit-content;
   opacity: 90%;
   height: 60%;
   display: flex;
@@ -26,4 +26,22 @@ button{
 body{
   padding-top: 130px;
   background-image: url(../../../../assets/images/choosing-bg.jpg);
+  height: auto;
+  min-height: 75%;
+}
+.temp-info{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  justify-content: center;
+  margin-top: 20px;
+  color: #fff8dc;
+}
+.temp-info .info{
+  background-color: #0c1228;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+.temp-info .info h2{
+  text-transform: uppercase;
 }
