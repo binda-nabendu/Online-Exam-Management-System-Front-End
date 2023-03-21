@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {TeacherService} from "../../../service/teacher.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StudentService} from "../../../service/student.service";
 

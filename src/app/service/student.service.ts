@@ -15,8 +15,8 @@ import {AnswerScript} from "../model/AnswerScript";
 
 export class StudentService {
   constructor(private httpClient: HttpClient) { }
-  // private url: string = "https://oems-production-dec7.up.railway.app/api/";
-  private url: string = "http://localhost:8080/api/";
+  private url: string = "https://oems-production-dec7.up.railway.app/api/";
+  // private url: string = "http://localhost:8080/api/";
   token = localStorage.getItem('OEMSToken');
 
 

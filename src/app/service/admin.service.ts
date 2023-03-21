@@ -12,8 +12,8 @@ import {RequestedCourses} from "../model/RequestedCourses";
 export class AdminService {
 
   constructor(private httpClient: HttpClient) { }
-  // private url: string = "https://oems-production-dec7.up.railway.app/api/";
-  private url: string = "http://localhost:8080/api/";
+  private url: string = "https://oems-production-dec7.up.railway.app/api/";
+  // private url: string = "http://localhost:8080/api/";
   token = localStorage.getItem('OEMSToken');
   getCard(){
 
@@ -68,12 +68,10 @@ export class AdminService {
   stdReqCrs(): Observable<RequestedCourses[]> {
     return this.httpClient.get<RequestedCourses[]>(this.url+"admin/requested-courses" , {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
   }
-  approveReqCourse(reqCrs : RequestedCourses) : boolean {
-    this.httpClient.post(this.url+"admin/requested-courses/approve",JSON.stringify(reqCrs), {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
-    return true;
+  approveReqCourse(reqCrs : RequestedCourses) : Observable<boolean> {
+    return this.httpClient.post<boolean>(this.url + "admin/requested-courses/approve", reqCrs, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
   }
-  deleteReqCourse(reqCrs : RequestedCourses): boolean {
-    this.httpClient.post(this.url+"admin/requested-courses/delete",JSON.stringify(reqCrs), {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
-    return true;
+  deleteReqCourse(reqCrs : RequestedCourses): Observable<boolean> {
+    return this.httpClient.post<boolean>(this.url + "admin/requested-courses/delete", reqCrs, {headers: new HttpHeaders({Authorization: 'Bearer ' + this.token})});
   }
 }

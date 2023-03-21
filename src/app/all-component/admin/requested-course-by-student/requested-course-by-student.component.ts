@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TeacherService} from "../../../service/teacher.service";
 import {AdminService} from "../../../service/admin.service";
-import {MatDialog} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {regStd} from "../../../model/regStd";
-import {PopupComponent} from "../popup/popup.component";
 import {RequestedCourses} from "../../../model/RequestedCourses";
 
 @Component({
@@ -31,22 +28,19 @@ export class RequestedCourseByStudentComponent implements OnInit{
       }else this.isemp = true;
     })
   }
-  updateForm = new FormGroup({
-    crs: new FormControl("", Validators.required),
-  })
-
   FunctionUpdate(user: regStd) {
 
   }
 
   FunctionDelete(element: RequestedCourses) {
-    this.admService.deleteReqCourse(element);
-    this.getAllStudentRequestedCourse();
-
+    this.admService.deleteReqCourse(element).subscribe( t =>{
+      this.getAllStudentRequestedCourse();
+    });
   }
 
   FunctionAdd(element: RequestedCourses) {
-    this.admService.approveReqCourse(element);
-    this.getAllStudentRequestedCourse();
+    this.admService.approveReqCourse(element).subscribe( t =>{
+      this.getAllStudentRequestedCourse();
+    });
   }
 }

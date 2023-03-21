@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {StudentService} from "../../../service/student.service";
 import {Course} from "../../../model/Course";
 import alertify from "alertifyjs";
+import {Router} from "@angular/router";
+import {catchError, of} from "rxjs";
 
 @Component({
   selector: 'app-request-for-course',
@@ -9,7 +11,7 @@ import alertify from "alertifyjs";
   styleUrls: ['./request-for-course.component.css']
 })
 export class RequestForCourseComponent  implements OnInit{
-  constructor(private stdService: StudentService) {
+  constructor(private stdService: StudentService, private router: Router) {
     this.reqCrs = new Set<Course>();
   }
   ngOnInit(): void {
@@ -43,8 +45,18 @@ export class RequestForCourseComponent  implements OnInit{
     if(reqCourse.length > 0){
       // issue may send same things multiple time have to handle it
 
-      this.stdService.requestForCourses(reqCourse).subscribe(t=>{
-        console.log(reqCourse);
+      this.stdService.requestForCourses(reqCourse).pipe(catchError(t=>{
+        if(t.error instanceof ErrorEvent)
+        alertify.error("Course Request failed");
+        return of(null);
+      })).subscribe(t=>{
+        console.log(t);
+        if(t != null){
+          alertify.success("Course Requested Successful");
+          // this.router.navigate(['student-dashboard/my-courses']);
+        }else{
+          alertify.error("Course Request failed");
+        }
       });
 
 
