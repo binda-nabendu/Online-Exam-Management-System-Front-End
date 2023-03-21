@@ -24,7 +24,7 @@ export class PendingTeacherComponent implements OnInit{
   getAllPendingTeachers(){
     this.admService.getPendingTeachers().subscribe(student =>{
       this.dataSource = student;
-      console.log(student);
+     // console.log(student);
       if(this.dataSource.length <= 0){
         this.isemp = false;
 

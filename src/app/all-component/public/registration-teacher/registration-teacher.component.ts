@@ -57,7 +57,7 @@ export class RegistrationTeacherComponent implements OnInit{
   registerTeacher(){
     let data:any = this.regTecForm.getRawValue().dob;
     this.regTecForm.value.dob = moment(data).format('YYYY-MM-DD');
-    console.log(this.regTecForm.value);
+    // console.log(this.regTecForm.value);
     let teacher: regTec = {nid:this.regTecForm.value.nid,
       userName:this.regTecForm.value.userName,
       fatherName:this.regTecForm.value.fatherName,
@@ -73,7 +73,7 @@ export class RegistrationTeacherComponent implements OnInit{
     };
     if(this.regTecForm.valid){
       this.service.submitTecReg(teacher).subscribe(item =>{
-        console.log(item);
+        // console.log(item);
         this.router.navigate(['public-dashboard/login']);
       });
       alertify.success("Registration Successfully")

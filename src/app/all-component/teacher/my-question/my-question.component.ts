@@ -26,7 +26,7 @@ export class MyQuestionComponent implements OnInit{
   getMyQuestionList(){
     this.tecService.getQuestionHeadDependOnLink("teacher/all-questions").subscribe(student =>{
       this.dataSource = student;
-      console.log(student);
+      // console.log(student);
       if(this.dataSource.length <= 0){
         this.isemp = false;
 

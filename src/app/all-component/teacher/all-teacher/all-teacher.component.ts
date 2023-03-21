@@ -19,7 +19,7 @@ export class AllTeacherComponent implements OnInit{
   getAllTeacher(){
     this.service.getAllTeacher().subscribe(teacher =>{
       this.dataSource = teacher;
-      console.log(teacher)
+      // console.log(teacher)
     })
   }
 }

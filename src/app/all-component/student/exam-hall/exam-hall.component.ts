@@ -17,20 +17,22 @@ export class ExamHallComponent implements OnDestroy, OnInit{
   ngOnInit() {
     this.stdService.examHistory("exams/immediate-upcoming").subscribe(getDate=>{
       let dateString;
-
+      // console.log(getDate[0].startingDateTime);
       if(getDate.length > 0){
         dateString = getDate[0].startingDateTime;
       }else{
         // dateString = "0000 0 0 00:00:00";
         dateString = "2024 3 14 18:39:00";//for check
       }
-      const dateParts = dateString.split(' ');
+      const dateParts = dateString.split('-');
       const year = Number(dateParts[0]);
       const month = Number(dateParts[1]) - 1; // Months are zero-indexed in JavaScript, so we need to subtract 1
-      const day = Number(dateParts[2]);
-      const hours = Number(dateParts[3].split(':')[0]);
-      const minutes = Number(dateParts[3].split(':')[1]);
-      const seconds = Number(dateParts[3].split(':')[2]);
+
+      const timeParts = dateParts[2].split(' ');
+      const day = Number(timeParts[0]);
+      const hours = Number(timeParts[1].split(':')[0]);
+      const minutes = Number(timeParts[1].split(':')[1]);
+      const seconds = Number(timeParts[1].split(':')[2]);
 
       this.targetDate = new Date(year, month, day, hours, minutes, seconds);
     });

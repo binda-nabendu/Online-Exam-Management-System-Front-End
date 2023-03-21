@@ -61,7 +61,7 @@ export class PopupComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log(this.data.userDetails.nid);
+    // console.log(this.data.userDetails.nid);
     this.updatePopup();
 
   }

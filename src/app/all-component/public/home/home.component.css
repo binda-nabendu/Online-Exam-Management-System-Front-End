@@ -118,6 +118,7 @@ a{
 .answer{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .answer .related-image{
   max-width: 50%;

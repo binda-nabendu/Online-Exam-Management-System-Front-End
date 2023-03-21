@@ -22,7 +22,7 @@ export class ExamsComponent  implements OnInit{
   private getExamHistory(path: string) {
     this.service.examHistory(path).subscribe(course =>{
       this.dataSource = course;
-      // console.log(path);
+      // console.log(course);
     })
   }
 }
