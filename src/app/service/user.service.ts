@@ -52,10 +52,10 @@ export class UserService {
     window.Buffer = window.Buffer || require('buffer').Buffer;
     //____________________*********___________________
 
+    let token = localStorage.getItem('OEMSToken');
 
-
-    if(this.token != null){
-      return   JSON.parse(atob(this.token.split('.')[1])).sub;
+    if(token != null){
+      return   JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).sub;
     }
     else return '';
   }

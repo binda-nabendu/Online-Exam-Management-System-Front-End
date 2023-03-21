@@ -21,7 +21,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   position: fixed;
   width: 200px;
   height: auto;
-  bottom: 60px;
+  bottom: 100px;
   right: 60px;
   transform: rotate(-30deg);
 }
